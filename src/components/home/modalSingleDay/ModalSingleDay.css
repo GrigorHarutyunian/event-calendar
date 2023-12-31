@@ -1,0 +1,55 @@
+.modal {
+  width: 100%;
+  height: 100%;
+  z-index: 11;
+  background: rgba(102, 51, 153, 0.259);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  width: 80%;
+  height: 80%;
+}
+
+.modal-enter {
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+.modal-enter-active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: opacity 1500ms, transform 1500ms ease-in-out;
+}
+
+.modal-exit {
+  transform: translateY(0);
+}
+
+.modal-exit-active {
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 1500ms, transform 1500ms ease-in-out;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
