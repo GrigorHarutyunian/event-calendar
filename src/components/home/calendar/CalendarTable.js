@@ -1,6 +1,6 @@
 import "./Calendar.css";
 import { useDispatch } from "react-redux";
-import { changeState } from "../../../redux/slices/modalSingleDaySlice";
+import { selectedDay } from "../../../redux/slices/selectedDaySlice";
 
 export const CalendarTable = ({ currentDate }) => {
   const dispatch = useDispatch();
@@ -55,7 +55,7 @@ const renderCalendarRows = (days, dispatch) => {
     currentRow = [
       ...currentRow,
       <td
-        onClick={() => dispatch(changeState())}
+        onClick={() => dispatch(selectedDay(day.toDateString()))}
         day={day}
         key={`${day.getDate()}`}
       >

@@ -1,14 +1,36 @@
 .calendar {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  height: 50%;
+  width: 60%;
+  height: 82%;
   border: 1px solid;
+  background: white;
+  border-radius: 5px;
+  position: relative;
+}
+
+.calendar::before,
+.calendar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 97%;
+  border-radius: 0 5px 5px 0;
+  background-color: #d3d5d6d7;
+  transform: translateY(-50%);
+}
+.calendar::before {
+  height: 94%;
+  left: calc(100% + 12px);
+  background-color: rgb(153, 153, 153);
 }
 
 .calendar-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 table {
