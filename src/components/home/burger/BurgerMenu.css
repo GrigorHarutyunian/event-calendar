@@ -1,0 +1,47 @@
+.menu-hidden {
+  position: absolute;
+  top: 0;
+  left: -100;
+  left: 4px;
+  transition: ease-out 1.5s;
+}
+
+.burger-menu {
+  width: 15%;
+  height: 100%;
+  background: red;
+  position: absolute;
+  left: 0;
+  z-index: 112331;
+  transition: ease-out 0.5s;
+}
+.burger-unclicked {
+  width: 31px;
+  height: 4px;
+  margin-top: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.burger-clicked {
+  width: 31px;
+  height: 4px;
+  background: white;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.burger-clicked:nth-child(1) {
+  transform: rotate(45deg) translate(0.75em, 1.3em);
+  transition: ease-out 0.5s;
+}
+
+.burger-clicked:nth-child(2) {
+  transform: scale(0);
+  transition: ease-out 0.5s;
+}
+
+.burger-clicked:nth-child(3) {
+  transform: rotate(135deg) translate(0.99em, -0.3em);
+  transition: ease-out 0.5s;
+}

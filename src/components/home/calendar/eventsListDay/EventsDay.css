@@ -1,0 +1,12 @@
+.events-day {
+  background: #7684a3;
+  height: 82%;
+  width: 20%;
+  position: relative;
+}
+
+.events-day-header {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
