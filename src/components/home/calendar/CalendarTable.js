@@ -1,11 +1,11 @@
 import "./Calendar.css";
 import { useDispatch } from "react-redux";
-import { selectedDay } from "../../../redux/slices/selectedDaySlice";
-
+import { selectedDay } from "../../../redux/slices/selectedDaySlice.js";
+const today = new Date().getDate();
+const thisMont = new Date().getMonth();
 export const CalendarTable = ({ currentDate }) => {
   const dispatch = useDispatch();
   const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-
   let daysInMonth = [];
   const startOfMonth = new Date(
     currentDate.getFullYear(),
@@ -56,7 +56,11 @@ const renderCalendarRows = (days, dispatch) => {
       ...currentRow,
       <td
         onClick={() => dispatch(selectedDay(day.toDateString()))}
-        day={day}
+        className={
+          day.getDate() === today && day.getMonth() === thisMont
+            ? "today"
+            : "day"
+        }
         key={`${day.getDate()}`}
       >
         {day.getDate()}

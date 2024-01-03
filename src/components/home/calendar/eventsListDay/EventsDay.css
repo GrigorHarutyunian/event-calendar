@@ -3,6 +3,8 @@
   height: 82%;
   width: 20%;
   position: relative;
+  transform: translateX(0%);
+  transition: 1.4s ease-in;
 }
 
 .events-day-header {
