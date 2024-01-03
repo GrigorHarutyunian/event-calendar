@@ -40,21 +40,3 @@
   opacity: 0;
   transition: opacity 1500ms, transform 1500ms ease-in-out;
 }
-
-@keyframes slideUp {
-  from {
-    transform: translateY(0);
-  }
-  to {
-    transform: translateY(-100%);
-  }
-}
-
-@keyframes slideDown {
-  from {
-    transform: translateY(-100%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}

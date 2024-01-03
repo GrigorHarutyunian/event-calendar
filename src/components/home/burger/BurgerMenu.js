@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./BurgerMenu.css";
 import { useSelector } from "react-redux";
-import { IconButton } from "@mui/material";
 import { useDispatch } from "react-redux";
 import { changeBurgerState } from "../../../redux/slices/burgerSlice";
 export const BurgerMenu = () => {
@@ -25,10 +24,13 @@ export const BurgerMenu = () => {
   };
 
   return (
-    <div className={menuClass}>
-      <div onClick={() => updateManu()} className={burgerClass}></div>
-      <div onClick={() => updateManu()} className={burgerClass}></div>
-      <div onClick={() => updateManu()} className={burgerClass}></div>
-    </div>
+    <>
+      <div className={menuClass}></div>
+      <div className="cursor-div" onClick={() => updateManu()}>
+        <div className={burgerClass}></div>
+        <div className={burgerClass}></div>
+        <div className={burgerClass}></div>
+      </div>
+    </>
   );
 };

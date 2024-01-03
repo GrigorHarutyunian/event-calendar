@@ -10,3 +10,44 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+.header {
+  position: absolute;
+  top: 0;
+  width: 87%;
+  height: 8%;
+  background: #e0b0b0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.burger-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background: #7684a3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateX(0%);
+  transition: ease-out 1.5s;
+}
+
+.burger-open {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 90%;
+  position: absolute;
+  background: #7684a3;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: translateX(6%);
+  transition: ease-out 1.5s;
+}
