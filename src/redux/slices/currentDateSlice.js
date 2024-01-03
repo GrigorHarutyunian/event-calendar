@@ -20,8 +20,11 @@ const currentDateSlice = createSlice({
         1
       ).toDateString();
     },
+    thisMonth: (state, action) => {
+      return new Date().toDateString();
+    },
   },
 });
 
-export const { nextMonth, prevMonth } = currentDateSlice.actions;
+export const { nextMonth, prevMonth, thisMonth } = currentDateSlice.actions;
 export default currentDateSlice.reducer;
