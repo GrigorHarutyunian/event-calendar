@@ -28,7 +28,6 @@ export const CalendarHeader = ({ currentDate }) => {
       <IconButton onClick={() => dispatch(prevMonth())} aria-label="cart">
         <ChevronLeftRounded />
       </IconButton>
-
       <h2>
         {currentMonth} {currentYear}
       </h2>
