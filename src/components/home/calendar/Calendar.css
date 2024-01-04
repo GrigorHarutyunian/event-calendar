@@ -29,11 +29,6 @@
   background-color: rgb(153, 153, 153);
 }
 
-.calendar-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 table {
   width: 100%;
@@ -84,33 +79,54 @@ td.today {
 } 
  */
 
- .calendar {
-  width: 70%; 
-  height: 70%; 
-  background: #F0FFF0;
+.calendar {
+  position: relative; /* Add this to make ::before and ::after position relative to .calendar */
+  width: 70%;
+  height: 70%;
+  background: #f0fff0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 7px;
+}
 
+.calendar::before,
+.calendar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 12px;
+  height: 97%;
+  border-radius: 0 5px 5px 0;
+  background-color: #d3d5d6d7;
+  transform: translateY(-50%);
+}
 
-  display: flex; 
-  flex-direction: "column";
-  align-items: "center"  ;
-  justify-content: "center"
+.calendar::before {
+  height: 94%;
+  left: calc(100% + 12px);
+  background-color: rgb(153, 153, 153);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img {
-width: 300px;
-height: 300px;
-margin-top: 120px;
-margin-left: 10px;
+  width: 300px;
+  height: 300px;
 }
 
-
 thead {
-  background-color: transparent; 
+  background-color: transparent;
 }
 
 th {
-  padding: 20px; 
-  border: none; 
+  padding: 20px;
+  border: none;
   /* color: #333;  */
   color: orange;
 }
@@ -121,30 +137,28 @@ td {
 }
 
 td.day {
-    background-color: transparent; 
-    font-weight: normal;
-    cursor: pointer;
-    transition:none;
+  background-color: transparent;
+  font-weight: normal;
+  cursor: pointer;
+  transition: none;
 }
-  
+
 td.day:hover {
-    transform:none;
-    background-color:#e0e0e0;/*Changed hover color*/
-}
-  
-td.today { 
-   border-radius :50%;
-   font-weight:bold;
-   color:white;
-   background-color:#333; 
+  transform: none;
+  background-color: #e0e0e0; /*Changed hover color*/
 }
 
-
+td.today {
+  border-radius: 50%;
+  font-weight: bold;
+  color: white;
+  background-color: #333;
+}
 
 @media only screen and (max-width: 400px) {
   .calendar {
-    width: 100%; 
-    height: 100%; 
+    width: 100%;
+    height: 100%;
   }
 
   .img {
@@ -154,7 +168,8 @@ td.today {
     margin-left: 5px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 10px;
   }
 }

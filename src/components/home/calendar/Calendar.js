@@ -24,9 +24,18 @@ export const Calendar = () => {
 
   return (
     <div className="calendar">
-      <img className="img" src={images[month]} alt="Month" />{" "}
       <CalendarHeader currentDate={currentDate} />
-      <CalendarTable currentDate={currentDate} />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-around",
+          width: "100%",
+          alignItems: "center",
+        }}
+      >
+        <img className="img" src={images[month]} alt="Month" />{" "}
+        <CalendarTable currentDate={currentDate} />
+      </div>
     </div>
   );
 };
