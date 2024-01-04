@@ -4,10 +4,16 @@ import AddIcon from "@mui/icons-material/Add";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { changeState } from "../../../../redux/slices/modalAddEventSlice";
+import { useEffect } from "react";
+import { GetEvents } from "../../../../firebase/service/GetEvents";
+
 export const EventsDay = () => {
   const dispatch = useDispatch();
   const selectedDayString = useSelector((store) => store.selectedDay);
   const selectedDay = new Date(selectedDayString);
+  const event = useSelector((store) => store.events);
+
+  console.log(event);
   const WeeksDay = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const months = [
     "January",
@@ -35,6 +41,15 @@ export const EventsDay = () => {
           {day} {months[month]} {year}
         </h4>
       </header>
+
+      {event.events.map((arr) => {
+        return (
+          <div key={Math.random()} className="event-item">
+            <div>{arr.title}</div>
+            <div>{arr.time}</div>
+          </div>
+        );
+      })}
       <Fab
         onClick={() => dispatch(changeState(true))}
         style={{ position: "absolute", bottom: "0", right: "0" }}

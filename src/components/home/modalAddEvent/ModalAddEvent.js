@@ -7,14 +7,14 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { useSelector } from "react-redux";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-import { upDateEvents } from "../../../firebase/FirebaseService";
+import { upDateEvents } from "../../../firebase/service/UpDateEvents";
 
 export const ModalAddEvent = () => {
   const [title, setTitle] = useState("");
   const [time, setTime] = useState({ time: "", state: "" });
   const dispatch = useDispatch();
   const selectedDayString = useSelector((store) => store.selectedDay);
-  console.log(time, title);
+
   return (
     <div onClick={() => dispatch(changeState(false))} className="modal">
       <div onClick={(e) => e.stopPropagation()} className="modal-content">
@@ -22,7 +22,8 @@ export const ModalAddEvent = () => {
           onSubmit={(e) => {
             e.preventDefault();
             console.log(1);
-            time.state && upDateEvents(selectedDayString, title, time.time);
+            time.state &&
+              upDateEvents(selectedDayString, title, time.time, dispatch);
           }}
           style={{ display: "flex", flexDirection: "column" }}
         >
@@ -33,14 +34,19 @@ export const ModalAddEvent = () => {
             variant="standard"
           />
           <LocalizationProvider dateAdapter={AdapterDayjs}>
-            {/* e[0].$H, e[1].$H */}
             <SingleInputTimeRangeField
               onChange={(e) => {
                 const startTime = e[0]?.valueOf(); // Assuming e[0] represents the start time
                 const endTime = e[1]?.valueOf(); // Assuming e[1] represents the end time
 
+                const formatTime = (date) => {
+                  const hours = date?.$H.toString().padStart(2, "0");
+                  const minutes = date?.$m.toString().padStart(2, "0");
+                  return `${hours}:${minutes}`;
+                };
+
                 setTime({
-                  time: `${e[0]?.$H}:${e[0]?.$m}-${e[1]?.$H}:${e[1]?.$m}`,
+                  time: `${formatTime(e[0])}-${formatTime(e[1])}`,
                   state: startTime < endTime ? true : false,
                 });
               }}

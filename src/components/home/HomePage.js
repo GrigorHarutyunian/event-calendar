@@ -10,8 +10,11 @@ import "./calendar/eventsListDay/EventsDay.js";
 import { CSSTransition } from "react-transition-group";
 import { useSelector } from "react-redux";
 import { thisMonth } from "../../redux/slices/currentDateSlice.js";
+import { selectedDay } from "../../redux/slices/selectedDaySlice.js";
+import { GetEvents } from "../../firebase/service/GetEvents.js";
 
 export const HomePage = () => {
+  const day = new Date();
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
@@ -34,7 +37,14 @@ export const HomePage = () => {
       <BurgerMenu />
       <div className={burgerState ? "burger-open" : "burger-close"}>
         <header className="header">
-          <Button onClick={() => dispatch(thisMonth())} variant="outlined">
+          <Button
+            onClick={() => {
+              GetEvents(dispatch, day.toDateString());
+              dispatch(selectedDay(day.toDateString()));
+              dispatch(thisMonth());
+            }}
+            variant="outlined"
+          >
             Today
           </Button>
         </header>

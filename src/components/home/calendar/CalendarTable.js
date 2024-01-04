@@ -1,10 +1,16 @@
 import "./Calendar.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectedDay } from "../../../redux/slices/selectedDaySlice.js";
+import { GetEvents } from "../../../firebase/service/GetEvents.js";
+
 const today = new Date().getDate();
 const thisMont = new Date().getMonth();
+const thisYear = new Date().getFullYear();
+
 export const CalendarTable = ({ currentDate }) => {
   const dispatch = useDispatch();
+  const selectedDayValue = useSelector((store) => store.selectedDay);
+
   const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let daysInMonth = [];
   const startOfMonth = new Date(
@@ -36,12 +42,14 @@ export const CalendarTable = ({ currentDate }) => {
           ))}
         </tr>
       </thead>
-      <tbody>{renderCalendarRows(daysInMonth, dispatch)}</tbody>
+      <tbody>
+        {renderCalendarRows(daysInMonth, dispatch, selectedDayValue)}
+      </tbody>
     </table>
   );
 };
 
-const renderCalendarRows = (days, dispatch) => {
+const renderCalendarRows = (days, dispatch, selectedDayValue) => {
   let rows = [];
   let currentRow = [];
   let firstDayInWeek = days[0].getDay() - 1 === -1 ? 6 : days[0].getDay() - 1;
@@ -55,9 +63,15 @@ const renderCalendarRows = (days, dispatch) => {
     currentRow = [
       ...currentRow,
       <td
-        onClick={() => dispatch(selectedDay(day.toDateString()))}
+        onClick={() => {
+          console.log(selectedDayValue);
+          dispatch(selectedDay(day.toDateString()));
+          GetEvents(dispatch, day.toDateString());
+        }}
         className={
-          day.getDate() === today && day.getMonth() === thisMont
+          day.getDate() === today &&
+          day.getMonth() === thisMont &&
+          day.getFullYear() === thisYear
             ? "today"
             : "day"
         }
