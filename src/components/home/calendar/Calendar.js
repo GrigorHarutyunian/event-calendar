@@ -4,6 +4,7 @@ import { CalendarTable } from "./CalendarTable";
 
 export const Calendar = () => {
   const currentDateText = useSelector((store) => store.currentDate);
+
   const currentDate = new Date(currentDateText);
   const month = currentDate.getMonth();
 
