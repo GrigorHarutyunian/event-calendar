@@ -16,7 +16,6 @@
 .event-item {
   display: flex;
   justify-content: space-evenly;
-  padding: 4%;
   border: 1px solid;
 }
 .event-item:hover {
