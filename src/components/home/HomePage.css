@@ -50,3 +50,7 @@
   transform: translateX(8%);
   transition: ease-out 1.5s;
 }
+
+.MuiSelect-select.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+  padding: 14.5px 59px;
+}

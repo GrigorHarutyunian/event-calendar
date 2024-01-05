@@ -2,10 +2,7 @@ import { CalendarHeader } from "./CalendarHeader";
 import { useSelector } from "react-redux";
 import { CalendarTable } from "./CalendarTable";
 
-export const Calendar = () => {
-  const currentDateText = useSelector((store) => store.currentDate);
-
-  const currentDate = new Date(currentDateText);
+export const Calendar = ({ currentDate }) => {
   const month = currentDate.getMonth();
 
   const images = [
@@ -24,7 +21,7 @@ export const Calendar = () => {
   ];
 
   return (
-    <div className="calendar">
+    <div className="calendar month">
       <CalendarHeader currentDate={currentDate} />
       <div
         style={{

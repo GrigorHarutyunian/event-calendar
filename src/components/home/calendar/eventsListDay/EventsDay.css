@@ -1,10 +1,11 @@
 .events-day {
   background: #7684a3;
-  height: 82%;
+  height: 73%;
   width: 20%;
   position: relative;
   transform: translateX(0%);
   transition: 1.4s ease-in;
+  overflow: auto;
 }
 
 .events-day-header {

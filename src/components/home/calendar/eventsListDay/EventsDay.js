@@ -37,36 +37,38 @@ export const EventsDay = () => {
   const year = selectedDay.getFullYear();
 
   return (
-    <div className="events-day">
-      <header className="events-day-header">
-        <h2>{selectedDayInWeek}</h2>
-        <h4>
-          {day} {months[month]} {year}
-        </h4>
-      </header>
+    <>
+      <div className="events-day">
+        <header className="events-day-header">
+          <h2>{selectedDayInWeek}</h2>
+          <h4>
+            {day} {months[month]} {year}
+          </h4>
+        </header>
 
-      {SorginEventsArray(eventsArr).map((arr) => {
-        return (
-          <div key={arr.id} className="event-item">
-            <h5>{arr.title}</h5>
-            <p>{arr.time}</p>
-            <IconButton
-              onClick={() =>
-                RemoveEvent(
-                  dispatch,
-                  selectedDayString,
-                  arr.id,
-                  selectedDayString + " " + arr.time.split("-")[0]
-                )
-              }
-              aria-label="delete"
-              size="midlle"
-            >
-              <DeleteIcon fontSize="inherit" />
-            </IconButton>
-          </div>
-        );
-      })}
+        {SorginEventsArray(eventsArr).map((arr) => {
+          return (
+            <div key={arr.id} className="event-item">
+              <h5>{arr.title}</h5>
+              <p>{arr.time}</p>
+              <IconButton
+                onClick={() =>
+                  RemoveEvent(
+                    dispatch,
+                    selectedDayString,
+                    arr.id,
+                    selectedDayString + " " + arr.time.split("-")[0]
+                  )
+                }
+                aria-label="delete"
+                size="midlle"
+              >
+                <DeleteIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+          );
+        })}
+      </div>
       <Fab
         onClick={() => dispatch(changeState(true))}
         style={{ position: "absolute", bottom: "0", right: "0" }}
@@ -75,6 +77,6 @@ export const EventsDay = () => {
       >
         <AddIcon />
       </Fab>
-    </div>
+    </>
   );
 };

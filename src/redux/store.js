@@ -4,6 +4,7 @@ import modalAddEventReducer from "./slices/modalAddEventSlice";
 import selectedDayReducer from "./slices/selectedDaySlice.js";
 import burgerReducer from "./slices/burgerSlice.js";
 import eventsReducer from "./slices/eventsSlice.js";
+import calendarTypeReducer from "./slices/calendarTypeSlice.js";
 
 export const store = configureStore({
   reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
     selectedDay: selectedDayReducer,
     burger: burgerReducer,
     events: eventsReducer,
+    calendarType: calendarTypeReducer,
   },
 });
