@@ -79,6 +79,7 @@ td.today {
 } 
  */
 
+
 .calendar {
   position: relative; /* Add this to make ::before and ::after position relative to .calendar */
   width: 70%;
@@ -128,6 +129,7 @@ td.today {
 }
 
 .img {
+  position: relative;
   width: 300px;
   height: 300px;
 }

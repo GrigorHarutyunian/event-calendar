@@ -49,7 +49,7 @@ export const HomePage = () => {
       <div className={burgerState ? "burger-open" : "burger-close"}>
         <header className="header">
           <FormControl style={{ maxWidth: "sm" }}>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <InputLabel id="demo-simple-select-label"></InputLabel>
             <Select
               value={calendarForm}
               onChange={(event) =>

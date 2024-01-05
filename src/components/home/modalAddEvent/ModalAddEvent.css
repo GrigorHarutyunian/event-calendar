@@ -10,15 +10,21 @@
 
 .modal-content {
   position: absolute;
+  /* position: relative; */
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5%;
-  width: 50%;
+  width: 25%;
   height: 50%;
-  background: burlywood;
+  /* background: burlywood; */
+  /* background: #DBCC95; */
+  /* background: #A4D0A4; */
+  /* background:#F7E1AE; */
+  background: #A3BB98;
   cursor: grab;
 }
+
 
 .modal-enter {
   transform: translateY(-50%);
@@ -30,7 +36,6 @@
   opacity: 1;
   transition: opacity 1500ms, transform 1500ms ease-in-out;
 }
-
 .modal-exit {
   transform: translateY(0);
 }
