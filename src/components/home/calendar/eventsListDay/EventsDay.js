@@ -6,6 +6,8 @@ import { useDispatch } from "react-redux";
 import { changeState } from "../../../../redux/slices/modalAddEventSlice";
 import { SorginEventsArray } from "./SortingEventsArray";
 import { RemoveEvent } from "../../../../firebase/service/RemoveEvent";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 export const EventsDay = () => {
   const dispatch = useDispatch();
@@ -45,20 +47,23 @@ export const EventsDay = () => {
 
       {SorginEventsArray(eventsArr).map((arr) => {
         return (
-          <div
-            key={arr.id}
-            onClick={() =>
-              RemoveEvent(
-                dispatch,
-                selectedDayString,
-                arr.id,
-                selectedDayString + " " + arr.time.split("-")[0]
-              )
-            }
-            className="event-item"
-          >
+          <div key={arr.id} className="event-item">
             <h5>{arr.title}</h5>
             <p>{arr.time}</p>
+            <IconButton
+              onClick={() =>
+                RemoveEvent(
+                  dispatch,
+                  selectedDayString,
+                  arr.id,
+                  selectedDayString + " " + arr.time.split("-")[0]
+                )
+              }
+              aria-label="delete"
+              size="midlle"
+            >
+              <DeleteIcon fontSize="inherit" />
+            </IconButton>
           </div>
         );
       })}
