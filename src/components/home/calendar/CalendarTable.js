@@ -8,6 +8,7 @@ const thisMont = new Date().getMonth();
 const thisYear = new Date().getFullYear();
 
 export const CalendarTable = ({ currentDate }) => {
+  const calendarForm = useSelector((store) => store.calendarType);
   const dispatch = useDispatch();
   const selectedDayValue = useSelector((store) => store.selectedDay);
 
@@ -38,18 +39,28 @@ export const CalendarTable = ({ currentDate }) => {
       <thead>
         <tr>
           {weekDays.map((day) => (
-            <th key={day}>{day}</th>
+            <th
+              style={{ padding: calendarForm === "Month" ? "20px" : "3px" }}
+              key={day}
+            >
+              {day}
+            </th>
           ))}
         </tr>
       </thead>
       <tbody>
-        {renderCalendarRows(daysInMonth, dispatch, selectedDayValue)}
+        {renderCalendarRows(
+          daysInMonth,
+          dispatch,
+          selectedDayValue,
+          calendarForm
+        )}
       </tbody>
     </table>
   );
 };
 
-const renderCalendarRows = (days, dispatch, selectedDayValue) => {
+const renderCalendarRows = (days, dispatch, selectedDayValue, calendarForm) => {
   let rows = [];
   let currentRow = [];
   let firstDayInWeek = days[0].getDay() - 1 === -1 ? 6 : days[0].getDay() - 1;
@@ -63,6 +74,7 @@ const renderCalendarRows = (days, dispatch, selectedDayValue) => {
     currentRow = [
       ...currentRow,
       <td
+        style={{ padding: calendarForm === "Month" ? "20px" : "3px" }}
         onClick={() => {
           console.log(selectedDayValue);
           dispatch(selectedDay(day.toDateString()));

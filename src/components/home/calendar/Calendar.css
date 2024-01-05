@@ -85,9 +85,20 @@ td.today {
   height: 70%;
   background: #f0fff0;
   display: flex;
+  border-radius: 7px;
+}
+
+.calendar.month {
   flex-direction: column;
   align-items: center;
-  border-radius: 7px;
+}
+
+.calendar.year {
+  justify-content: space-around;
+  flex-flow: wrap;
+  align-items: center;
+  overflow: overlay;
+  overflow-x: clip;
 }
 
 .calendar::before,
@@ -128,11 +139,11 @@ thead {
 th {
   padding: 20px;
   border: none;
-  /* color: #333;  */
+  color: #333;
   color: orange;
 }
 
-td {
+.day {
   padding: 20px;
   border: none;
 }
