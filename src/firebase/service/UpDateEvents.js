@@ -36,6 +36,7 @@ export const upDateEvents = async (date, title, time, dispatch) => {
         event: [
           ...event,
           {
+            id: time,
             title: title,
             time: time,
           },
