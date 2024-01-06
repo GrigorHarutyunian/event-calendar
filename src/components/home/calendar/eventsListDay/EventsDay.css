@@ -1,5 +1,6 @@
 .events-day {
-  background: #7684a3;
+  /* background: #7684a3; */
+  background: #f0fff0;
   height: 73%;
   width: 20%;
   position: relative;
@@ -21,5 +22,6 @@
   align-items: center;
 }
 .event-item:hover {
-  background: #687ba3;
+  /* background: #687ba3; */
+  background: #C1D0B5;
 }

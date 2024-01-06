@@ -10,7 +10,7 @@ import { EventsDay } from "./calendar/eventsListDay/EventsDay.js";
 import "./calendar/eventsListDay/EventsDay.js";
 import { CSSTransition } from "react-transition-group";
 import { useSelector } from "react-redux";
-import { useState } from "react";
+// import { useState } from "react";
 import { thisMonth } from "../../redux/slices/currentDateSlice.js";
 import { selectedDay } from "../../redux/slices/selectedDaySlice.js";
 import { GetEvents } from "../../firebase/service/GetEvents.js";
@@ -49,7 +49,7 @@ export const HomePage = () => {
       <div className={burgerState ? "burger-open" : "burger-close"}>
         <header className="header">
           <FormControl style={{ maxWidth: "sm" }}>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+            <InputLabel id="demo-simple-select-label"></InputLabel>
             <Select
               value={calendarForm}
               onChange={(event) =>
@@ -64,7 +64,11 @@ export const HomePage = () => {
             </Select>
           </FormControl>
           <Button
-            style={{ padding: "13px 23px" }}
+            style={{
+              padding: "13px 23px",
+              color: "black",
+              backgroundColor: "#A3BB98",
+            }}
             onClick={() => {
               GetEvents(dispatch, day.toDateString());
               dispatch(selectedDay(day.toDateString()));
@@ -75,6 +79,20 @@ export const HomePage = () => {
             Today
           </Button>
         </header>
+
+        <Button
+          style={{
+            position: "absolute",
+            top: "10px",
+            right: "60px",
+            padding: "10px 50px",
+            color: "black",
+            backgroundColor: "#A3BB98",
+          }}
+          variant="outlined"
+        >
+          Login
+        </Button>
         {calendarForm === "Year" ? (
           <CalendarYear currentDate={currentDate} />
         ) : (
