@@ -15,20 +15,24 @@ import { thisMonth } from "../../redux/slices/currentDateSlice.js";
 import { selectedDay } from "../../redux/slices/selectedDaySlice.js";
 import { GetEvents } from "../../firebase/service/GetEvents.js";
 import { Calendar } from "./calendar/Calendar.js";
+import { CalendarWeek } from "./calendar/calendarWeek/CalendarWeek.js";
 import { BurgerMenu } from "./burger/BurgerMenu.js";
 import { ModalAddEvent } from "./modalAddEvent/ModalAddEvent.js";
 import { CalendarYear } from "./calendar/calendarYear/CalendarYear.js";
 import { changeCalendarType } from "../../redux/slices/calendarTypeSlice.js";
+import { store } from "../../redux/store.js";
 
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
+  console.log(currentDateText);
+  const thisDay = useSelector((store) => store.selectedDay);
+  const date = new Date(thisDay);
   const currentDate = new Date(currentDateText);
   const day = new Date();
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
-
   return (
     <div className="home-page">
       <CSSTransition
@@ -94,7 +98,9 @@ export const HomePage = () => {
           Login
         </Button>
         {calendarForm === "Year" ? (
-          <CalendarYear currentDate={currentDate} />
+          <CalendarYear thisDay={date} currentDate={currentDate} />
+        ) : calendarForm === "Week" ? (
+          <CalendarWeek thisDay={date} currentDate={currentDate} />
         ) : (
           <Calendar currentDate={currentDate} />
         )}
