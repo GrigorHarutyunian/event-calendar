@@ -24,3 +24,53 @@
   left: 0;
   bottom: 0;
 }
+
+.login-form {
+  border-width: 2px;
+  width: 320px;
+  height: 270px;
+  border-color: inherit;
+  border-radius: 0.375rem;
+  padding-top: 4rem;
+  padding-bottom: 2.5rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.12), 0 6px 30px 0 rgba(0, 0, 0, 0.08);
+  background-color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
+
+.input-container {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.line-with-text {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: black;
+  margin: 0 10px;
+}
+
+.or-text {
+  color: black;
+}
+
+.sign-up-container {
+  display: flex;
+  margin-top: 15px;
+  justify-content: center;
+}
