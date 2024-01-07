@@ -2,12 +2,13 @@ import "./Calendar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectedDay } from "../../../redux/slices/selectedDaySlice.js";
 import { GetEvents } from "../../../firebase/service/GetEvents.js";
+import { setDate } from "../../../redux/slices/currentDateSlice.js";
 
 const today = new Date().getDate();
 const thisMont = new Date().getMonth();
 const thisYear = new Date().getFullYear();
 
-export const CalendarTable = ({ currentDate }) => {
+export const CalendarTable = ({ thisDay, currentDate }) => {
   const calendarForm = useSelector((store) => store.calendarType);
   const dispatch = useDispatch();
   const selectedDayValue = useSelector((store) => store.selectedDay);
@@ -76,7 +77,7 @@ const renderCalendarRows = (days, dispatch, selectedDayValue, calendarForm) => {
       <td
         style={{ padding: calendarForm === "Month" ? "20px" : "3px" }}
         onClick={() => {
-          console.log(selectedDayValue);
+          dispatch(setDate(day.toDateString()));
           dispatch(selectedDay(day.toDateString()));
           GetEvents(dispatch, day.toDateString());
         }}

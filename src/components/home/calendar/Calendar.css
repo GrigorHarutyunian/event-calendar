@@ -79,7 +79,6 @@ td.today {
 } 
  */
 
-
 .calendar {
   position: relative; /* Add this to make ::before and ::after position relative to .calendar */
   width: 70%;
@@ -94,6 +93,31 @@ td.today {
   align-items: center;
 }
 
+.calendar.week {
+  flex-direction: column;
+  align-items: center;
+}
+
+.calendar-week-list {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.week-days-date {
+  width: 14.28%;
+  border: 1px solid;
+}
+
+.week-day {
+  text-align: center;
+  height: 10%;
+}
+
+.week-date {
+  height: 90%;
+}
 .calendar.year {
   justify-content: space-around;
   flex-flow: wrap;
@@ -167,7 +191,7 @@ td.today {
   font-weight: bold;
   color: white;
   /* background-color: #333; */
-  background-color: #A3BB98;
+  background-color: #a3bb98;
 }
 
 @media only screen and (max-width: 400px) {
