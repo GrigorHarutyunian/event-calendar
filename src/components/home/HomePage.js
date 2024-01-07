@@ -28,6 +28,7 @@ export const HomePage = () => {
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
+  const user = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div className="home-page">
@@ -74,6 +75,9 @@ export const HomePage = () => {
           >
             Today
           </Button>
+          <div className="image-container">
+            <img src={user?.image} />
+          </div>
         </header>
         {calendarForm === "Year" ? (
           <CalendarYear currentDate={currentDate} />
