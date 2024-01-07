@@ -3,7 +3,7 @@ import "./Login.css";
 import { GoogleLogin } from "@react-oauth/google";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
-
+import BackgroundVideoComp from "./BackgroundVideo/BackgroundVideoComp";
 export default function Login() {
   const navigate = useNavigate();
   const responsGoogle = (response) => {
@@ -21,12 +21,17 @@ export default function Login() {
   };
   return (
     <div className="login-container">
-      <GoogleLogin
-        text="signin_with"
-        shape="circle"
-        onSuccess={responsGoogle}
-        onError={responsGoogle}
-      />
+      <div className="backVideoWithForm">
+        <BackgroundVideoComp />
+        <div className="form-container">
+          <GoogleLogin
+            text="signin_with"
+            shape="circle"
+            onSuccess={responsGoogle}
+            onError={responsGoogle}
+          />
+        </div>
+      </div>
     </div>
   );
 }
