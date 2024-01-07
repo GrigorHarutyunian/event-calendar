@@ -74,15 +74,24 @@ export const CalendarWeek = ({ currentDate }) => {
         </IconButton>
       </header>
       <div className="calendar-week-list">
-        {weekDays.map((day, index) => (
-          <div className="week-days-date">
-            <div key={day} className="week-day">
-              {day}
+        <div className="hours-list">
+          {Array.from({ length: 24 }).map((_, hour) => (
+            <div key={hour} className="hour">
+              {hour === 0
+                ? "12 AM"
+                : hour === 12
+                ? "12 PM"
+                : hour > 12
+                ? `${hour - 12} PM`
+                : `${hour} AM`}
             </div>
+          ))}
+        </div>
+        {weekDays.map((day, index) => (
+          <div key={Date.now()} className="week-days-date">
+            <div className="week-day">{day}</div>
             <div style={{ height: "100%" }}>
-              <div key={weekDaysList[index].getDate()} className="week-date">
-                {weekDaysList[index].getDate()}
-              </div>
+              <div className="week-date">{weekDaysList[index].getDate()}</div>
             </div>
           </div>
         ))}
