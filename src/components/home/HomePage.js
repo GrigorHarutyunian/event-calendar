@@ -82,6 +82,9 @@ export const HomePage = () => {
           >
             Today
           </Button>
+          <div className="image-container">
+            <img src={user?.image} />
+          </div>
         </header>
 
         <Button
