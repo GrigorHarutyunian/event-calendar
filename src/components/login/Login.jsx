@@ -8,7 +8,8 @@ import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent
 import { TextField } from "@mui/material";
 import validateEmail from "../../utils/emailValidation";
 import validatePass from "../../utils/passwordValidation";
-
+import onClickHandlerForEmailFunction from "../../handlers/onClickHandlerForEmailFunction";
+import onClickHandlerForPasswordFunction from "../../handlers/onClickHandlerForPasswordFunction";
 export default function Login() {
   const navigate = useNavigate();
 
@@ -30,27 +31,18 @@ export default function Login() {
     localStorage.setItem("user", JSON.stringify(doc));
     navigate("/home");
   };
-  const onClickHandlerForEmail = (e) => {
-    e.preventDefault();
 
-    setEmail(e.target.value);
+  const onClickHandlerForEmail = onClickHandlerForEmailFunction(
+    setEmail,
+    validateEmail,
+    setIsNotValidEmail
+  );
 
-    if (validateEmail(e.target.value)) {
-      setIsNotValidEmail(false);
-    } else {
-      setIsNotValidEmail(true);
-    }
-  };
-  const onClickHandlerForPassword = (e) => {
-    e.preventDefault();
-
-    setPassword(e.target.value);
-    if (validatePass(e.target.value)) {
-      setIsNotValidPassword(false);
-    } else {
-      setIsNotValidPassword(true);
-    }
-  };
+  const onClickHandlerForPassword = onClickHandlerForPasswordFunction(
+    setPassword,
+    validatePass,
+    setIsNotValidPassword
+  );
   function onSubmitHandler(e) {
     e.preventDefault();
     const data = {
