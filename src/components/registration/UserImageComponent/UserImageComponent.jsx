@@ -5,7 +5,7 @@ import "./UserImageComponent.css";
 
 export default function UserImageComponent({ image, uploadImage }) {
   return (
-    <div>
+    <div className="user-container">
       <ImageComponent image={image} />
       <ImageInputComponent uploadImage={uploadImage} />
     </div>
