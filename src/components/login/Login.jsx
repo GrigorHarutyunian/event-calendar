@@ -5,13 +5,17 @@ import jwt_decode from "jwt-decode";
 import { NavLink, useNavigate } from "react-router-dom";
 import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
 import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent";
-import { SingleInputTimeRangeField } from "@mui/x-date-pickers-pro";
 import { TextField } from "@mui/material";
+import validateEmail from "../../utils/emailValidation";
+import validatePass from "../../utils/passwordValidation";
 
 export default function Login() {
   const navigate = useNavigate();
-  const [isValidEmail, setIsValidEmail] = useState(false);
-  const [isValidPassword, setisValidPassword] = useState(false);
+
+  const [isNotValidEmail, setIsNotValidEmail] = useState(true);
+  const [isNotValidPassword, setIsNotValidPassword] = useState(true);
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const responsGoogle = (response) => {
     let decodedHeader = jwt_decode(response.credential);
@@ -26,25 +30,56 @@ export default function Login() {
     localStorage.setItem("user", JSON.stringify(doc));
     navigate("/home");
   };
-  const onClickHandlerForEmail = () => {
-    setIsValidEmail(true);
+  const onClickHandlerForEmail = (e) => {
+    e.preventDefault();
+
+    setEmail(e.target.value);
+
+    if (validateEmail(e.target.value)) {
+      setIsNotValidEmail(false);
+    } else {
+      setIsNotValidEmail(true);
+    }
   };
-  const onClickHandlerForPassword = () => {
-    setisValidPassword(true);
+  const onClickHandlerForPassword = (e) => {
+    e.preventDefault();
+
+    setPassword(e.target.value);
+    if (validatePass(e.target.value)) {
+      setIsNotValidPassword(false);
+    } else {
+      setIsNotValidPassword(true);
+    }
   };
+  function onSubmitHandler(e) {
+    e.preventDefault();
+    const data = {
+      email,
+      password,
+    };
+
+    if (!isNotValidEmail && !isNotValidPassword) {
+      // here should be function to send data object to the database or server just
+      alert("Send");
+    } else {
+      alert("not send");
+    }
+  }
+
   return (
     <div className="login-container">
       <div className="backVideoWithForm">
         <BackgroundVideoComp />
         <div className="form-container">
-          <form className="login-form" onSubmit="">
+          <form className="login-form" onSubmit={onSubmitHandler}>
             <div className="input-container">
               <TextField
+                value={email}
                 autoComplete
                 fullWidth="true"
                 required="true"
                 color="info"
-                error={isValidEmail}
+                error={isNotValidEmail}
                 onChange={onClickHandlerForEmail}
                 id="standard-basic"
                 label="Email"
@@ -53,11 +88,12 @@ export default function Login() {
             </div>
             <div className="input-container">
               <TextField
+                value={password}
                 autoComplete
                 fullWidth="true"
                 required="true"
                 color="info"
-                error={isValidPassword}
+                error={isNotValidPassword}
                 onChange={onClickHandlerForPassword}
                 id="standard-basic"
                 label="Password"
