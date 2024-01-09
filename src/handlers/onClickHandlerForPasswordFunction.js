@@ -1,4 +1,4 @@
-function onClickHandlerForPasswordFunction(
+export function onClickHandlerForPasswordFunction(
   setPassword,
   validatePass,
   setIsNotValidPassword
@@ -14,5 +14,3 @@ function onClickHandlerForPasswordFunction(
     }
   };
 }
-
-export default onClickHandlerForPasswordFunction;

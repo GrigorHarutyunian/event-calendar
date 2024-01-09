@@ -1,4 +1,4 @@
-function onClickHandlerForEmailFunction(
+export function onClickHandlerForEmailFunction(
   setEmail,
   validateEmail,
   setIsNotValidEmail
@@ -15,5 +15,3 @@ function onClickHandlerForEmailFunction(
     }
   };
 }
-
-export default onClickHandlerForEmailFunction;

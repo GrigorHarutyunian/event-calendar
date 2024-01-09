@@ -5,13 +5,16 @@ import { NavLink, useNavigate } from "react-router-dom";
 import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
 import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent";
 import { TextField } from "@mui/material";
-import onClickHandlerForEmailFunction from "../../handlers/onClickHandlerForEmailFunction";
-import onClickHandlerForPasswordFunction from "../../handlers/onClickHandlerForPasswordFunction";
 import {
   validateEmail,
   validatePass,
   responsGoogleFunction,
 } from "../../utils";
+import {
+  onClickHandlerForEmailFunction,
+  onClickHandlerForPasswordFunction,
+  onSubmitHandlerForLogin,
+} from "../../handlers";
 export default function Login() {
   const navigate = useNavigate();
 
@@ -32,21 +35,12 @@ export default function Login() {
     validatePass,
     setIsNotValidPassword
   );
-  function onSubmitHandler(e) {
-    e.preventDefault();
-    const data = {
-      email,
-      password,
-    };
-
-    if (!isNotValidEmail && !isNotValidPassword) {
-      // here should be function to send data object to the database or server just
-      alert("Send");
-    } else {
-      alert("not send");
-    }
-  }
-
+  const onSubmitHandler = onSubmitHandlerForLogin(
+    email,
+    password,
+    isNotValidEmail,
+    isNotValidPassword
+  );
   return (
     <div className="login-container">
       <div className="backVideoWithForm">
