@@ -15,11 +15,13 @@ import {
   onClickHandlerForPasswordFunction,
   onSubmitHandlerForLogin,
 } from "../../handlers";
+import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFooterComponent";
+
 export default function Login() {
   const navigate = useNavigate();
 
-  const [isNotValidEmail, setIsNotValidEmail] = useState(true);
-  const [isNotValidPassword, setIsNotValidPassword] = useState(true);
+  const [isNotValidEmail, setIsNotValidEmail] = useState(false);
+  const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
@@ -65,6 +67,7 @@ export default function Login() {
               <TextField
                 value={password}
                 autoComplete
+                type={"password"}
                 fullWidth="true"
                 required="true"
                 color="info"
@@ -85,14 +88,11 @@ export default function Login() {
                 onError={responsGoogle}
               />
             </div>
-            <div className="line-with-text">
-              <hr className="line" />
-              <span className="or-text">Don't have a account ?</span>
-              <hr className="line" />
-            </div>
-            <div className="sign-up-container">
-              <NavLink to="/registration">Sign up</NavLink>
-            </div>
+            <FormFooterComponent
+              text1="Don't have an account"
+              text2="Sign up"
+              link="/registration"
+            />
           </form>
         </div>
       </div>

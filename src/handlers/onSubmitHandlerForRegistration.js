@@ -1,6 +1,7 @@
-export function onSubmitHandlerForLogin(
+export function onSubmitHandlerForRegistration(
   email,
   password,
+  image,
   isNotValidEmail,
   isNotValidPassword
 ) {
@@ -9,13 +10,15 @@ export function onSubmitHandlerForLogin(
     const data = {
       email,
       password,
+      image,
     };
 
-    if (!isNotValidEmail && !isNotValidPassword && password && email) {
+    if (!isNotValidEmail && !isNotValidPassword && password && email && image) {
       // here should be function to send data object to the database or server just
-      alert("Send");
+      console.log(data);
+      alert("Registrated");
     } else {
-      alert("not send");
+      alert("not registrated");
     }
   };
 }
