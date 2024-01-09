@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import "./FormFooterComponent.css";
 
 export default function FormFooterComponent({ text1, text2, link }) {
   return (
@@ -10,7 +11,9 @@ export default function FormFooterComponent({ text1, text2, link }) {
         <hr className="line" />
       </div>
       <div className="sign-up-container">
-        <NavLink to={link}>{text2}</NavLink>
+        <NavLink className="link-to-login" to={link}>
+          {text2}
+        </NavLink>
       </div>
     </div>
   );
