@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import "./SelectComponent.css";
 import { Select, FormControl, InputLabel, MenuItem } from "@mui/material";
-export default function SelectComponent({ arrayOfOptions, title }) {
-  const [option, setOption] = useState("");
-
+export default function SelectComponent({
+  arrayOfOptions,
+  title,
+  option,
+  setOption,
+}) {
   const handleChange = (event) => {
     setOption(event.target.value);
   };

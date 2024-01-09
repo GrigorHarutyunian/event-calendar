@@ -20,8 +20,10 @@ export default function FormComponent({ image }) {
   const navigate = useNavigate();
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
+  const [isNotValidBirthday, setIsNotValidBirthday] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const [birthday, setBirthday] = useState(null);
   const responsGoogle = responsGoogleFunction(navigate);
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
@@ -37,9 +39,11 @@ export default function FormComponent({ image }) {
   const onSubmitHandler = onSubmitHandlerForRegistration(
     email,
     password,
+    birthday,
     image,
     isNotValidEmail,
-    isNotValidPassword
+    isNotValidPassword,
+    isNotValidBirthday
   );
   return (
     <form onSubmit={onSubmitHandler}>
@@ -70,7 +74,7 @@ export default function FormComponent({ image }) {
           label="Password"
           variant="standard"
         />
-        <BirthdayDateComponent />
+        <BirthdayDateComponent setBirthday={setBirthday} />
       </div>
       <div className="button-container">
         <ButtonComponent text="Sign up" type="submit" />
