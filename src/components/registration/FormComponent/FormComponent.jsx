@@ -14,6 +14,7 @@ import {
   onClickHandlerForPasswordFunction,
   onSubmitHandlerForRegistration,
 } from "../../../handlers";
+import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponent";
 
 export default function FormComponent({ image }) {
   const navigate = useNavigate();
@@ -69,6 +70,7 @@ export default function FormComponent({ image }) {
           label="Password"
           variant="standard"
         />
+        <BirthdayDateComponent />
       </div>
       <div className="button-container">
         <ButtonComponent text="Sign up" type="submit" />
