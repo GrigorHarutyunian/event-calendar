@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { GoogleLogin } from "@react-oauth/google";
-import jwt_decode from "jwt-decode";
 import { NavLink, useNavigate } from "react-router-dom";
 import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
 import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent";
 import { TextField } from "@mui/material";
-import validateEmail from "../../utils/emailValidation";
-import validatePass from "../../utils/passwordValidation";
 import onClickHandlerForEmailFunction from "../../handlers/onClickHandlerForEmailFunction";
 import onClickHandlerForPasswordFunction from "../../handlers/onClickHandlerForPasswordFunction";
+import {
+  validateEmail,
+  validatePass,
+  responsGoogleFunction,
+} from "../../utils";
 export default function Login() {
   const navigate = useNavigate();
 
@@ -18,20 +20,7 @@ export default function Login() {
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
 
-  const responsGoogle = (response) => {
-    let decodedHeader = jwt_decode(response.credential);
-    const { name, sub, picture } = decodedHeader;
-    const doc = {
-      _id: sub,
-      _type: "user",
-      userName: name,
-      image: picture,
-    };
-
-    localStorage.setItem("user", JSON.stringify(doc));
-    navigate("/home");
-  };
-
+  const responsGoogle = responsGoogleFunction(navigate);
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
     validateEmail,
