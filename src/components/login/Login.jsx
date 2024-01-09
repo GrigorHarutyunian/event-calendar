@@ -47,7 +47,7 @@ export default function Login() {
     <div className="login-container">
       <div className="backVideoWithForm">
         <BackgroundVideoComp />
-        <div className="form-container">
+        <div className="form-container-login">
           <form className="login-form" onSubmit={onSubmitHandler}>
             <div className="input-container">
               <TextField

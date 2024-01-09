@@ -12,6 +12,7 @@
 }
 
 .reg-form {
+  display: flex;
   border-width: 2px;
   width: 700px;
   height: 400px;
