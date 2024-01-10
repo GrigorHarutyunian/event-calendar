@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./Login.css";
-import { GoogleLogin } from "@react-oauth/google";
 import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
-import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent";
 import { validateEmail, validatePass } from "../../utils";
+import ButtonsComponent from "../commonComponents/ButtonsComponents/ButtonsComponent";
 import {
   onClickHandlerForEmailFunction,
   onClickHandlerForPasswordFunction,
@@ -12,6 +11,7 @@ import {
 import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFooterComponent";
 import { motion } from "framer-motion";
 import DivOfInputComponents from "../commonComponents/DivOfInputComponents/DivOfInputComponents";
+import LabelComponent from "../commonComponents/LabelComponent/LabelComponent";
 
 export default function Login() {
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
@@ -73,7 +73,7 @@ export default function Login() {
             }}
             animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
             transition={{
-              delay: 0.4,
+              delay: 0.9,
               duration: 1.2,
               type: "spring",
               stiffness: 100,
@@ -81,24 +81,13 @@ export default function Login() {
             className="login-form"
             onSubmit={onSubmitHandler}
           >
-            <motion.span
-              initial={{
-                x: "100vw",
-              }}
-              animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
-              transition={{
-                delay: 1.4,
-                duration: 1.2,
-                type: "spring",
-                stiffness: 100,
-              }}
-              className="login-text"
-            >
-              Login
-            </motion.span>
+            <LabelComponent text="Login" />
 
             <DivOfInputComponents inputArray={inputArray} />
-            <ButtonComponent buttonText="Sign in" optionText="Or you can use" />
+            <ButtonsComponent
+              buttonText="Sign in"
+              optionText="Or sign in with"
+            />
             <FormFooterComponent
               text1="Don't have an account"
               text2="Sign up"

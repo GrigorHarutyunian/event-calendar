@@ -16,6 +16,7 @@ import {
 } from "../../../handlers";
 import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponent";
 import DivOfInputComponents from "../../commonComponents/DivOfInputComponents/DivOfInputComponents";
+import ButtonsComponent from "../../commonComponents/ButtonsComponents/ButtonsComponent";
 
 export default function FormComponent({ image }) {
   const navigate = useNavigate();
@@ -72,16 +73,7 @@ export default function FormComponent({ image }) {
           setIsNotValidBirthday={setIsNotValidBirthday}
         />
       </div>
-      <div className="button-container">
-        <ButtonComponent text="Sign up" type="submit" />
-        <GoogleLogin
-          text="signin_with"
-          type="icon"
-          shape="circle"
-          onSuccess={responsGoogle}
-          onError={responsGoogle}
-        />
-      </div>
+      <ButtonsComponent buttonText="Create" optionText="Or sign up with" />
     </form>
   );
 }

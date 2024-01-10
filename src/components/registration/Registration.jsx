@@ -6,6 +6,7 @@ import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFoo
 import UserImageComponent from "./UserImageComponent/UserImageComponent";
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
+import LabelComponent from "../commonComponents/LabelComponent/LabelComponent";
 export default function Registration() {
   const [image, setImage] = useState(null);
   const uploadImage = onChangeHandlerForImageInput(setImage);
@@ -31,13 +32,15 @@ export default function Registration() {
           }}
           animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
           transition={{
-            delay: 0.4,
+            delay: 0.9,
             duration: 1.2,
             type: "spring",
             stiffness: 100,
           }}
           className="registration-container"
         >
+          <LabelComponent text="Registration" />
+
           <div className="form-container-reg">
             <UserImageComponent image={image} uploadImage={uploadImage} />
             <FormComponent image={image} />

@@ -1,0 +1,7 @@
+.span-text {
+  display: flex;
+  font-size: xxx-large;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
