@@ -16,4 +16,4 @@ const Loading = ({ message }) => {
   );
 };
 
-export default Spinner;
+export default Loading;

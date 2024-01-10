@@ -1,32 +1,21 @@
-import ButtonComponent from "../../commonComponents/ButtonComponent/ButtonComponent";
 import { useState } from "react";
 import "./FormComponent.css";
-import { GoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
-import { TextField } from "@mui/material";
-import {
-  validateEmail,
-  validatePass,
-  responsGoogleFunction,
-} from "../../../utils";
+import { validateEmail, validatePass } from "../../../utils";
 import {
   onClickHandlerForEmailFunction,
   onClickHandlerForPasswordFunction,
   onSubmitHandlerForRegistration,
 } from "../../../handlers";
 import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponent";
-import DivOfInputComponents from "../../commonComponents/DivOfInputComponents/DivOfInputComponents";
-import ButtonsComponent from "../../commonComponents/ButtonsComponents/ButtonsComponent";
+import { ButtonsComponent, DivOfInputComponents } from "../../commonComponents";
 
 export default function FormComponent({ image }) {
-  const navigate = useNavigate();
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [birthday, setBirthday] = useState(null);
-  const responsGoogle = responsGoogleFunction(navigate);
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
     validateEmail,

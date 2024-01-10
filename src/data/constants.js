@@ -23,7 +23,3 @@ const currentYear = data.getFullYear();
 for (let i = currentYear; i > currentYear - 100; i--) {
   years.push(i);
 }
-
-export function toDate(month, day, year) {
-  return new Date(year, month, day);
-}

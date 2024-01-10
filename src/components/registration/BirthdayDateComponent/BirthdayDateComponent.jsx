@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import SelectComponent from "../../commonComponents/SelectComponent/SelectComponent";
 import "./BirthdayDateComponent.css";
-import { days, years, months, toDate } from "../../../data/constants";
+import { days, years, months } from "../../../data/constants";
+import { toDate } from "../../../utils";
 import { validateBirthdayDate } from "./../../../utils/birthdayDataValidation";
 
 export default function BirthdayDateComponent({

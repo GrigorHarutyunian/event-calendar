@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "./Registration.css";
-import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
 import FormComponent from "./FormComponent/FormComponent";
-import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFooterComponent";
 import UserImageComponent from "./UserImageComponent/UserImageComponent";
+import {
+  FormFooterComponent,
+  LabelComponent,
+  BackgroundVideoComp,
+} from "../commonComponents";
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
-import LabelComponent from "../commonComponents/LabelComponent/LabelComponent";
 export default function Registration() {
   const [image, setImage] = useState(null);
   const uploadImage = onChangeHandlerForImageInput(setImage);
