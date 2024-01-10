@@ -72,7 +72,6 @@ export const HomePage = () => {
       >
         <ModalAddEvent />
       </CSSTransition>
-
       <BurgerMenu />
       <div className={burgerState ? "burger-open" : "burger-close"}>
         <header className="header">
@@ -108,7 +107,6 @@ export const HomePage = () => {
             Today
           </Button>
         </header>
-
         <Button
           style={{
             position: "absolute",
