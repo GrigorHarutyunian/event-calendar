@@ -20,7 +20,7 @@ export default function FormComponent({ image }) {
   const navigate = useNavigate();
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
-  const [isNotValidBirthday, setIsNotValidBirthday] = useState(false);
+  const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [birthday, setBirthday] = useState(null);
@@ -74,7 +74,10 @@ export default function FormComponent({ image }) {
           label="Password"
           variant="standard"
         />
-        <BirthdayDateComponent setBirthday={setBirthday} />
+        <BirthdayDateComponent
+          setBirthday={setBirthday}
+          setIsNotValidBirthday={setIsNotValidBirthday}
+        />
       </div>
       <div className="button-container">
         <ButtonComponent text="Sign up" type="submit" />

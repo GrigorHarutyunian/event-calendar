@@ -29,6 +29,7 @@ export function onSubmitHandlerForRegistration(
       console.log(data);
       alert("Registrated");
     } else {
+      console.log(data);
       alert("not registrated");
     }
   };

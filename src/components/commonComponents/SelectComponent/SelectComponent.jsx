@@ -18,6 +18,7 @@ export default function SelectComponent({
           labelId={title}
           id={title}
           value={option}
+          on
           onChange={handleChange}
           label={title}
         >
