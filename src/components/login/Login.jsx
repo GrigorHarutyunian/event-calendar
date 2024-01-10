@@ -63,7 +63,15 @@ export default function Login() {
     <div className="login-container">
       <div className="backVideoWithForm">
         <BackgroundVideoComp />
-        <div className="form-container-login">
+        <motion.div
+          initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+          animate={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+          transition={{
+            delay: 1,
+            duration: 2,
+          }}
+          className="form-container-login"
+        >
           <motion.form
             initial={{
               x: "40vw",
@@ -81,16 +89,40 @@ export default function Login() {
             className="login-form"
             onSubmit={onSubmitHandler}
           >
+            <motion.span
+              initial={{
+                x: "100vw",
+              }}
+              animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
+              transition={{
+                delay: 1.4,
+                duration: 1.2,
+                type: "spring",
+                stiffness: 100,
+              }}
+              className="login-text"
+            >
+              Login
+            </motion.span>
+
             <DivOfInputComponents inputArray={inputArray} />
-            <div className="button-container">
+            <div className="buttons">
               <ButtonComponent text="Sign in" type="submit" />
-              <GoogleLogin
-                text="signin_with"
-                type="icon"
-                shape="circle"
-                onSuccess={responsGoogle}
-                onError={responsGoogle}
-              />
+              <span className="orText">Or you can use</span>
+              <motion.div
+                whileHover={{
+                  scale: 1.5,
+                }}
+                transition={{ duration: 0, type: "spring", stiffness: 500 }}
+              >
+                <GoogleLogin
+                  text="signin_with"
+                  type="icon"
+                  shape="circle"
+                  onSuccess={responsGoogle}
+                  onError={responsGoogle}
+                />
+              </motion.div>
             </div>
             <FormFooterComponent
               text1="Don't have an account"
@@ -98,7 +130,7 @@ export default function Login() {
               link="/registration"
             />
           </motion.form>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

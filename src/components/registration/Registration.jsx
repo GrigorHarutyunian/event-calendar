@@ -13,7 +13,15 @@ export default function Registration() {
   return (
     <div className="backVideoWithForm">
       <BackgroundVideoComp />
-      <div className="page-container">
+      <motion.div
+        initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
+        animate={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        transition={{
+          delay: 1,
+          duration: 2,
+        }}
+        className="page-container"
+      >
         <motion.div
           initial={{
             x: "-40vw",
@@ -40,7 +48,7 @@ export default function Registration() {
             link="/login"
           />
         </motion.div>
-      </div>
+      </motion.div>
     </div>
   );
 }

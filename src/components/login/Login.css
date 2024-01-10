@@ -31,11 +31,11 @@ body {
 .login-form {
   border-width: 2px;
   width: 320px;
-  height: 270px;
+  height: 295px;
   border-color: inherit;
   border-radius: 0.375rem;
-  padding-top: 4rem;
-  padding-bottom: 2.5rem;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2),
@@ -44,13 +44,25 @@ body {
   font-weight: 500;
 }
 
-.input-container {
-  margin-top: 5px;
-  margin-bottom: 20px;
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8px;
+  margin-inline: 5px;
 }
 
-.button-container {
+.orText {
   display: flex;
+  font-size: medium;
   justify-content: center;
-  margin-top: 8px;
+  align-items: center;
+  text-align: center;
+}
+
+.login-text {
+  display: flex;
+  font-size: xxx-large;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
