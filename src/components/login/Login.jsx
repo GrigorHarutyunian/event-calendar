@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { GoogleLogin } from "@react-oauth/google";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
 import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent";
-import { TextField } from "@mui/material";
 import {
   validateEmail,
   validatePass,
@@ -17,6 +16,8 @@ import {
 } from "../../handlers";
 import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFooterComponent";
 import { motion } from "framer-motion";
+import DivOfInputComponents from "../commonComponents/DivOfInputComponents/DivOfInputComponents";
+
 export default function Login() {
   const navigate = useNavigate();
 
@@ -80,21 +81,7 @@ export default function Login() {
             className="login-form"
             onSubmit={onSubmitHandler}
           >
-            {inputArray.map((input) => (
-              <div className="input-container">
-                <TextField
-                  value={input.value}
-                  type={input.type}
-                  fullWidth="true"
-                  required="true"
-                  error={input.error}
-                  onChange={input.onChange}
-                  id="standard-basic"
-                  label={input.label}
-                  variant="standard"
-                />
-              </div>
-            ))}
+            <DivOfInputComponents inputArray={inputArray} />
             <div className="button-container">
               <ButtonComponent text="Sign in" type="submit" />
               <GoogleLogin

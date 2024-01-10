@@ -15,6 +15,7 @@ import {
   onSubmitHandlerForRegistration,
 } from "../../../handlers";
 import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponent";
+import DivOfInputComponents from "../../commonComponents/DivOfInputComponents/DivOfInputComponents";
 
 export default function FormComponent({ image }) {
   const navigate = useNavigate();
@@ -45,33 +46,27 @@ export default function FormComponent({ image }) {
     isNotValidPassword,
     isNotValidBirthday
   );
+  const inputArray = [
+    {
+      value: email,
+      type: "email",
+      error: isNotValidEmail,
+      onChange: onClickHandlerForEmail,
+      label: "Email",
+    },
+    {
+      value: password,
+      type: "password",
+      error: isNotValidPassword,
+      onChange: onClickHandlerForPassword,
+      label: "Password",
+    },
+  ];
+
   return (
     <form onSubmit={onSubmitHandler}>
       <div className="input-container">
-        <TextField
-          value={email}
-          type={"email"}
-          fullWidth="true"
-          required="true"
-          error={isNotValidEmail}
-          onChange={onClickHandlerForEmail}
-          id="standard-basic"
-          label="Email"
-          variant="standard"
-        />
-      </div>
-      <div className="input-container">
-        <TextField
-          value={password}
-          type={"password"}
-          fullWidth="true"
-          required="true"
-          error={isNotValidPassword}
-          onChange={onClickHandlerForPassword}
-          id="standard-basic"
-          label="Password"
-          variant="standard"
-        />
+        <DivOfInputComponents inputArray={inputArray} />
         <BirthdayDateComponent
           setBirthday={setBirthday}
           setIsNotValidBirthday={setIsNotValidBirthday}
