@@ -1,9 +1,9 @@
 import React from "react";
 import "./ImageComponent.css";
-import User from "../../../assets/User.png";
+import UserImage from "../../../assets/UserImage.png";
 
 export default function ImageComponent({ image }) {
-  let userImage = image ? image : User;
+  let userImage = image ? image : UserImage;
   return (
     <div className="image-container">
       <img className="image" src={userImage} alt="User Image" />

@@ -16,7 +16,7 @@ import {
   onSubmitHandlerForLogin,
 } from "../../handlers";
 import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFooterComponent";
-
+import { motion } from "framer-motion";
 export default function Login() {
   const navigate = useNavigate();
 
@@ -47,8 +47,24 @@ export default function Login() {
     <div className="login-container">
       <div className="backVideoWithForm">
         <BackgroundVideoComp />
-        <div className="form-container-login">
-          <form className="login-form" onSubmit={onSubmitHandler}>
+        <motion.div className="form-container-login">
+          <motion.form
+            initial={{
+              x: "40vw",
+              y: "40vw",
+              rotateX: 90,
+              rotateY: 90,
+            }}
+            animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
+            transition={{
+              delay: 0.4,
+              duration: 1.2,
+              type: "spring",
+              stiffness: 100,
+            }}
+            className="login-form"
+            onSubmit={onSubmitHandler}
+          >
             <div className="input-container">
               <TextField
                 value={email}
@@ -93,8 +109,8 @@ export default function Login() {
               text2="Sign up"
               link="/registration"
             />
-          </form>
-        </div>
+          </motion.form>
+        </motion.div>
       </div>
     </div>
   );
