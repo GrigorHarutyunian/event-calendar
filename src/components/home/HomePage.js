@@ -21,11 +21,11 @@ import { ModalAddEvent } from "./modalAddEvent/ModalAddEvent.js";
 import { CalendarYear } from "./calendar/calendarYear/CalendarYear.js";
 import { changeCalendarType } from "../../redux/slices/calendarTypeSlice.js";
 import { store } from "../../redux/store.js";
+import { useEffect } from "react";
 
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
-  console.log(currentDateText);
   const thisDay = useSelector((store) => store.selectedDay);
   const date = new Date(thisDay);
   const currentDate = new Date(currentDateText);
@@ -33,6 +33,11 @@ export const HomePage = () => {
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    GetEvents(dispatch, currentDateText);
+  }, []);
+
   return (
     <div className="home-page">
       <CSSTransition
@@ -52,8 +57,9 @@ export const HomePage = () => {
       <BurgerMenu />
       <div className={burgerState ? "burger-open" : "burger-close"}>
         <header className="header">
-          <FormControl style={{ maxWidth: "sm" }}>
-            <InputLabel id="demo-simple-select-label"></InputLabel>
+          <FormControl
+            style={{ maxWidth: "sm", width: "200px", background: "#A3BB98" }}
+          >
             <Select
               value={calendarForm}
               onChange={(event) =>
@@ -82,9 +88,6 @@ export const HomePage = () => {
           >
             Today
           </Button>
-          <div className="image-container">
-            <img src={user?.image} />
-          </div>
         </header>
 
         <Button

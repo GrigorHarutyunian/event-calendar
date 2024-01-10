@@ -16,15 +16,40 @@
   align-items: center;
   gap: 5%;
   width: 25%;
-  height: 50%;
+  height: 60%;
+  border-radius: 20px;
+  box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
+    0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+
   /* background: burlywood; */
   /* background: #DBCC95; */
   /* background: #A4D0A4; */
   /* background:#F7E1AE; */
-  background: #A3BB98;
+  background: #98a7bb;
   cursor: grab;
 }
 
+.modal-content-div {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  justify-content: space-between;
+}
+
+.modal-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal-textarea {
+  background: #43762b00;
+  width: 97%;
+  resize: none;
+  outline: none;
+}
 
 .modal-enter {
   transform: translateY(-50%);
@@ -44,4 +69,20 @@
   transform: translateY(-50%);
   opacity: 0;
   transition: opacity 1500ms, transform 1500ms ease-in-out;
+}
+
+.MuiFormControl-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+
+.MuiFormControl-root.css-z3c6am-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+
+.MuiFormControl-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  width: 100%;
+}
+
+.MuiFormControl-root.css-1nrlq1o-MuiFormControl-root {
+  width: 100%;
 }
