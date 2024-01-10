@@ -2,7 +2,14 @@ import { getDatabase, ref, update, get } from "firebase/database";
 import { database } from "../firebase-config";
 import { GetEvents } from "./GetEvents";
 import { useDispatch } from "react-redux";
-export const upDateEvents = async (date, title, time, dispatch) => {
+export const upDateEvents = async (
+  date,
+  title,
+  time,
+  dispatch,
+  icon,
+  description
+) => {
   const userId = "user1";
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
@@ -39,6 +46,8 @@ export const upDateEvents = async (date, title, time, dispatch) => {
             id: time,
             title: title,
             time: time,
+            icon: icon,
+            description: description,
           },
         ],
         busyHours: [...busyHours, newTimeRange],

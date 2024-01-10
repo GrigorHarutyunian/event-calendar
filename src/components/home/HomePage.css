@@ -5,7 +5,12 @@
   height: 100%;
   width: 100%;
   position: absolute;
+
+  /* background: #7684a3; */
+  background: #c1d0b5;
+
   background: #7684a3;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -28,8 +33,15 @@
   height: 100%;
   width: 100%;
   position: absolute;
+
+  /* background: #7684a3; */
+  background: #c1d0b5;
+  /* background-image:  url("https://images.unsplash.com/photo-1511884642898-4c92249e20b6?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  display: flex; */
+
   background: #7684a3;
   display: flex;
+
   justify-content: space-evenly;
   align-items: center;
   transform: translateX(0%);
@@ -43,7 +55,12 @@
   height: 100%;
   width: 90%;
   position: absolute;
+
+  /* background: #7684a3; */
+  background: #c1d0b5;
+
   background: #7684a3;
+
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -54,5 +71,7 @@
 .MuiSelect-select.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
   padding: 14.5px 59px;
   /* color: black; */
+
   background-color: #a3bb98;
+
 }
