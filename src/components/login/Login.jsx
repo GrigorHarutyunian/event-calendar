@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { GoogleLogin } from "@react-oauth/google";
-import { useNavigate } from "react-router-dom";
 import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
 import ButtonComponent from "../commonComponents/ButtonComponent/ButtonComponent";
-import {
-  validateEmail,
-  validatePass,
-  responsGoogleFunction,
-} from "../../utils";
+import { validateEmail, validatePass } from "../../utils";
 import {
   onClickHandlerForEmailFunction,
   onClickHandlerForPasswordFunction,
@@ -19,13 +14,10 @@ import { motion } from "framer-motion";
 import DivOfInputComponents from "../commonComponents/DivOfInputComponents/DivOfInputComponents";
 
 export default function Login() {
-  const navigate = useNavigate();
-
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const responsGoogle = responsGoogleFunction(navigate);
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
     validateEmail,
@@ -106,24 +98,7 @@ export default function Login() {
             </motion.span>
 
             <DivOfInputComponents inputArray={inputArray} />
-            <div className="buttons">
-              <ButtonComponent text="Sign in" type="submit" />
-              <span className="orText">Or you can use</span>
-              <motion.div
-                whileHover={{
-                  scale: 1.5,
-                }}
-                transition={{ duration: 0, type: "spring", stiffness: 500 }}
-              >
-                <GoogleLogin
-                  text="signin_with"
-                  type="icon"
-                  shape="circle"
-                  onSuccess={responsGoogle}
-                  onError={responsGoogle}
-                />
-              </motion.div>
-            </div>
+            <ButtonComponent buttonText="Sign in" optionText="Or you can use" />
             <FormFooterComponent
               text1="Don't have an account"
               text2="Sign up"

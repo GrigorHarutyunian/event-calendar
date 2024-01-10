@@ -44,21 +44,6 @@ body {
   font-weight: 500;
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 8px;
-  margin-inline: 5px;
-}
-
-.orText {
-  display: flex;
-  font-size: medium;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .login-text {
   display: flex;
   font-size: xxx-large;
