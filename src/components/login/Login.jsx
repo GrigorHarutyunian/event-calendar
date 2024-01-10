@@ -24,7 +24,6 @@ export default function Login() {
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-
   const responsGoogle = responsGoogleFunction(navigate);
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
@@ -43,11 +42,27 @@ export default function Login() {
     isNotValidEmail,
     isNotValidPassword
   );
+  const inputArray = [
+    {
+      value: email,
+      type: "email",
+      error: isNotValidEmail,
+      onChange: onClickHandlerForEmail,
+      label: "Email",
+    },
+    {
+      value: password,
+      type: "password",
+      error: isNotValidPassword,
+      onChange: onClickHandlerForPassword,
+      label: "Password",
+    },
+  ];
   return (
     <div className="login-container">
       <div className="backVideoWithForm">
         <BackgroundVideoComp />
-        <motion.div className="form-container-login">
+        <div className="form-container-login">
           <motion.form
             initial={{
               x: "40vw",
@@ -65,35 +80,21 @@ export default function Login() {
             className="login-form"
             onSubmit={onSubmitHandler}
           >
-            <div className="input-container">
-              <TextField
-                value={email}
-                autoComplete
-                fullWidth="true"
-                required="true"
-                color="info"
-                error={isNotValidEmail}
-                onChange={onClickHandlerForEmail}
-                id="standard-basic"
-                label="Email"
-                variant="standard"
-              />
-            </div>
-            <div className="input-container">
-              <TextField
-                value={password}
-                autoComplete
-                type={"password"}
-                fullWidth="true"
-                required="true"
-                color="info"
-                error={isNotValidPassword}
-                onChange={onClickHandlerForPassword}
-                id="standard-basic"
-                label="Password"
-                variant="standard"
-              />
-            </div>
+            {inputArray.map((input) => (
+              <div className="input-container">
+                <TextField
+                  value={input.value}
+                  type={input.type}
+                  fullWidth="true"
+                  required="true"
+                  error={input.error}
+                  onChange={input.onChange}
+                  id="standard-basic"
+                  label={input.label}
+                  variant="standard"
+                />
+              </div>
+            ))}
             <div className="button-container">
               <ButtonComponent text="Sign in" type="submit" />
               <GoogleLogin
@@ -110,7 +111,7 @@ export default function Login() {
               link="/registration"
             />
           </motion.form>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

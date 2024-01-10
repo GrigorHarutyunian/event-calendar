@@ -50,7 +50,7 @@ export default function FormComponent({ image }) {
       <div className="input-container">
         <TextField
           value={email}
-          autoComplete
+          type={"email"}
           fullWidth="true"
           required="true"
           error={isNotValidEmail}
@@ -63,11 +63,9 @@ export default function FormComponent({ image }) {
       <div className="input-container">
         <TextField
           value={password}
-          autoCompleteq
           type={"password"}
           fullWidth="true"
           required="true"
-          color="info"
           error={isNotValidPassword}
           onChange={onClickHandlerForPassword}
           id="standard-basic"
