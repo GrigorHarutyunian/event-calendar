@@ -60,6 +60,7 @@ export const CalendarYear = ({ currentDate, thisDay }) => {
           display: "flex",
           flexFlow: "wrap",
           justifyContent: "space-between",
+          overflow: "auto",
         }}
       >
         {arr.map((v, i) => (
