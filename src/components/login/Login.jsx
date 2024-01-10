@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 import {
   BackgroundVideoComp,
@@ -56,6 +56,12 @@ export default function Login() {
       label: "Password",
     },
   ];
+  const isLoggedIn = localStorage.getItem("loggedIn");
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/home");
+    }
+  }, [isLoggedIn]);
   return (
     <div className="login-container">
       <div className="backVideoWithForm">
