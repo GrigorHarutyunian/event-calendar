@@ -12,6 +12,26 @@ export default function BirthdayDateComponent({
   const [month, setMonth] = useState("");
   const [monthIndex, setMonthIndex] = useState(null);
   const [year, setYear] = useState("");
+  const selects = [
+    {
+      arrayOfOptions: months,
+      title: "Months",
+      option: month,
+      setOption: setMonth,
+    },
+    {
+      arrayOfOptions: days,
+      title: "Days",
+      option: day,
+      setOption: setDay,
+    },
+    {
+      arrayOfOptions: years,
+      title: "Years",
+      option: year,
+      setOption: setYear,
+    },
+  ];
 
   useEffect(() => {
     months.forEach((currenMonth, i) => {
@@ -31,24 +51,14 @@ export default function BirthdayDateComponent({
     <div>
       <h3 className="birth-label">Birth data</h3>
       <div className="select-container">
-        <SelectComponent
-          arrayOfOptions={months}
-          title="Months"
-          option={month}
-          setOption={setMonth}
-        />
-        <SelectComponent
-          arrayOfOptions={days}
-          title="Days"
-          option={day}
-          setOption={setDay}
-        />
-        <SelectComponent
-          arrayOfOptions={years}
-          title="Year"
-          option={year}
-          setOption={setYear}
-        />
+        {selects.map((select) => (
+          <SelectComponent
+            arrayOfOptions={select.arrayOfOptions}
+            title={select.title}
+            option={select.option}
+            setOption={select.setOption}
+          />
+        ))}
       </div>
     </div>
   );

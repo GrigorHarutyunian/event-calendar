@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./SelectComponent.css";
 import { Select, FormControl, InputLabel, MenuItem } from "@mui/material";
+
 export default function SelectComponent({
   arrayOfOptions,
   title,
@@ -13,8 +14,9 @@ export default function SelectComponent({
   return (
     <div>
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
-        <InputLabel id="demo-simple-select-standard-label">{title}</InputLabel>
+        <InputLabel id={title}>{title}</InputLabel>
         <Select
+          required="true"
           labelId={title}
           id={title}
           value={option}
@@ -22,9 +24,6 @@ export default function SelectComponent({
           onChange={handleChange}
           label={title}
         >
-          <MenuItem value="">
-            <em>None</em>
-          </MenuItem>
           {arrayOfOptions?.map((option) => (
             <MenuItem key={option} value={option}>
               {option}
