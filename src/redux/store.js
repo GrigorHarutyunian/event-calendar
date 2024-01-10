@@ -5,6 +5,7 @@ import selectedDayReducer from "./slices/selectedDaySlice.js";
 import burgerReducer from "./slices/burgerSlice.js";
 import eventsReducer from "./slices/eventsSlice.js";
 import calendarTypeReducer from "./slices/calendarTypeSlice.js";
+// import weekEventsReducer from "./slices/weekEventsSlice";
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     burger: burgerReducer,
     events: eventsReducer,
     calendarType: calendarTypeReducer,
+    // weekEvents: weekEventsReducer,
   },
 });

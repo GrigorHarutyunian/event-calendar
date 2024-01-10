@@ -21,6 +21,7 @@ import { ModalAddEvent } from "./modalAddEvent/ModalAddEvent.js";
 import { CalendarYear } from "./calendar/calendarYear/CalendarYear.js";
 import { changeCalendarType } from "../../redux/slices/calendarTypeSlice.js";
 import { store } from "../../redux/store.js";
+
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
