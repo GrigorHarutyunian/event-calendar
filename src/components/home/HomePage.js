@@ -21,10 +21,14 @@ import { ModalAddEvent } from "./modalAddEvent/ModalAddEvent.js";
 import { CalendarYear } from "./calendar/calendarYear/CalendarYear.js";
 import { changeCalendarType } from "../../redux/slices/calendarTypeSlice.js";
 import { store } from "../../redux/store.js";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { logOutFunction } from "../../utils/logOutFunction.js";
 
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
+  const navigate = useNavigate();
   console.log(currentDateText);
   const thisDay = useSelector((store) => store.selectedDay);
   const date = new Date(thisDay);
@@ -33,6 +37,12 @@ export const HomePage = () => {
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
+  const isLoggedIn = localStorage.getItem("loggedIn");
+  useEffect(() => {
+    if (!isLoggedIn) {
+      navigate("/login");
+    }
+  }, [isLoggedIn]);
   return (
     <div className="home-page">
       <CSSTransition
@@ -82,9 +92,6 @@ export const HomePage = () => {
           >
             Today
           </Button>
-          <div className="image-container">
-            <img src={user?.image} />
-          </div>
         </header>
 
         <Button
@@ -97,8 +104,12 @@ export const HomePage = () => {
             backgroundColor: "#A3BB98",
           }}
           variant="outlined"
+          onClick={() => {
+            logOutFunction();
+            navigate("/login");
+          }}
         >
-          Login
+          LogOut
         </Button>
         {calendarForm === "Year" ? (
           <CalendarYear thisDay={date} currentDate={currentDate} />

@@ -1,0 +1,7 @@
+.video {
+  min-height: 100vh;
+  max-height: 100vh;
+  min-width: 100%;
+  max-width: 100vw;
+  object-fit: cover;
+}
