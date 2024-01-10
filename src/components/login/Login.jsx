@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import "./Login.css";
-import BackgroundVideoComp from "../commonComponents/BackgroundVideo/BackgroundVideoComp";
+import {
+  BackgroundVideoComp,
+  ButtonsComponent,
+  FormFooterComponent,
+  DivOfInputComponents,
+  LabelComponent,
+} from "../commonComponents";
 import { validateEmail, validatePass } from "../../utils";
-import ButtonsComponent from "../commonComponents/ButtonsComponents/ButtonsComponent";
 import {
   onClickHandlerForEmailFunction,
   onClickHandlerForPasswordFunction,
   onSubmitHandlerForLogin,
 } from "../../handlers";
-import FormFooterComponent from "../commonComponents/FormFooterComponent/FormFooterComponent";
 import { motion } from "framer-motion";
-import DivOfInputComponents from "../commonComponents/DivOfInputComponents/DivOfInputComponents";
-import LabelComponent from "../commonComponents/LabelComponent/LabelComponent";
+import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
+  const navigate = useNavigate();
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
     validateEmail,
@@ -33,7 +37,8 @@ export default function Login() {
     email,
     password,
     isNotValidEmail,
-    isNotValidPassword
+    isNotValidPassword,
+    navigate
   );
   const inputArray = [
     {

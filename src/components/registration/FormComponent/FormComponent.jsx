@@ -8,11 +8,13 @@ import {
 } from "../../../handlers";
 import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponent";
 import { ButtonsComponent, DivOfInputComponents } from "../../commonComponents";
+import { useNavigate } from "react-router-dom";
 
 export default function FormComponent({ image }) {
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
+  const navigate = useNavigate();
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
   const [birthday, setBirthday] = useState(null);
@@ -34,7 +36,8 @@ export default function FormComponent({ image }) {
     image,
     isNotValidEmail,
     isNotValidPassword,
-    isNotValidBirthday
+    isNotValidBirthday,
+    navigate
   );
   const inputArray = [
     {
