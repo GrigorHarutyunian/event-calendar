@@ -14,6 +14,6 @@ export function responsGoogleFunction(navigate) {
     //here should be function to send the date to the database or just the server to keep it
     localStorage.setItem("user", JSON.stringify(doc));
     localStorage.setItem("loggedIn", true);
-    navigate("/home");
+    navigate("/home"); // this is an exapmle just, real code shouldn't be working like this
   };
 }

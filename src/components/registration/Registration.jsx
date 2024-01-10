@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Registration.css";
 import FormComponent from "./FormComponent/FormComponent";
 import UserImageComponent from "./UserImageComponent/UserImageComponent";
@@ -9,19 +9,27 @@ import {
 } from "../commonComponents";
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 export default function Registration() {
   const [image, setImage] = useState(null);
+  const navigate = useNavigate();
   const uploadImage = onChangeHandlerForImageInput(setImage);
-
+  const isLoggedIn = localStorage.getItem("loggedIn");
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/home");
+    }
+  }, [isLoggedIn]);
   return (
     <div className="backVideoWithForm">
       <BackgroundVideoComp />
       <motion.div
         initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-        animate={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+        animate={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
         transition={{
           delay: 1,
-          duration: 2,
+          duration: 3,
         }}
         className="page-container"
       >

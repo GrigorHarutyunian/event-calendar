@@ -28,12 +28,12 @@ export function onSubmitHandlerForRegistration(
       birthday
     ) {
       // here should be function to send data object to the database or just the server
-      console.log(data);
-      alert("Registrated");
-      navigate("/login");
+      console.log(data); // this is an exapmle just, real code shouldn't be working like this
+      alert("Registrated"); // this is an exapmle just, real code shouldn't be working like this
+      navigate("/login"); // this is an exapmle just, real code shouldn't be working like this
     } else {
-      console.log(data);
-      alert("not registrated");
+      console.log(data); // this is an exapmle just, real code shouldn't be working like this
+      alert("not registrated"); // this is an exapmle just, real code shouldn't be working like this
     }
   };
 }

@@ -68,10 +68,10 @@ export default function Login() {
         <BackgroundVideoComp />
         <motion.div
           initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-          animate={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
+          animate={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
           transition={{
             delay: 1,
-            duration: 2,
+            duration: 3,
           }}
           className="form-container-login"
         >
