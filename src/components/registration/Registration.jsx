@@ -13,14 +13,14 @@ import { useNavigate } from "react-router-dom";
 
 export default function Registration() {
   const [image, setImage] = useState(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const uploadImage = onChangeHandlerForImageInput(setImage);
-  const isLoggedIn = localStorage.getItem("loggedIn");
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/home");
-    }
-  }, [isLoggedIn]);
+  // const isLoggedIn = localStorage.getItem("loggedIn");
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     navigate("/home");
+  //   }
+  // }, [isLoggedIn]);
   return (
     <div className="backVideoWithForm">
       <BackgroundVideoComp />

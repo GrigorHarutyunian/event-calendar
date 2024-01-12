@@ -1,19 +1,33 @@
 import jwt_decode from "jwt-decode";
-
-export function responsGoogleFunction(navigate) {
-  return function responsGoogle(response) {
+import { addUser } from "../firebase/service/addUser";
+import { currentUser } from "../redux/slices/userDataSlice";
+import { getUser } from "../firebase/service/GetUser";
+import { userIsLogin } from "../redux/slices/userIsLoginSlice";
+import { generateUserId } from "./generateUserIdWithEmail";
+export function responsGoogleFunction(navigate, dispatch) {
+  return async function responsGoogle(response) {
     let decodedHeader = jwt_decode(response.credential);
-    const { name, sub, picture } = decodedHeader;
+    const { email, sub, picture } = decodedHeader;
+    console.log(decodedHeader);
     const doc = {
-      _id: sub,
-      _type: "user",
-      userName: name,
+      id: generateUserId(email),
+      email,
       image: picture,
     };
 
-    //here should be function to send the date to the database or just the server to keep it
-    localStorage.setItem("user", JSON.stringify(doc));
-    localStorage.setItem("loggedIn", true);
-    navigate("/home"); // this is an exapmle just, real code shouldn't be working like this
+    try {
+      const a = await getUser(doc.id);
+      if (a) {
+        dispatch(userIsLogin());
+        dispatch(currentUser(a.description));
+      } else {
+        addUser(doc);
+        dispatch(userIsLogin());
+        dispatch(currentUser(doc));
+      }
+      navigate("/home");
+    } catch (er) {
+      console.log(er);
+    }
   };
 }

@@ -2,15 +2,16 @@ import { getDatabase, ref, update, get } from "firebase/database";
 import { database } from "../firebase-config";
 import { GetEvents } from "./GetEvents";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 export const upDateEvents = async (
   date,
   title,
   time,
   dispatch,
   icon,
-  description
+  description,
+  userId
 ) => {
-  const userId = "user1";
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
 
@@ -53,7 +54,7 @@ export const upDateEvents = async (
         busyHours: [...busyHours, newTimeRange],
       });
 
-      GetEvents(dispatch, date);
+      GetEvents(dispatch, date, userId);
       console.log("Event added successfully");
     }
   } catch (error) {

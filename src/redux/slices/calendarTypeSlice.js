@@ -6,8 +6,13 @@ const calendarTypeSlice = createSlice({
     changeCalendarType: (state, action) => {
       return action.payload;
     },
+    calendarTypereloader: (state, action) => {
+      console.log("reloading");
+      return "Month";
+    },
   },
 });
 
-export const { changeCalendarType } = calendarTypeSlice.actions;
+export const { changeCalendarType, calendarTypereloader } =
+  calendarTypeSlice.actions;
 export default calendarTypeSlice.reducer;
