@@ -21,6 +21,8 @@ import { ModalAddEvent } from "./modalAddEvent/ModalAddEvent.js";
 import { CalendarYear } from "./calendar/calendarYear/CalendarYear.js";
 import { changeCalendarType } from "../../redux/slices/calendarTypeSlice.js";
 import { store } from "../../redux/store.js";
+import { userIsLogin } from "../../redux/slices/userIsLoginSlice.js";
+import { pageReloader } from "../../utils/pageReloader.js";
 
 import { useEffect } from "react";
 
@@ -31,10 +33,8 @@ import { logOutFunction } from "../../utils/logOutFunction.js";
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
-
   const navigate = useNavigate();
-  console.log(currentDateText);
-
+  const isLoggedIn = useSelector((store) => store.userIsLogin);
   const thisDay = useSelector((store) => store.selectedDay);
   const date = new Date(thisDay);
   const currentDate = new Date(currentDateText);
@@ -42,12 +42,12 @@ export const HomePage = () => {
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
-
+  const userID = useSelector((store) => store.userData.id);
+  const user = useSelector((store) => store.userData);
   useEffect(() => {
-    GetEvents(dispatch, currentDateText);
+    GetEvents(dispatch, currentDateText, userID);
   }, []);
 
-  const isLoggedIn = localStorage.getItem("loggedIn");
   useEffect(() => {
     if (!isLoggedIn) {
       navigate("/login");
@@ -95,7 +95,7 @@ export const HomePage = () => {
               backgroundColor: "#A3BB98",
             }}
             onClick={() => {
-              GetEvents(dispatch, day.toDateString());
+              GetEvents(dispatch, day.toDateString(), userID);
               dispatch(selectedDay(day.toDateString()));
               dispatch(thisMonth());
             }}
@@ -115,20 +115,28 @@ export const HomePage = () => {
           }}
           variant="outlined"
           onClick={() => {
-            logOutFunction();
-            navigate("/login");
+            dispatch(userIsLogin());
+            pageReloader(dispatch);
           }}
         >
           LogOut
         </Button>
         {calendarForm === "Year" ? (
-          <CalendarYear thisDay={date} currentDate={currentDate} />
+          <CalendarYear
+            userID={userID}
+            thisDay={date}
+            currentDate={currentDate}
+          />
         ) : calendarForm === "Week" ? (
-          <CalendarWeek thisDay={date} currentDate={currentDate} />
+          <CalendarWeek
+            userID={userID}
+            thisDay={date}
+            currentDate={currentDate}
+          />
         ) : (
-          <Calendar currentDate={currentDate} />
+          <Calendar userID={userID} currentDate={currentDate} />
         )}
-        <EventsDay />
+        <EventsDay userID={userID} />
       </div>
     </div>
   );

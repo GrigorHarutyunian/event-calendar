@@ -6,15 +6,17 @@ export default function DivOfInputComponents({ inputArray }) {
   return (
     <>
       {inputArray.map((input) => (
-        <div className="input-container">
+        <div
+          className="input-container"
+          key={`${input.type}-${input.onChange}`}
+        >
           <TextField
             value={input.value}
             type={input.type}
-            fullWidth="true"
-            required="true"
+            fullWidth={true}
+            required={true}
             error={input.error}
             onChange={input.onChange}
-            id="standard-basic"
             label={input.label}
             variant="standard"
           />

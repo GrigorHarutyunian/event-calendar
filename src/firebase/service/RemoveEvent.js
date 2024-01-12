@@ -6,9 +6,10 @@ export const RemoveEvent = async (
   dispatch,
   date,
   itemIdToRemove1,
-  itemIdToRemove2
+  itemIdToRemove2,
+  userID
 ) => {
-  const userId = "user1";
+  const userId = userID;
   const path1 = `calendars/${userId}/events/${date}/event`;
   const path2 = `calendars/${userId}/events/${date}/busyHours`;
   const eventRef1 = ref(database, path1);
@@ -32,7 +33,7 @@ export const RemoveEvent = async (
       busyHours: upDateBusyHoursArray,
     });
 
-    GetEvents(dispatch, date);
+    GetEvents(dispatch, date, userId);
     console.log(`Items removed successfully.`);
   } catch (error) {
     console.error("Error removing items from the database:", error);

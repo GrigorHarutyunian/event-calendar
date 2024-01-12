@@ -2,7 +2,7 @@ import { CalendarHeader } from "./CalendarHeader";
 import { useSelector } from "react-redux";
 import { CalendarTable } from "./CalendarTable";
 
-export const Calendar = ({ currentDate, thisDay }) => {
+export const Calendar = ({ currentDate, thisDay, userID }) => {
   const month = currentDate.getMonth();
   const images = [
     "january.webp",
@@ -30,7 +30,11 @@ export const Calendar = ({ currentDate, thisDay }) => {
         }}
       >
         <img className="img" src={images[month]} alt="Month" />{" "}
-        <CalendarTable thisDay={thisDay} currentDate={currentDate} />
+        <CalendarTable
+          userID={userID}
+          thisDay={thisDay}
+          currentDate={currentDate}
+        />
       </div>
     </div>
   );

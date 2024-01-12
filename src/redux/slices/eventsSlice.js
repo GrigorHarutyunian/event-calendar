@@ -12,8 +12,15 @@ const eventsSlice = createSlice({
         busyHours: action.payload.busyHours,
       };
     },
+    eventsReloader: (state, action) => {
+      console.log("reloading");
+      return {
+        events: [],
+        busyHours: [],
+      };
+    },
   },
 });
 
-export const { getEvent } = eventsSlice.actions;
+export const { getEvent, eventsReloader } = eventsSlice.actions;
 export default eventsSlice.reducer;

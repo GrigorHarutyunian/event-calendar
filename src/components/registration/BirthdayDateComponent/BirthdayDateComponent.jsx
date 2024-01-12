@@ -54,6 +54,7 @@ export default function BirthdayDateComponent({
       <div className="select-container">
         {selects.map((select) => (
           <SelectComponent
+            key={`${select.arrayOfOptions}-${select.title}`}
             arrayOfOptions={select.arrayOfOptions}
             title={select.title}
             option={select.option}

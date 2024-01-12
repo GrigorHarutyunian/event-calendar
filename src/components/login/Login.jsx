@@ -15,12 +15,14 @@ import {
 } from "../../handlers";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 export default function Login() {
+  const dispatch = useDispatch();
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const navigate = useNavigate();
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
@@ -38,7 +40,8 @@ export default function Login() {
     password,
     isNotValidEmail,
     isNotValidPassword,
-    navigate
+    navigate,
+    dispatch
   );
   const inputArray = [
     {
@@ -56,12 +59,13 @@ export default function Login() {
       label: "Password",
     },
   ];
-  const isLoggedIn = localStorage.getItem("loggedIn");
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/home");
-    }
-  }, [isLoggedIn]);
+  // const isLoggedIn = localStorage.getItem("loggedIn");
+  // useEffect(() => {
+  //   if (isLoggedIn) {
+  //     navigate("/home");
+  //   }
+  // }, [isLoggedIn]);
+
   return (
     <div className="login-container">
       <div className="backVideoWithForm">

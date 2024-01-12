@@ -8,11 +8,10 @@ const today = new Date().getDate();
 const thisMont = new Date().getMonth();
 const thisYear = new Date().getFullYear();
 
-export const CalendarTable = ({ thisDay, currentDate }) => {
+export const CalendarTable = ({ thisDay, currentDate, userID }) => {
   const calendarForm = useSelector((store) => store.calendarType);
   const dispatch = useDispatch();
   const selectedDayValue = useSelector((store) => store.selectedDay);
-
   const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   let daysInMonth = [];
   const startOfMonth = new Date(
@@ -54,14 +53,21 @@ export const CalendarTable = ({ thisDay, currentDate }) => {
           daysInMonth,
           dispatch,
           selectedDayValue,
-          calendarForm
+          calendarForm,
+          userID
         )}
       </tbody>
     </table>
   );
 };
 
-const renderCalendarRows = (days, dispatch, selectedDayValue, calendarForm) => {
+const renderCalendarRows = (
+  days,
+  dispatch,
+  selectedDayValue,
+  calendarForm,
+  userID
+) => {
   let rows = [];
   let currentRow = [];
   let firstDayInWeek = days[0].getDay() - 1 === -1 ? 6 : days[0].getDay() - 1;
@@ -79,7 +85,7 @@ const renderCalendarRows = (days, dispatch, selectedDayValue, calendarForm) => {
         onClick={() => {
           dispatch(setDate(day.toDateString()));
           dispatch(selectedDay(day.toDateString()));
-          GetEvents(dispatch, day.toDateString());
+          GetEvents(dispatch, day.toDateString(), userID);
         }}
         className={
           day.getDate() === today &&

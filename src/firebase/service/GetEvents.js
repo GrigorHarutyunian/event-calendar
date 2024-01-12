@@ -1,9 +1,9 @@
 import { database } from "../firebase-config";
 import { getEvent } from "../../redux/slices/eventsSlice";
 import { getDatabase, ref, get } from "firebase/database";
+import { useSelector } from "react-redux";
 
-export const GetEvents = async (dispatch, date) => {
-  const userId = "user1";
+export const GetEvents = async (dispatch, date, userId) => {
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
 

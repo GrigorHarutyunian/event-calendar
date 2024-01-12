@@ -32,6 +32,7 @@ export const ModalAddEvent = () => {
   const [position, setPosition] = useState({ x: 500, y: 150 });
   const dispatch = useDispatch();
   const selectedDayString = useSelector((store) => store.selectedDay);
+  const userId = useSelector((store) => store.userData.id);
   const modalRef = useRef();
   const inputRef = useRef(null);
   const timeRef = useRef(null);
@@ -83,7 +84,8 @@ export const ModalAddEvent = () => {
         time.time,
         dispatch,
         icon,
-        description
+        description,
+        userId
       );
   };
 

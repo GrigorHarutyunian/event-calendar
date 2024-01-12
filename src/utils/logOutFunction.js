@@ -1,3 +1,3 @@
-export function logOutFunction() {
-  localStorage.clear();
-}
+// export function logOutFunction() {
+//   localStorage.clear();
+// }
