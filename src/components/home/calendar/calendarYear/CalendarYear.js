@@ -27,7 +27,7 @@ const monthNames = [
   "December",
 ];
 
-export const CalendarYear = ({ currentDate, thisDay }) => {
+export const CalendarYear = ({ currentDate, thisDay, userID }) => {
   const dispatch = useDispatch();
   console.log(
     "🚀 ~ file: CalendarYear.js:42 ~ CalendarYear ~ thisDay:",
@@ -60,6 +60,7 @@ export const CalendarYear = ({ currentDate, thisDay }) => {
           display: "flex",
           flexFlow: "wrap",
           justifyContent: "space-between",
+          overflow: "auto",
         }}
       >
         {arr.map((v, i) => (
@@ -68,6 +69,7 @@ export const CalendarYear = ({ currentDate, thisDay }) => {
               {monthNames[new Date(currentDate.getFullYear(), i, 1).getMonth()]}
             </p>
             <CalendarTable
+              userID={userID}
               currentDate={new Date(currentDate.getFullYear(), i, 1)}
             />
           </div>

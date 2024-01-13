@@ -6,8 +6,13 @@ const burgerSlice = createSlice({
     changeBurgerState: (state, action) => {
       return action.payload;
     },
+
+    burgerReloader: (state, action) => {
+      console.log("reloading");
+      return false;
+    },
   },
 });
 
-export const { changeBurgerState } = burgerSlice.actions;
+export const { changeBurgerState, burgerReloader } = burgerSlice.actions;
 export default burgerSlice.reducer;

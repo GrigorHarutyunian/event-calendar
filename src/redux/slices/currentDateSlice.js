@@ -68,6 +68,10 @@ const currentDateSlice = createSlice({
         date.getDate()
       ).toDateString();
     },
+    currentDateReloader: (state, action) => {
+      console.log("reloading");
+      return new Date().toDateString();
+    },
   },
 });
 
@@ -80,5 +84,6 @@ export const {
   nexTWeek,
   prevWeek,
   setDate,
+  currentDateReloader,
 } = currentDateSlice.actions;
 export default currentDateSlice.reducer;

@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import { prevWeek, nexTWeek } from "../../../../redux/slices/currentDateSlice";
 import { IconButton } from "@mui/material";
 import { ChevronRightRounded } from "@mui/icons-material";
 import { ChevronLeftRounded } from "@mui/icons-material";
-import { useEffect, useState } from "react";
+
 const monthNames = [
   "January",
   "February",
@@ -19,8 +20,26 @@ const monthNames = [
   "December",
 ];
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+
+const TimeGrid = () => {
+  const hours = Array.from({ length: 24 }, (_, i) => i); // Adjust as needed
+
+  return (
+    <div className="time-grid">
+      {hours.map((hour) => (
+        <div key={hour} className="time-grid-item">
+          {hour}:00
+        </div>
+      ))}
+    </div>
+  );
+};
+
 export const CalendarWeek = ({ currentDate }) => {
   const dispatch = useDispatch();
+  const event = useSelector((store) => store.events);
+  const eventsArr = [...event.events];
+
   function generateWeeklyDays(startDate) {
     const daysOfWeek = [];
     const currentDay = new Date(startDate).getDay();
@@ -75,7 +94,7 @@ export const CalendarWeek = ({ currentDate }) => {
       </header>
       <div className="calendar-week-list">
         {weekDays.map((day, index) => (
-          <div className="week-days-date">
+          <div className="week-days-date" key={index}>
             <div key={day} className="week-day">
               {day}
             </div>
@@ -83,6 +102,7 @@ export const CalendarWeek = ({ currentDate }) => {
               <div key={weekDaysList[index].getDate()} className="week-date">
                 {weekDaysList[index].getDate()}
               </div>
+              <TimeGrid />
             </div>
           </div>
         ))}

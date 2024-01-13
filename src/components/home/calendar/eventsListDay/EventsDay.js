@@ -9,7 +9,7 @@ import { RemoveEvent } from "../../../../firebase/service/RemoveEvent";
 import IconButton from "@mui/material/IconButton";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-export const EventsDay = () => {
+export const EventsDay = ({ userID }) => {
   const dispatch = useDispatch();
   const selectedDayString = useSelector((store) => store.selectedDay);
   const selectedDay = new Date(selectedDayString);
@@ -57,7 +57,8 @@ export const EventsDay = () => {
                     dispatch,
                     selectedDayString,
                     arr.id,
-                    selectedDayString + " " + arr.time.split("-")[0]
+                    selectedDayString + " " + arr.time.split("-")[0],
+                    userID
                   )
                 }
                 aria-label="delete"

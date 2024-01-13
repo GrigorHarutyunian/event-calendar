@@ -12,7 +12,7 @@ export default function ImageInputComponent({ uploadImage }) {
         }}
         transition={{ duration: 0, type: "spring", stiffness: 500 }}
         id="upload-label"
-        for="upload-image"
+        htmlFor="upload-image"
       >
         Upload image
       </motion.label>

@@ -5,10 +5,11 @@ import { GoogleLogin } from "@react-oauth/google";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { responsGoogleFunction } from "../../../utils";
-
+import { useDispatch } from "react-redux";
 export default function ButtonsComponent({ buttonText, optionText }) {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const responsGoogle = responsGoogleFunction(navigate);
+  const responsGoogle = responsGoogleFunction(navigate, dispatch);
   return (
     <div className="buttons">
       <ButtonComponent text={buttonText} type="submit" />

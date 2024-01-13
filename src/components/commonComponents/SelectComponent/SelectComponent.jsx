@@ -16,11 +16,10 @@ export default function SelectComponent({
       <FormControl variant="standard" sx={{ m: 1, minWidth: 80 }}>
         <InputLabel id={title}>{title}</InputLabel>
         <Select
-          required="true"
+          required={true}
           labelId={title}
           id={title}
           value={option}
-          on
           onChange={handleChange}
           label={title}
         >

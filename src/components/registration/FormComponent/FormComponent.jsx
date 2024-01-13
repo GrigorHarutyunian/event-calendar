@@ -15,9 +15,9 @@ export default function FormComponent({ image }) {
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
   const navigate = useNavigate();
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [birthday, setBirthday] = useState(null);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [birthday, setBirthday] = useState("");
   const onClickHandlerForEmail = onClickHandlerForEmailFunction(
     setEmail,
     validateEmail,
