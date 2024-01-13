@@ -7,6 +7,7 @@ import eventsReducer from "./slices/eventsSlice.js";
 import calendarTypeReducer from "./slices/calendarTypeSlice.js";
 import userDataReducer from "./slices/userDataSlice.js";
 import userIsLoginReducer from "./slices/userIsLoginSlice.js";
+import userFirendsReducer from "./slices/userFriendsSlice.js";
 // import weekEventsReducer from "./slices/weekEventsSlice";
 
 export const store = configureStore({
@@ -19,6 +20,7 @@ export const store = configureStore({
     calendarType: calendarTypeReducer,
     userData: userDataReducer,
     userIsLogin: userIsLoginReducer,
+    userFirends: userFirendsReducer,
     // weekEvents: weekEventsReducer,
   },
 });

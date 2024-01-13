@@ -23,16 +23,20 @@ import CoffeeIcon from "@mui/icons-material/Coffee";
 import ImageIcon from "@mui/icons-material/Image";
 import SubjectIcon from "@mui/icons-material/Subject";
 import CakeIcon from "@mui/icons-material/Cake";
+import { MyAutocomplete } from "../../commonComponents/InputAutocomplete/Autocomplete";
 
 export const ModalAddEvent = () => {
+  const selectedDayString = useSelector((store) => store.selectedDay);
+  const userId = useSelector((store) => store.userData.id);
+  const friends = useSelector((store) => store.userFirends);
+  const [friendsInfo, setFriendsInfo] = useState([]);
   const [title, setTitle] = useState("");
   const [time, setTime] = useState({ time: "", state: "" });
   const [icon, setIcon] = useState("");
   const [description, setDescription] = useState("");
   const [position, setPosition] = useState({ x: 500, y: 150 });
   const dispatch = useDispatch();
-  const selectedDayString = useSelector((store) => store.selectedDay);
-  const userId = useSelector((store) => store.userData.id);
+  console.log(friendsInfo);
   const modalRef = useRef();
   const inputRef = useRef(null);
   const timeRef = useRef(null);
@@ -85,7 +89,8 @@ export const ModalAddEvent = () => {
         dispatch,
         icon,
         description,
-        userId
+        userId,
+        friendsInfo
       );
   };
 
@@ -148,11 +153,10 @@ export const ModalAddEvent = () => {
           <div className="modal-content-div ">
             <GroupAddIcon onClick={() => guestsRef.current.focus()} />
             <div style={{ width: "65%" }}>
-              <TextField
-                id="standard-basic"
-                label="Add Guests"
-                variant="standard"
-                inputRef={guestsRef}
+              <MyAutocomplete
+                friends={friends}
+                setFriendsInfo={setFriendsInfo}
+                friendsInfo={friendsInfo}
               />
             </div>
           </div>
