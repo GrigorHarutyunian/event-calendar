@@ -25,7 +25,7 @@ export default function IsLoginComponent() {
   ];
 
   return (
-    <div>
+    <div className="signIn-signUp-buttons-container">
       {isLoggedIn ? (
         <Account />
       ) : (
