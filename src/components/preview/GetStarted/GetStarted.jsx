@@ -2,11 +2,35 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./GetStarted.css";
 import { ArrowOutward } from "@mui/icons-material";
+import { motion } from "framer-motion";
 
 export default function GetStarted() {
   const navigate = useNavigate();
+  const buttonVariants = {
+    hidden: { x: "-100vw", rotate: 360 },
+    visible: {
+      x: 0,
+      rotate: 0,
+      transition: {
+        delay: 1.5,
+        duration: 2.4,
+        type: "spring",
+        stiffness: 70,
+      },
+    },
+    hover: {
+      scale: 1.3,
+      textShadow: "0px 0px 15px rgb(0, 0, 0)",
+      boxShadow: "0px 0px 15px rgb(255, 255, 255)",
+    },
+  };
+
   return (
-    <div
+    <motion.div
+      variants={buttonVariants}
+      initial="hidden"
+      animate="visible"
+      whileHover="hover"
       className="custom-button"
       onClick={() => {
         navigate("/login");
@@ -25,6 +49,6 @@ export default function GetStarted() {
           </p>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

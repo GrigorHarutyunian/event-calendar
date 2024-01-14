@@ -2,8 +2,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100px;
-  height: 100px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
   background: linear-gradient(to right, #2b6cb0, #93c5fd);
   padding: 2px;
@@ -31,14 +31,12 @@
   font-family: "Poppins", sans-serif;
   font-weight: medium;
   font-size: 18px;
-  line-height: 23px;
+  line-height: 10px;
   margin-right: 5px;
 }
 
 .text-gradient {
-  background: linear-gradient(to right, #4299e1, #ebf4ff);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: #00040f;
 }
 
 .arrow-image {
