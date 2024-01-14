@@ -1,4 +1,5 @@
 import { addUser } from "../firebase/service/addUser";
+import { sendEmail } from "../utils";
 import { generateUserId } from "../utils/generateUserIdWithEmail";
 export function onSubmitHandlerForRegistration(
   email,
@@ -34,6 +35,7 @@ export function onSubmitHandlerForRegistration(
       console.log(data); // this is an exapmle just, real code shouldn't be working like this
       addUser(data);
       alert("Registrated"); // this is an exapmle just, real code shouldn't be working like this
+      sendEmail(email, "Hello");
       navigate("/login"); // this is an exapmle just, real code shouldn't be working like this
     } else {
       console.log(data); // this is an exapmle just, real code shouldn't be working like this

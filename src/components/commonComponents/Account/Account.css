@@ -1,7 +1,9 @@
 .user-account-container {
-  margin-bottom: 3px;
+  display: flex;
+  justify-content: center;
 }
 .user-logo-container {
+  margin-right: 10px;
   width: 40px;
   height: 40px;
 }
