@@ -1,6 +1,5 @@
 import "./ModalAddEvent.css";
 import { useRef } from "react";
-import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { changeState } from "../../../redux/slices/modalAddEventSlice";
 import { SingleInputTimeRangeField } from "@mui/x-date-pickers-pro";
@@ -72,6 +71,8 @@ export const ModalAddEvent = () => {
   };
 
   const handleMouseMove = (e) => {
+    if (!modalRef.current) return;
+
     let dx = e.clientX - initialMousePos.x;
     let dy = e.clientY - initialMousePos.y;
 
