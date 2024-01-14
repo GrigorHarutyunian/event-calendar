@@ -10,6 +10,7 @@ import {
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export default function Registration() {
   const [image, setImage] = useState(null);
@@ -20,7 +21,7 @@ export default function Registration() {
     if (isLoggedIn) {
       navigate("/home");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
   const regContainerVariants = {
     hidden: {
       x: "-100vw",

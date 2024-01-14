@@ -6,7 +6,7 @@ export default function SignInUpButtonsComp({ buttonsArray }) {
   return (
     <div className="signIn-signUp-buttons-container">
       {buttonsArray.map((button) => (
-        <div>
+        <div key={`${button.text}-${button.text}`}>
           <SignInSignUpButton
             onClickHandler={button.onClickHandler}
             text={button.text}

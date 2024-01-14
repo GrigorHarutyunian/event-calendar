@@ -53,7 +53,7 @@ export const HomePage = () => {
     if (!isLoggedIn) {
       navigate("/login");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, navigate]);
 
   return (
     <div className="home-page">
