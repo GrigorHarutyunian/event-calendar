@@ -1,5 +1,5 @@
 import React from "react";
-import LoginButtonForHeader from "../LoginButtonForHeader/LoginButtonForHeader";
+import SignInSignUpButton from "../SignInSignUpButton/SignInSignUpButton";
 import "./SignInUpButtonsComp.css";
 
 export default function SignInUpButtonsComp({ buttonsArray }) {
@@ -7,7 +7,7 @@ export default function SignInUpButtonsComp({ buttonsArray }) {
     <div className="signIn-signUp-buttons-container">
       {buttonsArray.map((button) => (
         <div>
-          <LoginButtonForHeader
+          <SignInSignUpButton
             onClickHandler={button.onClickHandler}
             text={button.text}
           />

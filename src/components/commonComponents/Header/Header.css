@@ -26,6 +26,7 @@
 }
 
 .main-header-time-container {
+  margin-right: 10px;
   display: flex;
   justify-content: flex-end;
 }

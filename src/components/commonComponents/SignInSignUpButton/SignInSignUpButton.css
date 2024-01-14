@@ -1,8 +1,10 @@
 .signIn-signUp-button-header {
   border-width: 2px;
+  color: #ffffff;
+
   border-color: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  background-color: #f7fafc;
+  background-color: #1a2e52;
   padding: 0.4rem 1.2rem;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -10,6 +12,5 @@
 }
 
 .signIn-signUp-button-header:hover {
-  background-color: #1a2e52;
   color: #ffffff;
 }
