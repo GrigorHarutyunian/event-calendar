@@ -16,10 +16,13 @@ export const upDateEvents = async (
   user,
   friendsInfo
 ) => {
+  const userEmail = user.email;
   const userId = user.id;
   let usersIdArr = [userId];
+  let userEmailArr = [userEmail];
   friendsInfo.forEach((friends) => {
     usersIdArr = [...usersIdArr, friends.id];
+    userEmailArr = [...userEmailArr, friends.email];
   });
 
   if (usersIdArr.length === 1) {
@@ -35,7 +38,7 @@ export const upDateEvents = async (
         description,
         dispatch,
         (type = "individual"),
-        email
+        userEmailArr[0]
       );
     } else {
       console.log("Oops! Time range overlaps with existing busy hours for,You");
@@ -57,7 +60,7 @@ export const upDateEvents = async (
     if (overLapsResponse.length === 0) {
       await Promise.all(
         usersIdArr.map(
-          async (userId) =>
+          async (userId, i) =>
             await upDateEvent(
               userId,
               date,
@@ -67,7 +70,7 @@ export const upDateEvents = async (
               description,
               dispatch,
               (type = "group"),
-              user.email
+              userEmailArr[i]
             )
         )
       );

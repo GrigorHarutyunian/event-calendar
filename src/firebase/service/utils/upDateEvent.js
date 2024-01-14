@@ -40,6 +40,7 @@ export async function upDateEvent(
       ],
       busyHours: [...busyHours, newTimeRange],
     });
+    console.log(email);
     //email [time, title, email]
     sendEmail(email, "hello");
     console.log(`Event added successfully for user ${userId}`);
