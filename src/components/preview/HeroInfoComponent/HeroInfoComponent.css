@@ -1,0 +1,59 @@
+.hero-info-container {
+  margin-left: 5%;
+  font-family: "Poppins", sans-serif;
+}
+.hero-button-with-intro {
+  display: flex;
+}
+
+.hero-button-container {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-intro span {
+  font-size: 72px;
+  font-weight: 800;
+}
+
+.hero-span-1 {
+  line-height: 100px;
+  color: white;
+}
+.hero-span-2 {
+  line-height: 100px;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.hero-span-container {
+  max-width: 470px;
+}
+
+.hero-info-container .hero-p {
+  font-weight: 700;
+  line-height: 150px;
+  margin: 0;
+  font-size: 72px;
+  color: white;
+}
+.hero-info-container .hero-span-info {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 30.8px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 10px;
+}
