@@ -31,6 +31,9 @@ export default function GetStarted() {
       initial="hidden"
       animate="visible"
       whileHover="hover"
+      drag
+      dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
+      dragElastic={1}
       className="custom-button"
       onClick={() => {
         navigate("/login");

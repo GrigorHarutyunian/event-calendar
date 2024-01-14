@@ -59,9 +59,9 @@ export default function HeroInfoComponent() {
         className="hero-span-container"
       >
         <span className="hero-span-info">
-          Our team of experts uses a methodology to identify the credit cards
-          most likely to fit your needs.We examine annual percentage rares,
-          annual fees.
+          Efficiently organize your schedule with our intuitive calendar and
+          events website. Seamlessly manage events, set reminders, and stay on
+          track effortlessly. Simplify your life, one click at a time.
         </span>
       </motion.div>
     </div>

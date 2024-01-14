@@ -7,6 +7,7 @@ export default function LabelComponent({ text }) {
     <motion.span
       initial={{
         x: "100vw",
+        textShadow: "0px 0px 15px rgb(0, 0, 0)",
       }}
       animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
       transition={{

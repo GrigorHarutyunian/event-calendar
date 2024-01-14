@@ -59,6 +59,26 @@ export default function Login() {
       label: "Password",
     },
   ];
+
+  const loginContainerVariants = {
+    hidden: {
+      x: "100vw",
+      boxShadow: "0px 0px 15px rgb(255, 255, 255)",
+      y: "100vw",
+      rotate: 360,
+    },
+    visible: {
+      x: 0,
+      y: 0,
+      rotate: 0,
+      transition: {
+        delay: 0.9,
+        duration: 1.2,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
+  };
   // const isLoggedIn = localStorage.getItem("loggedIn");
   // useEffect(() => {
   //   if (isLoggedIn) {
@@ -80,19 +100,9 @@ export default function Login() {
           className="form-container-login"
         >
           <motion.form
-            initial={{
-              x: "40vw",
-              y: "40vw",
-              rotateX: 90,
-              rotateY: 90,
-            }}
-            animate={{ x: 0, y: 0, rotateZ: 0, rotateX: 0, rotateY: 0 }}
-            transition={{
-              delay: 0.9,
-              duration: 1.2,
-              type: "spring",
-              stiffness: 100,
-            }}
+            variants={loginContainerVariants}
+            initial="hidden"
+            animate="visible"
             className="login-form"
             onSubmit={onSubmitHandler}
           >
