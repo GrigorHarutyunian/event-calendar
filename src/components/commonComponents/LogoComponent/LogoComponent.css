@@ -1,5 +1,9 @@
 .header-logo-container {
   display: flex;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
   justify-content: flex-start;
   margin-left: 20px;
   cursor: pointer;
@@ -17,4 +21,35 @@
   margin: 0;
   width: 100%;
   height: 100%;
+}
+
+.logo-span {
+  transform: rotate(-7deg);
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 60px;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.logo-bg {
+  position: absolute;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  right: 20;
+  bottom: 20;
+  background: linear-gradient(180deg, rgba(188, 165, 255, 0) 0%, #214d76 100%);
+  filter: blur(123px);
 }
