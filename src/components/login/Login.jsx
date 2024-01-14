@@ -15,10 +15,11 @@ import {
 } from "../../handlers";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Login() {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector((store) => store.userIsLogin);
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [email, setEmail] = useState("");
@@ -79,12 +80,11 @@ export default function Login() {
       },
     },
   };
-  // const isLoggedIn = localStorage.getItem("loggedIn");
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     navigate("/home");
-  //   }
-  // }, [isLoggedIn]);
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/home");
+    }
+  }, [isLoggedIn, navigate]);
 
   return (
     <div className="login-container">
@@ -103,6 +103,7 @@ export default function Login() {
             variants={loginContainerVariants}
             initial="hidden"
             animate="visible"
+            exit="exit"
             className="login-form"
             onSubmit={onSubmitHandler}
           >

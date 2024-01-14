@@ -24,7 +24,6 @@ export function onSubmitHandlerForLogin(
         const { success, user, message } = await checkUser(data);
 
         if (success) {
-          // add get local
           dispatch(userIsLogin());
           dispatch(currentUser(user.description));
           navigate("/home");

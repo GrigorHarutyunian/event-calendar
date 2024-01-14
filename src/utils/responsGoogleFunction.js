@@ -18,11 +18,9 @@ export function responsGoogleFunction(navigate, dispatch) {
     try {
       const a = await getUser(doc.id);
       if (a) {
-        // get local storige user
         dispatch(userIsLogin());
         dispatch(currentUser(a.description));
       } else {
-        //get local storige user
         addUser(doc);
         dispatch(userIsLogin());
         dispatch(currentUser(doc));
