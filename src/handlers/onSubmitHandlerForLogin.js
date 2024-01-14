@@ -2,6 +2,7 @@ import { checkUser } from "../firebase/service/checkUser";
 import { userIsLogin } from "../redux/slices/userIsLoginSlice";
 import { currentUser } from "../redux/slices/userDataSlice";
 import { generateUserId } from "../utils/generateUserIdWithEmail";
+import { sendEmail } from "../utils/sendEmail";
 export function onSubmitHandlerForLogin(
   email,
   password,
@@ -26,6 +27,7 @@ export function onSubmitHandlerForLogin(
         if (success) {
           dispatch(userIsLogin());
           dispatch(currentUser(user.description));
+          sendEmail(email, "Hello");
           navigate("/home");
         } else {
           console.log(message);

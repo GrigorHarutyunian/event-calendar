@@ -1,4 +1,5 @@
 import { getDatabase, ref, update, get } from "firebase/database";
+import { sendEmail } from "../../../utils/sendEmail";
 import { database } from "../../firebase-config";
 import { GetEvents } from "../GetEvents";
 
@@ -10,7 +11,8 @@ export async function upDateEvent(
   icon,
   description,
   dispatch,
-  type
+  type,
+  email
 ) {
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
@@ -38,7 +40,8 @@ export async function upDateEvent(
       ],
       busyHours: [...busyHours, newTimeRange],
     });
-
+    //email [time, title, email]
+    sendEmail(email, "hello");
     console.log(`Event added successfully for user ${userId}`);
   } catch (error) {
     console.error(`Error adding event for user ${userId}:`, error);

@@ -27,7 +27,7 @@ import { MyAutocomplete } from "../../commonComponents/InputAutocomplete/Autocom
 
 export const ModalAddEvent = () => {
   const selectedDayString = useSelector((store) => store.selectedDay);
-  const userId = useSelector((store) => store.userData.id);
+  const user = useSelector((store) => store.userData);
   const friends = useSelector((store) => store.userFirends);
   const [friendsInfo, setFriendsInfo] = useState([]);
   const [title, setTitle] = useState("");
@@ -89,7 +89,7 @@ export const ModalAddEvent = () => {
         dispatch,
         icon,
         description,
-        userId,
+        user,
         friendsInfo
       );
   };
