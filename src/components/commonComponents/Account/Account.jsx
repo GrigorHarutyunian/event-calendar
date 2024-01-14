@@ -8,7 +8,7 @@ export default function Account() {
   return (
     <div className="user-account-container">
       <div className="user-logo-container">
-        <img className="user-logo-image" src={user.image} />
+        <img className="user-logo-image" src={user?.image} alt="user" />
       </div>
     </div>
   );

@@ -10,9 +10,10 @@ import LogoCal from "./LogoCal.png";
 import Logo from "./Logo.png";
 import Calendar from "./Calendar.png";
 import CalLog from "./CalLog.png";
-
+import MyLogo from "./MyLogo.png";
 export {
   Login,
+  MyLogo,
   CalLog,
   Calendar,
   Logo,
