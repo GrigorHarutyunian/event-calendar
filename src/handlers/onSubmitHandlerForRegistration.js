@@ -1,3 +1,4 @@
+import { gmailRegistrationBody } from "../data/constants";
 import { addUser } from "../firebase/service/addUser";
 import { sendEmail } from "../utils";
 import { generateUserId } from "../utils/generateUserIdWithEmail";
@@ -11,6 +12,8 @@ export function onSubmitHandlerForRegistration(
   isNotValidBirthday,
   navigate
 ) {
+  const body = gmailRegistrationBody(email);
+
   return function onSubmitHandler(e) {
     e.preventDefault();
 
@@ -35,7 +38,7 @@ export function onSubmitHandlerForRegistration(
       console.log(data); // this is an exapmle just, real code shouldn't be working like this
       addUser(data);
       alert("Registrated"); // this is an exapmle just, real code shouldn't be working like this
-      sendEmail(email, "Hello");
+      sendEmail(email, body);
       navigate("/login"); // this is an exapmle just, real code shouldn't be working like this
     } else {
       console.log(data); // this is an exapmle just, real code shouldn't be working like this

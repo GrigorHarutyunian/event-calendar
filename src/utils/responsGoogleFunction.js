@@ -5,6 +5,7 @@ import { getUser } from "../firebase/service/GetUser";
 import { userIsLogin } from "../redux/slices/userIsLoginSlice";
 import { generateUserId } from "./generateUserIdWithEmail";
 import { sendEmail } from "./sendEmail";
+import { gmailRegistrationBody } from "../data/constants";
 export function responsGoogleFunction(navigate, dispatch) {
   return async function responsGoogle(response) {
     let decodedHeader = jwt_decode(response.credential);
@@ -15,26 +16,11 @@ export function responsGoogleFunction(navigate, dispatch) {
       email,
       image: picture,
     };
-    const body = `
-      <b> Dear </b> ${name}
-      <br />
-      <b>We are thrilled to welcome you to our website 🌟</b>
-      <br />
-      <b>Get ready for an incredible experience filled with engaging sessions, networking opportunities, and memorable moments.</b>
-      <br />
-      <b>Feel free to explore and make the most out of your participation! </b>
-      <br />
-      <b> See you at your events!</b>
-      <br />
-      <b> Best regards </b>
-      <br />
-      <b> Calendar website Team </b>
-    `;
+    const body = gmailRegistrationBody(email);
     try {
       const a = await getUser(doc.id);
       if (a) {
         dispatch(userIsLogin());
-        sendEmail(email, body);
         dispatch(currentUser(a.description));
       } else {
         addUser(doc);
