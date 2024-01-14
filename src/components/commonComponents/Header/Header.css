@@ -1,4 +1,31 @@
-.header-container {
+.main-header-container {
+  color: white;
+  height: 50px;
+  background: rgb(5, 0, 60);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(5, 0, 60, 1) 32%,
+    rgba(0, 0, 20, 1) 86%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(5, 0, 60, 1) 32%,
+    rgba(0, 0, 20, 1) 86%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(5, 0, 60, 1) 32%,
+    rgba(0, 0, 20, 1) 86%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#05003c",endColorstr="#000014",GradientType=1);
+}
+
+.main-header-logo-info-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header-time-container {
   display: flex;
   justify-content: flex-end;
 }
