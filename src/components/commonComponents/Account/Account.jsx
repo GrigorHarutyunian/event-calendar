@@ -7,11 +7,12 @@ import { pageReloader } from "../../../utils/pageReloader";
 import { userIsLogin } from "../../../redux/slices/userIsLoginSlice";
 export default function Account() {
   const user = useSelector((store) => store.userData);
+  const userImage = user.image;
   const dispatch = useDispatch();
   return (
     <div className="user-account-container">
       <div className="user-logo-container">
-        <img className="user-logo-image" src={user?.image} alt="user" />
+        <img className="user-logo-image" src={userImage} alt="user" />
       </div>
       <motion.div
         whileHover={{ scale: 1.3 }}
