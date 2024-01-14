@@ -44,6 +44,14 @@ export const ModalAddEvent = () => {
   const guestsRef = useRef(null);
   const descriptionRef = useRef(null);
 
+  let initialMousePos = { x: 0, y: 0 };
+  let initialModalPos = {
+    x: modalRef.current
+      ? window.innerWidth / 2 - modalRef.current.offsetWidth / 2
+      : 0,
+    y: 0,
+  };
+
   const handleMouseDown = (e) => {
     if (
       e.target.tagName.toLowerCase() === "input" ||
@@ -52,13 +60,24 @@ export const ModalAddEvent = () => {
       return;
     }
 
+    initialMousePos = { x: e.clientX, y: e.clientY };
+    initialModalPos = {
+      x: modalRef.current.offsetLeft,
+      y: modalRef.current.offsetTop,
+    };
+
     document.addEventListener("mousemove", handleMouseMove);
     document.addEventListener("mouseup", handleMouseUp);
   };
 
   const handleMouseMove = (e) => {
-    let x = e.clientX - modalRef.current.offsetWidth / 2;
-    let y = e.clientY - modalRef.current.offsetHeight / 2;
+    if (!modalRef.current) return;
+
+    let dx = e.clientX - initialMousePos.x;
+    let dy = e.clientY - initialMousePos.y;
+
+    let x = initialModalPos.x + dx;
+    let y = initialModalPos.y + dy;
 
     if (x < 0) x = 0;
     if (y < 0) y = 0;
