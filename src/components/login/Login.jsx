@@ -79,6 +79,16 @@ export default function Login() {
         stiffness: 100,
       },
     },
+    exit: {
+      x: "100vw",
+      y: "100vw",
+      transition: {
+        delay: 0.4,
+        duration: 1.2,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
   };
   useEffect(() => {
     if (isLoggedIn) {

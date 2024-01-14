@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <AnimatePresence>
-        <Routes location={location} key={location.key}>
+      <AnimatePresence mode="wait">
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Preview />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registration" element={<Registration />} />

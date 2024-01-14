@@ -40,6 +40,16 @@ export default function Registration() {
         stiffness: 100,
       },
     },
+    exit: {
+      x: "-100vw",
+      y: "-100vw",
+      transition: {
+        delay: 0.4,
+        duration: 1.2,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
   };
   return (
     <div className="backVideoWithForm">
@@ -57,6 +67,7 @@ export default function Registration() {
           variants={regContainerVariants}
           initial="hidden"
           animate="visible"
+          exit="exit"
           className="registration-container"
         >
           <LabelComponent text="Registration" />
