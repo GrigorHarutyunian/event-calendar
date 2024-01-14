@@ -6,7 +6,7 @@ import ButtonsComponent from "./ButtonsComponent/ButtonsComponent.jsx";
 import DivOfInputComponents from "./DivOfInputComponents/DivOfInputComponents.jsx";
 import Loading from "./Loading/Loading.jsx";
 import SelectComponent from "./SelectComponent/SelectComponent.jsx";
-
+import Header from "./Header/Header.jsx";
 export {
   LabelComponent,
   FormFooterComponent,
@@ -16,4 +16,5 @@ export {
   DivOfInputComponents,
   Loading,
   SelectComponent,
+  Header,
 };
