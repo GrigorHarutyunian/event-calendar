@@ -76,6 +76,7 @@ export const HomePage = () => {
         ) : (
           <Calendar userID={userID} currentDate={currentDate} />
         )}
+        <div className="snow"></div>
         <EventsDay userID={userID} />
       </div>
     </div>
