@@ -140,7 +140,7 @@ td.today {
   /* max-width: 1200px; */
   width: 80%;
   height: 80%;
-  background: #f0fff0;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -151,7 +151,7 @@ td.today {
   position: relative;
   width: 70%;
   height: 70%;
-  background: #f0fff0;
+  background: white;
   display: flex;
   border-radius: 7px;
   justify-content: flex-start;
@@ -239,6 +239,7 @@ td.day {
   font-weight: normal;
   cursor: pointer;
   transition: none;
+  text-align: center;
 }
 
 td.day:hover {

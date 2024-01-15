@@ -1,10 +1,9 @@
 .cursor-div {
   cursor: pointer;
   position: absolute;
-  top: 0;
+  top: 12px;
   left: 10px;
   z-index: 1111111;
-
 }
 
 .menu-hidden {
@@ -15,18 +14,19 @@
   left: 0;
   transition: ease-out 1.5s;
   transform: translateX(-100%);
-
+  z-index: 1;
 }
 
 .burger-menu {
   width: 15%;
   height: 100%;
   /* background: red; */
+  z-index: 112331;
 
-  background: #A3BB98;
+  background: #080741;
   position: absolute;
   left: 0px;
-  z-index: 112331;
+  /* z-index: 112331; */
   transform: translateX(0%);
   transition: ease-out 1.5s;
 }
@@ -35,12 +35,10 @@
   height: 4px;
   margin-top: 6px;
   /* background: white; */
-  background:#f0fff0;
+  background: #f0fff0;
   cursor: pointer;
   transition: transform 1.5s ease-out;
-
 }
-
 
 .burger-clicked {
   width: 31px;
@@ -50,23 +48,19 @@
   margin-left: 10px;
   cursor: pointer;
   transition: transform 1.5s ease-out;
-
 }
 
 .burger-clicked:nth-child(1) {
   transform: rotate(45deg) translate(0.75em, 1.3em);
   transition: ease-out 0.5s;
-
 }
 
 .burger-clicked:nth-child(2) {
   transform: scale(0);
   transition: ease-out 0.5s;
-
 }
 
 .burger-clicked:nth-child(3) {
   transform: rotate(135deg) translate(0.99em, -0.3em);
   transition: ease-out 0.5s;
-
 }
