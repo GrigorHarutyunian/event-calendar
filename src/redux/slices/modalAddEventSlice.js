@@ -7,8 +7,11 @@ const modalAddEventSlice = createSlice({
     changeState: (state, action) => {
       return action.payload;
     },
+    modalReloader: () => {
+      return false;
+    },
   },
 });
 
-export const { changeState } = modalAddEventSlice.actions;
+export const { changeState, modalReloader } = modalAddEventSlice.actions;
 export default modalAddEventSlice.reducer;

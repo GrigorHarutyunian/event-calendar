@@ -5,6 +5,7 @@ import { eventsReloader } from "../redux/slices/eventsSlice";
 import { selectedDayReloader } from "../redux/slices/selectedDaySlice";
 import { userDataReloader } from "../redux/slices/userDataSlice";
 import { userIsLoggedReloader } from "../redux/slices/userIsLoginSlice";
+import { modalReloader } from "../redux/slices/modalAddEventSlice";
 
 export const pageReloader = (dispatch) => {
   const arr = [
@@ -15,6 +16,7 @@ export const pageReloader = (dispatch) => {
     selectedDayReloader(),
     userDataReloader(),
     userIsLoggedReloader(),
+    modalReloader(),
   ];
   arr.forEach((func) => {
     dispatch(func);
