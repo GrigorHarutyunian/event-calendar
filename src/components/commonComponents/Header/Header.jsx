@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import { changeCalendarType } from "../../../redux/slices/calendarTypeSlice";
 import { selectedDay } from "../../../redux/slices/selectedDaySlice";
 import { thisMonth } from "../../../redux/slices/currentDateSlice";
-
 export default function Header() {
   const dispatch = useDispatch();
   const calendarForm = useSelector((store) => store.calendarType);
