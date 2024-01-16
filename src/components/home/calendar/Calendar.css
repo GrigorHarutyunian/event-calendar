@@ -151,10 +151,11 @@ td.today {
   position: relative;
   width: 70%;
   height: 70%;
-  background: white;
+  background: #ffffff91;
   display: flex;
   border-radius: 7px;
   justify-content: flex-start;
+  z-index: 3;
 }
 
 .calendar-week-list {
