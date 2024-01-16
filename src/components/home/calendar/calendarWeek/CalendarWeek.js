@@ -134,13 +134,16 @@ export const CalendarWeek = ({ currentDate }) => {
       </header>
       <div className="calendar-week-list">
         {weekDaysList.map((date, index) => (
-          <div className="week-days-date" key={index}>
-            <div key={date} className="week-day">
+          <div className="week-days-date" key={date + index}>
+            <div key={date + "week-day" + index} className="week-day">
+              {weekDays[date.getDay()]}
+            </div>
+            <div key={date + "week-date" + index} className="week-date">
               {date.getDate()}
             </div>
             <div style={{ height: "100%" }}>
               <TimeGrid
-                key={date}
+                key={date + "time-grid" + index}
                 date={date}
                 selectedHours={selectedHours}
                 setSelectedHours={setSelectedHours}
