@@ -288,11 +288,21 @@ td.today {
 .time-grid-item {
   border-bottom: 1px solid #ccc;
   color: #7077a1;
-  /* color: transparent; */
+   /* color: transparent;  */
   text-align: left;
   font-size: 12px;
+
+}
+.time-grid-item:hover {
+  background-color: #e0e0e0; 
 }
 
 .time-grid-item:first-child {
   border-top: none;
 }
+
+.time-grid-item.selected {
+  background-color: #e0e0e0; 
+}
+
+

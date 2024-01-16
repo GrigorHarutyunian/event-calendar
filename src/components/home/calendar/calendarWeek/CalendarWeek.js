@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { prevWeek, nexTWeek } from "../../../../redux/slices/currentDateSlice";
 import { IconButton } from "@mui/material";
 import { ChevronRightRounded } from "@mui/icons-material";
@@ -21,13 +21,51 @@ const monthNames = [
 ];
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const TimeGrid = () => {
-  const hours = Array.from({ length: 24 }, (_, i) => i); // Adjust as needed
+const TimeGrid = ({ date, selectedHours, setSelectedHours }) => {
+  const hours = Array.from({ length: 24 }, (_, i) => i);
+  const [dragStart, setDragStart] = useState(null);
+  const [dragEnd, setDragEnd] = useState(null);
+  const [dragging, setDragging] = useState(false);
+
+  const handleMouseDown = (hour) => {
+    setDragStart(hour);
+    setDragEnd(hour);
+    setDragging(true);
+  };
+
+  const handleMouseOver = (hour) => {
+    if (dragging) {
+      setDragEnd(hour);
+    }
+  };
+
+  const handleMouseUp = () => {
+    console.log(`Selected hours: ${dragStart} to ${dragEnd}`);
+    console.log(`Selected day: ${date.getDate()}`);
+    console.log(`Selected month: ${monthNames[date.getMonth()]}`);
+    console.log(`Selected year: ${date.getFullYear()}`);
+
+    setSelectedHours({ start: dragStart, end: dragEnd, date });
+    setDragging(false);
+  };
 
   return (
     <div className="time-grid">
       {hours.map((hour) => (
-        <div key={hour} className="time-grid-item">
+        <div
+          key={hour}
+          className={`time-grid-item ${
+            selectedHours &&
+            selectedHours.date.getDate() === date.getDate() &&
+            selectedHours.start <= hour &&
+            hour <= selectedHours.end
+              ? "selected"
+              : ""
+          }`}
+          onMouseDown={() => handleMouseDown(hour)}
+          onMouseOver={() => handleMouseOver(hour)}
+          onMouseUp={handleMouseUp}
+        >
           {hour}:00
         </div>
       ))}
@@ -37,8 +75,8 @@ const TimeGrid = () => {
 
 export const CalendarWeek = ({ currentDate }) => {
   const dispatch = useDispatch();
-  const event = useSelector((store) => store.events);
-  const eventsArr = [...event.events];
+  // const event = useSelector((store) => store.events);
+  // const eventsArr = [...event.events];
 
   function generateWeeklyDays(startDate) {
     const daysOfWeek = [];
@@ -78,6 +116,8 @@ export const CalendarWeek = ({ currentDate }) => {
   }
 
   const weekDaysList = generateWeeklyDays(currentDate);
+  const [selectedHours, setSelectedHours] = useState(null);
+
   return (
     <div className="calendar week">
       <header className="calendar-header">
@@ -93,16 +133,21 @@ export const CalendarWeek = ({ currentDate }) => {
         </IconButton>
       </header>
       <div className="calendar-week-list">
-        {weekDays.map((day, index) => (
-          <div className="week-days-date" key={index}>
-            <div key={day} className="week-day">
-              {day}
+        {weekDaysList.map((date, index) => (
+          <div className="week-days-date" key={date + index}>
+            <div key={date + "week-day" + index} className="week-day">
+              {weekDays[date.getDay()]}
+            </div>
+            <div key={date + "week-date" + index} className="week-date">
+              {date.getDate()}
             </div>
             <div style={{ height: "100%" }}>
-              <div key={weekDaysList[index].getDate()} className="week-date">
-                {weekDaysList[index].getDate()}
-              </div>
-              <TimeGrid />
+              <TimeGrid
+                key={date + "time-grid" + index}
+                date={date}
+                selectedHours={selectedHours}
+                setSelectedHours={setSelectedHours}
+              />
             </div>
           </div>
         ))}
