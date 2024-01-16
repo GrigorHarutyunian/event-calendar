@@ -12,6 +12,13 @@ export default function HeroImageComponent() {
         duration: 1.2,
       },
     },
+    exit: {
+      scale: 0,
+      transition: {
+        delay: 1.2,
+        duration: 1.2,
+      },
+    },
   };
   return (
     <div className="heroImage-container">
@@ -19,6 +26,7 @@ export default function HeroImageComponent() {
         variants={imageVariants}
         initial="hidden"
         animate="visible"
+        exit="exit"
         className="hero-image-container"
       >
         <img className="hero-img" src={Picture3ForPreview} alt="Preview" />

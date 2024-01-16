@@ -17,6 +17,7 @@ body {
 
 .form-container-login {
   background-color: rgba(0, 0, 0, 0.5);
+  padding-top: 90px;
   position: absolute;
   display: flex;
   flex-direction: column;

@@ -10,7 +10,7 @@ body {
 
 .page-container {
   background-color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 60px;
+  padding-top: 60px;
   position: absolute;
   display: flex;
   flex-direction: column;
