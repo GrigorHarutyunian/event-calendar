@@ -15,11 +15,27 @@ export default function HeroInfoComponent() {
         stiffness: 100,
       },
     },
+    exit: {
+      x: "100vw",
+      transition: {
+        delay: 1,
+        duration: 1.1,
+        type: "spring",
+        stiffness: 100,
+      },
+    },
   };
   const labelVariant2 = {
     hidden: { scale: 0 },
     visible: {
       scale: 1,
+      transition: {
+        delay: 2,
+        duration: 1.2,
+      },
+    },
+    exit: {
+      scale: 0,
       transition: {
         delay: 2,
         duration: 1.2,
@@ -34,6 +50,7 @@ export default function HeroInfoComponent() {
           variants={labelVariant1}
           initial="hidden"
           animate="visible"
+          exit="exit"
           className="hero-intro"
         >
           <span className="hero-span-1">The Next</span>
@@ -48,6 +65,7 @@ export default function HeroInfoComponent() {
         variants={labelVariant1}
         initial="hidden"
         animate="visible"
+        exit="exit"
         className="hero-p"
       >
         Event corditating
@@ -56,6 +74,7 @@ export default function HeroInfoComponent() {
         variants={labelVariant2}
         initial="hidden"
         animate="visible"
+        exit="exit"
         className="hero-span-container"
       >
         <span className="hero-span-info">

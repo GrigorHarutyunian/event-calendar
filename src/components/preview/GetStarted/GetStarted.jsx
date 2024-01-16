@@ -18,6 +18,16 @@ export default function GetStarted() {
         stiffness: 70,
       },
     },
+    exit: {
+      x: "-100vw",
+      rotate: 360,
+      transition: {
+        delay: 1.5,
+        duration: 2.4,
+        type: "spring",
+        stiffness: 70,
+      },
+    },
     hover: {
       scale: 1.3,
       textShadow: "0px 0px 15px rgb(0, 0, 0)",
@@ -31,6 +41,7 @@ export default function GetStarted() {
       initial="hidden"
       animate="visible"
       whileHover="hover"
+      exit="exit"
       drag
       dragConstraints={{ left: 0, top: 0, right: 0, bottom: 0 }}
       dragElastic={1}
