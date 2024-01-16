@@ -19,6 +19,11 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import { Autumn } from "./weathers/autumn/Autumn.js";
+import { Winter } from "./weathers/winter/Winter.js";
+import { Summer } from "./weathers/summer/Summer.js";
+import { Spring } from "./weathers/spring/Spring.js";
+
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
@@ -76,7 +81,10 @@ export const HomePage = () => {
         ) : (
           <Calendar userID={userID} currentDate={currentDate} />
         )}
-        <div className="snow"></div>
+        {/* <Winter /> */}
+        {/* <Autumn /> */}
+        {/* <Spring /> */}
+        <Summer />
         <EventsDay userID={userID} />
       </div>
     </div>
