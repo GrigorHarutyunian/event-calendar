@@ -1,4 +1,4 @@
-import React from "react"; // Make sure to import React
+import React from "react";
 import "../Calendar.css";
 import "./CalendarYear.css";
 import { IconButton } from "@mui/material";
@@ -64,7 +64,11 @@ export const CalendarYear = ({ currentDate, thisDay, userID }) => {
         }}
       >
         {arr.map((v, i) => (
-          <div key={i} className="calendar-years">
+          // <div key={i} className="calendar-years">
+          <div
+            key={i}
+            className={`calendar-years ${i >= 10 ? "center-month" : ""}`}
+          >
             <p>
               {monthNames[new Date(currentDate.getFullYear(), i, 1).getMonth()]}
             </p>

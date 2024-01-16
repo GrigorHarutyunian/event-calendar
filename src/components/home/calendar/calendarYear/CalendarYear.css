@@ -1,7 +1,14 @@
 .calendar-years {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: auto;
+   flex-direction: column;
+  /* justify-content: center; */
+  justify-content: start;
+   align-items: center;  
+   overflow: auto;
+   height: 250px; 
+}
+
+.center-month {
+  margin: auto; 
+
 }
