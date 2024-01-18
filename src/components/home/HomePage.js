@@ -16,18 +16,17 @@ import { GetEvents } from "../../firebase/service/GetEvents.js";
 
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { Autumn } from "./weathers/autumn/Autumn.js";
 import { Winter } from "./weathers/winter/Winter.js";
 import { Summer } from "./weathers/summer/Summer.js";
 import { Spring } from "./weathers/spring/Spring.js";
+import { useIsLoggin } from "../../hooks";
 
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
-  const navigate = useNavigate();
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   const thisDay = useSelector((store) => store.selectedDay);
   const date = new Date(thisDay);
@@ -43,11 +42,7 @@ export const HomePage = () => {
     GetEvents(dispatch, currentDateText, userID);
   }, []);
 
-  useEffect(() => {
-    if (!isLoggedIn) {
-      navigate("/login");
-    }
-  }, [isLoggedIn, navigate]);
+  useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
 
   return (
     <div className="home-page">

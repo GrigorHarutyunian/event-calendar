@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Login.css";
 import {
   BackgroundVideoComp,
@@ -16,6 +16,7 @@ import {
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { useIsLoggin } from "../../hooks";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -90,11 +91,8 @@ export default function Login() {
       },
     },
   };
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/home");
-    }
-  }, [isLoggedIn, navigate]);
+
+  useIsLoggin(isLoggedIn, "/home", isLoggedIn);
 
   return (
     <div className="login-container">
