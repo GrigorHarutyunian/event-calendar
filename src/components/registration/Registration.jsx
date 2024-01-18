@@ -9,19 +9,15 @@ import {
 } from "../commonComponents";
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useIsLoggin } from "../../hooks";
 
 export default function Registration() {
   const [image, setImage] = useState(null);
-  const navigate = useNavigate();
   const uploadImage = onChangeHandlerForImageInput(setImage);
   const isLoggedIn = useSelector((store) => store.userIsLogin);
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/home");
-    }
-  }, [isLoggedIn, navigate]);
+  useIsLoggin(isLoggedIn, "/home", isLoggedIn);
+
   const regContainerVariants = {
     hidden: {
       x: "-100vw",
