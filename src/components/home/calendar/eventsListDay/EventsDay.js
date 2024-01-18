@@ -46,29 +46,39 @@ export const EventsDay = ({ userID }) => {
           </h4>
         </header>
 
-        {SorginEventsArray(eventsArr).map((arr) => {
-          return (
-            <div key={arr.id} className="event-item">
-              <h5>{arr.title}</h5>
-              <p>{arr.time}</p>
-              <IconButton
-                onClick={() =>
-                  RemoveEvent(
-                    dispatch,
-                    selectedDayString,
-                    arr.id,
-                    selectedDayString + " " + arr.time.split("-")[0],
-                    userID
-                  )
-                }
-                aria-label="delete"
-                size="midlle"
-              >
-                <DeleteIcon fontSize="inherit" />
-              </IconButton>
-            </div>
-          );
-        })}
+        {SorginEventsArray(eventsArr).length > 0 ? (
+          SorginEventsArray(eventsArr).map((arr) => {
+            return (
+              <div key={arr.id} className="event-item">
+                <div className="event-title">
+                  <h5>{arr.title}</h5>
+                </div>
+                <div className="event-time">
+                  <p>{arr.time}</p>
+                </div>
+                <IconButton
+                  onClick={() =>
+                    RemoveEvent(
+                      dispatch,
+                      selectedDayString,
+                      arr.id,
+                      selectedDayString + " " + arr.time.split("-")[0],
+                      userID
+                    )
+                  }
+                  aria-label="delete"
+                  size="midlle"
+                >
+                  <DeleteIcon fontSize="inherit" />
+                </IconButton>
+              </div>
+            );
+          })
+        ) : (
+          <div className="no-events">
+            <p>No events for this day</p>
+          </div>
+        )}
       </div>
       <Fab
         onClick={() => dispatch(changeState(true))}
