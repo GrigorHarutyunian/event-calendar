@@ -30,8 +30,13 @@ export default function GetStarted() {
     },
     hover: {
       scale: 1.3,
+      rotate: 360,
       textShadow: "0px 0px 15px rgb(0, 0, 0)",
       boxShadow: "0px 0px 15px rgb(255, 255, 255)",
+      transition: {
+        delay: 0,
+        duration: 0.3,
+      },
     },
   };
 
