@@ -18,7 +18,6 @@ export const CalendarHeader = ({ currentDate, thisDay }) => {
     "November",
     "December",
   ];
-  console.log(currentDate);
   const currentMonth = monthNames[currentDate.getMonth()];
   const currentYear = currentDate.getFullYear();
   const dispatch = useDispatch();

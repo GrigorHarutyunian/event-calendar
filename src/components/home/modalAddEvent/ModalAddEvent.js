@@ -24,6 +24,7 @@ import ImageIcon from "@mui/icons-material/Image";
 import SubjectIcon from "@mui/icons-material/Subject";
 import CakeIcon from "@mui/icons-material/Cake";
 import { MyAutocomplete } from "../../commonComponents/InputAutocomplete/Autocomplete";
+import dayjs from "dayjs";
 
 export const ModalAddEvent = () => {
   const selectedDayString = useSelector((store) => store.selectedDay);
@@ -36,13 +37,16 @@ export const ModalAddEvent = () => {
   const [description, setDescription] = useState("");
   const [position, setPosition] = useState({ x: 500, y: 150 });
   const dispatch = useDispatch();
-  console.log(friendsInfo);
+
   const modalRef = useRef();
   const inputRef = useRef(null);
   const timeRef = useRef(null);
   const iconRef = useRef(null);
   const guestsRef = useRef(null);
   const descriptionRef = useRef(null);
+
+  const calendarTypes = useSelector((store) => store.calendarType);
+  const selectedTime = useSelector((store) => store.selectedTime);
 
   let initialMousePos = { x: 0, y: 0 };
   let initialModalPos = {
@@ -161,9 +165,17 @@ export const ModalAddEvent = () => {
             <div style={{ width: "65%" }}>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <SingleInputTimeRangeField
+                  defaultValue={
+                    calendarTypes === "Week"
+                      ? [
+                          dayjs(`2022-04-17T${selectedTime.start}`),
+                          dayjs(`2022-04-17T${selectedTime.end}`),
+                        ]
+                      : undefined // Set to undefined if you don't want a default value for other calendar types
+                  }
                   inputRef={timeRef}
                   onChange={handleTime}
-                  label="From - To"
+                  label="Controlled field"
                 />
               </LocalizationProvider>
             </div>
