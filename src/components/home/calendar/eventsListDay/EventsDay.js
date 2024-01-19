@@ -82,7 +82,7 @@ export const EventsDay = ({ userID }) => {
       </div>
       <Fab
         onClick={() => dispatch(changeState(true))}
-        style={{ position: "absolute", bottom: "12%", right: "3%" }}
+        style={{ position: "absolute", bottom: "4%", right: "3%" }}
         color="secondary"
         aria-label="add"
       >

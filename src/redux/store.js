@@ -19,7 +19,7 @@ import userDataReducer from "./slices/userDataSlice.js";
 import userIsLoginReducer from "./slices/userIsLoginSlice.js";
 import userFirendsReducer from "./slices/userFriendsSlice.js";
 import persistStore from "redux-persist/es/persistStore";
-// import weekEventsReducer from "./slices/weekEventsSlice";
+import selectedTimeReducer from "./slices/selectedTimeSlice.js";
 
 const persistConfig = {
   key: "root",
@@ -36,7 +36,7 @@ const rootReducer = combineReducers({
   userData: userDataReducer,
   userIsLogin: userIsLoginReducer,
   userFirends: userFirendsReducer,
-  // weekEvents: weekEventsReducer,
+  selectedTime: selectedTimeReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

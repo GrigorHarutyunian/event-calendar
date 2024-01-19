@@ -18,11 +18,9 @@ import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 
-import { Autumn } from "./weathers/autumn/Autumn.js";
-import { Winter } from "./weathers/winter/Winter.js";
-import { Summer } from "./weathers/summer/Summer.js";
-import { Spring } from "./weathers/spring/Spring.js";
 import { useIsLoggin } from "../../hooks";
+
+import { getWeather } from "./weathers/getWeather.js";
 
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
@@ -31,12 +29,12 @@ export const HomePage = () => {
   const thisDay = useSelector((store) => store.selectedDay);
   const date = new Date(thisDay);
   const currentDate = new Date(currentDateText);
-
   const burgerState = useSelector((state) => state.burger);
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
   const userID = useSelector((store) => store.userData.id);
-
+  console.log(thisDay);
+  console.log(currentDate);
   useEffect(() => {
     GetFriendsList(dispatch);
     GetEvents(dispatch, currentDateText, userID);
@@ -76,10 +74,7 @@ export const HomePage = () => {
         ) : (
           <Calendar userID={userID} currentDate={currentDate} />
         )}
-        {/* <Winter /> */}
-        {/* <Autumn /> */}
-        {/* <Spring /> */}
-        <Summer />
+        {getWeather(currentDate.getMonth())}
         <EventsDay userID={userID} />
       </div>
     </div>

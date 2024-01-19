@@ -4,7 +4,10 @@ import { prevWeek, nexTWeek } from "../../../../redux/slices/currentDateSlice";
 import { IconButton } from "@mui/material";
 import { ChevronRightRounded } from "@mui/icons-material";
 import { ChevronLeftRounded } from "@mui/icons-material";
-
+import { setDate } from "../../../../redux/slices/currentDateSlice";
+import { selectedDay } from "../../../../redux/slices/selectedDaySlice";
+import { getSelectedTime } from "../../../../redux/slices/selectedTimeSlice";
+import { GetEvents } from "../../../../firebase/service/GetEvents";
 const monthNames = [
   "January",
   "February",
@@ -21,12 +24,12 @@ const monthNames = [
 ];
 const weekDays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
 
-const TimeGrid = ({ date, selectedHours, setSelectedHours }) => {
+const TimeGrid = ({ userID, date, selectedHours, setSelectedHours }) => {
   const hours = Array.from({ length: 24 }, (_, i) => i);
   const [dragStart, setDragStart] = useState(null);
   const [dragEnd, setDragEnd] = useState(null);
   const [dragging, setDragging] = useState(false);
-
+  const dispatch = useDispatch();
   const handleMouseDown = (hour) => {
     setDragStart(hour);
     setDragEnd(hour);
@@ -44,8 +47,11 @@ const TimeGrid = ({ date, selectedHours, setSelectedHours }) => {
     console.log(`Selected day: ${date.getDate()}`);
     console.log(`Selected month: ${monthNames[date.getMonth()]}`);
     console.log(`Selected year: ${date.getFullYear()}`);
-
+    dispatch(setDate(date.toDateString()));
+    dispatch(selectedDay(date.toDateString()));
+    dispatch(getSelectedTime({ start: dragStart, end: dragEnd }));
     setSelectedHours({ start: dragStart, end: dragEnd, date });
+    GetEvents(dispatch, date.toDateString(), userID);
     setDragging(false);
   };
 
@@ -73,7 +79,7 @@ const TimeGrid = ({ date, selectedHours, setSelectedHours }) => {
   );
 };
 
-export const CalendarWeek = ({ currentDate }) => {
+export const CalendarWeek = ({ userID, currentDate }) => {
   const dispatch = useDispatch();
   // const event = useSelector((store) => store.events);
   // const eventsArr = [...event.events];
@@ -147,6 +153,7 @@ export const CalendarWeek = ({ currentDate }) => {
                 date={date}
                 selectedHours={selectedHours}
                 setSelectedHours={setSelectedHours}
+                userID={userID}
               />
             </div>
           </div>
