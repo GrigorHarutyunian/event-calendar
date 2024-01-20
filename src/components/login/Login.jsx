@@ -17,12 +17,17 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
+import ValidDate from "../commonComponents/ValidDate/ValidDate";
 
 export default function Login() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
+  const [inValidDateShow, setInValidDateShow] = useState(false);
+  const [doesExistGmail, setDoesExistGmail] = useState(false);
+  const [isUserExist, setIsUserExist] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -42,9 +47,25 @@ export default function Login() {
     password,
     isNotValidEmail,
     isNotValidPassword,
+    setInValidDateShow,
+    setIsUserExist,
     navigate,
     dispatch
   );
+  const validDateArray = [
+    {
+      state: inValidDateShow,
+      message: "InValid email or password!",
+    },
+    {
+      state: isUserExist,
+      message: "User doesn't exist with this email or password!",
+    },
+    {
+      state: doesExistGmail,
+      message: "User doesn't exist with this Gmail!",
+    },
+  ];
   const inputArray = [
     {
       value: email,
@@ -116,7 +137,13 @@ export default function Login() {
             onSubmit={onSubmitHandler}
           >
             <LabelComponent text="Login" />
-
+            {validDateArray.map((validDate) => (
+              <ValidDate
+                key={validDate.text}
+                state={validDate.state}
+                message={validDate.message}
+              />
+            ))}
             <DivOfInputComponents
               inputArray={inputArray}
               iId={"i-intup-login"}
@@ -124,6 +151,7 @@ export default function Login() {
             <ButtonsComponent
               buttonText="Sign in"
               optionText="Or sign in with"
+              setDoesExistGmail={setDoesExistGmail}
             />
             <FormFooterComponent
               text1="Don't have an account"

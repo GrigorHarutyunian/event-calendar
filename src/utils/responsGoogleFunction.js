@@ -6,7 +6,7 @@ import { userIsLogin } from "../redux/slices/userIsLoginSlice";
 import { generateUserId } from "./generateUserIdWithEmail";
 import { sendEmail } from "./sendEmail";
 import { gmailRegistrationBody } from "../data/constants";
-export function responsGoogleFunction(navigate, dispatch) {
+export function responsGoogleFunction(navigate, dispatch, setDoesExistGmail) {
   return async function responsGoogle(response) {
     let decodedHeader = jwt_decode(response.credential);
     const { email, sub, name, picture } = decodedHeader;
@@ -22,14 +22,17 @@ export function responsGoogleFunction(navigate, dispatch) {
       if (a) {
         dispatch(userIsLogin());
         dispatch(currentUser(a.description));
+        setDoesExistGmail(false);
       } else {
         addUser(doc);
         sendEmail(email, body);
         dispatch(userIsLogin());
         dispatch(currentUser(doc));
+        setDoesExistGmail(false);
       }
       navigate("/home");
     } catch (er) {
+      setDoesExistGmail(true);
       console.log(er);
     }
   };

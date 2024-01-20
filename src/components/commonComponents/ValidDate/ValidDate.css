@@ -1,0 +1,10 @@
+.invalid-text-container {
+  display: flex;
+  justify-content: center;
+  color: red;
+}
+
+.invalid-text {
+  text-align: center;
+  color: red;
+}
