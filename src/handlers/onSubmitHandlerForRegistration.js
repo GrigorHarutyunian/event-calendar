@@ -10,6 +10,8 @@ export function onSubmitHandlerForRegistration(
   isNotValidEmail,
   isNotValidPassword,
   isNotValidBirthday,
+  setinValideDate,
+  setUserExistWithEmail,
   navigate
 ) {
   const body = gmailRegistrationBody(email);
@@ -34,15 +36,13 @@ export function onSubmitHandlerForRegistration(
       image &&
       birthday
     ) {
-      // here should be function to send data object to the database or just the server
-      console.log(data); // this is an exapmle just, real code shouldn't be working like this
+      // here should be checked does exist user with this email if not create user and call setUserExistWithEmail(false) if yes call setUserExistWithEmail(true)
       addUser(data);
-      alert("Registrated"); // this is an exapmle just, real code shouldn't be working like this
+      setinValideDate(false);
       sendEmail(email, body);
-      navigate("/login"); // this is an exapmle just, real code shouldn't be working like this
+      navigate("/login");
     } else {
-      console.log(data); // this is an exapmle just, real code shouldn't be working like this
-      alert("not registrated"); // this is an exapmle just, real code shouldn't be working like this
+      setinValideDate(true);
     }
   };
 }

@@ -10,10 +10,16 @@ import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponen
 import { ButtonsComponent, DivOfInputComponents } from "../../commonComponents";
 import { useNavigate } from "react-router-dom";
 
-export default function FormComponent({ image }) {
+export default function FormComponent({
+  image,
+  setinValideDate,
+  setUserExistWithEmail,
+}) {
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
+  const [showPasswordValid, setShowPasswordValid] = useState(false);
+
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -27,6 +33,7 @@ export default function FormComponent({ image }) {
   const onClickHandlerForPassword = onClickHandlerForPasswordFunction(
     setPassword,
     validatePass,
+    setShowPasswordValid,
     setIsNotValidPassword
   );
   const onSubmitHandler = onSubmitHandlerForRegistration(
@@ -37,6 +44,8 @@ export default function FormComponent({ image }) {
     isNotValidEmail,
     isNotValidPassword,
     isNotValidBirthday,
+    setinValideDate,
+    setUserExistWithEmail,
     navigate
   );
   const inputArray = [
@@ -59,7 +68,12 @@ export default function FormComponent({ image }) {
   return (
     <form onSubmit={onSubmitHandler}>
       <div className="input-container">
-        <DivOfInputComponents inputArray={inputArray} />
+        <DivOfInputComponents
+          inputArray={inputArray}
+          showPasswordValid={showPasswordValid}
+          setShowPasswordValid={setShowPasswordValid}
+          iId={"i-intup-reg"}
+        />
         <BirthdayDateComponent
           setBirthday={setBirthday}
           setIsNotValidBirthday={setIsNotValidBirthday}

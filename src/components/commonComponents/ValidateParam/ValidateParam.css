@@ -1,0 +1,11 @@
+.tracker-box .validated {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.list-icon {
+  margin-right: 8px;
+}
+
+.list-icon.green {
+  color: #0f0;
+}

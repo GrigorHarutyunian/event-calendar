@@ -6,10 +6,18 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { responsGoogleFunction } from "../../../utils";
 import { useDispatch } from "react-redux";
-export default function ButtonsComponent({ buttonText, optionText }) {
+export default function ButtonsComponent({
+  buttonText,
+  optionText,
+  setDoesExistGmail,
+}) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const responsGoogle = responsGoogleFunction(navigate, dispatch);
+  const responsGoogle = responsGoogleFunction(
+    navigate,
+    dispatch,
+    setDoesExistGmail
+  );
   return (
     <div className="buttons">
       <ButtonComponent text={buttonText} type="submit" />

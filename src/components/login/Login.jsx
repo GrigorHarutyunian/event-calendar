@@ -17,12 +17,18 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
+import InValidDateComp from "./InValidDateComp/InValidDateComp";
 
 export default function Login() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
+  const [showPasswordValid, setShowPasswordValid] = useState(true);
+  const [inValidDateShow, setInValidDateShow] = useState(false);
+  const [doesExistGmail, setDoesExistGmail] = useState(false);
+  const [DoesUserExist, setDoesUserExist] = useState(false);
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -35,6 +41,7 @@ export default function Login() {
   const onClickHandlerForPassword = onClickHandlerForPasswordFunction(
     setPassword,
     validatePass,
+    setShowPasswordValid,
     setIsNotValidPassword
   );
   const onSubmitHandler = onSubmitHandlerForLogin(
@@ -42,6 +49,8 @@ export default function Login() {
     password,
     isNotValidEmail,
     isNotValidPassword,
+    setInValidDateShow,
+    setDoesUserExist,
     navigate,
     dispatch
   );
@@ -116,11 +125,21 @@ export default function Login() {
             onSubmit={onSubmitHandler}
           >
             <LabelComponent text="Login" />
-
-            <DivOfInputComponents inputArray={inputArray} />
+            <InValidDateComp
+              inValidDateShow={inValidDateShow}
+              DoesUserExist={DoesUserExist}
+              doesExistGmail={doesExistGmail}
+            />
+            <DivOfInputComponents
+              inputArray={inputArray}
+              showPasswordValid={showPasswordValid}
+              setShowPasswordValid={setShowPasswordValid}
+              iId={"i-intup-login"}
+            />
             <ButtonsComponent
               buttonText="Sign in"
               optionText="Or sign in with"
+              setDoesExistGmail={setDoesExistGmail}
             />
             <FormFooterComponent
               text1="Don't have an account"

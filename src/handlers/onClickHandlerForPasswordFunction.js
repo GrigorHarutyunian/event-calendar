@@ -1,6 +1,7 @@
 export function onClickHandlerForPasswordFunction(
   setPassword,
   validatePass,
+  setShowPasswordValid,
   setIsNotValidPassword
 ) {
   return function onClickHandlerForPassword(e) {
@@ -8,8 +9,10 @@ export function onClickHandlerForPasswordFunction(
 
     setPassword(e.target.value);
     if (validatePass(e.target.value)) {
+      setShowPasswordValid(false);
       setIsNotValidPassword(false);
     } else {
+      setShowPasswordValid(false);
       setIsNotValidPassword(true);
     }
   };
