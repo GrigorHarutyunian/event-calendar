@@ -17,7 +17,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
-import ValidDate from "../commonComponents/ValidDate/ValidDate";
+import InValidDateComp from "./InValidDateComp/InValidDateComp";
 
 export default function Login() {
   const dispatch = useDispatch();
@@ -26,7 +26,7 @@ export default function Login() {
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [inValidDateShow, setInValidDateShow] = useState(false);
   const [doesExistGmail, setDoesExistGmail] = useState(false);
-  const [isUserExist, setIsUserExist] = useState(false);
+  const [DoesUserExist, setDoesUserExist] = useState(false);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -48,24 +48,10 @@ export default function Login() {
     isNotValidEmail,
     isNotValidPassword,
     setInValidDateShow,
-    setIsUserExist,
+    setDoesUserExist,
     navigate,
     dispatch
   );
-  const validDateArray = [
-    {
-      state: inValidDateShow,
-      message: "InValid email or password!",
-    },
-    {
-      state: isUserExist,
-      message: "User doesn't exist with this email or password!",
-    },
-    {
-      state: doesExistGmail,
-      message: "User doesn't exist with this Gmail!",
-    },
-  ];
   const inputArray = [
     {
       value: email,
@@ -137,13 +123,11 @@ export default function Login() {
             onSubmit={onSubmitHandler}
           >
             <LabelComponent text="Login" />
-            {validDateArray.map((validDate) => (
-              <ValidDate
-                key={validDate.text}
-                state={validDate.state}
-                message={validDate.message}
-              />
-            ))}
+            <InValidDateComp
+              inValidDateShow={inValidDateShow}
+              DoesUserExist={DoesUserExist}
+              doesExistGmail={doesExistGmail}
+            />
             <DivOfInputComponents
               inputArray={inputArray}
               iId={"i-intup-login"}

@@ -9,7 +9,7 @@ export function onSubmitHandlerForLogin(
   isNotValidEmail,
   isNotValidPassword,
   setInValidDateShow,
-  setIsUserExist,
+  setDoesUserExist,
   navigate,
   dispatch
 ) {
@@ -30,15 +30,15 @@ export function onSubmitHandlerForLogin(
           dispatch(userIsLogin());
           dispatch(currentUser(user.description));
           setInValidDateShow(false);
-          setIsUserExist(false);
+          setDoesUserExist(false);
           navigate("/home");
         } else {
           console.log(message);
           setInValidDateShow(false);
-          setIsUserExist(true);
+          setDoesUserExist(true);
         }
       } else {
-        setIsUserExist(false);
+        setDoesUserExist(false);
         setInValidDateShow(true);
       }
     } catch (error) {
