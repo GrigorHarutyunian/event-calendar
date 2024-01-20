@@ -1,21 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
-.li-container {
-  font-size: 0.8rem;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-.li-container i {
-  width: 20px;
-  color: #aaa;
-  font-size: 0.6rem;
+.tracker-box .validated {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.requirement-list li.valid span {
-  color: #999;
+.list-icon {
+  margin-right: 8px;
 }
 
-.validata-text {
-  font-family: "Poppins", sans-serif;
+.list-icon.green {
+  color: #0f0;
 }

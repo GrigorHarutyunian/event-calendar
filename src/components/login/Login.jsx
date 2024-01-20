@@ -24,6 +24,7 @@ export default function Login() {
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
+  const [showPasswordValid, setShowPasswordValid] = useState(true);
   const [inValidDateShow, setInValidDateShow] = useState(false);
   const [doesExistGmail, setDoesExistGmail] = useState(false);
   const [DoesUserExist, setDoesUserExist] = useState(false);
@@ -40,6 +41,7 @@ export default function Login() {
   const onClickHandlerForPassword = onClickHandlerForPasswordFunction(
     setPassword,
     validatePass,
+    setShowPasswordValid,
     setIsNotValidPassword
   );
   const onSubmitHandler = onSubmitHandlerForLogin(
@@ -130,6 +132,8 @@ export default function Login() {
             />
             <DivOfInputComponents
               inputArray={inputArray}
+              showPasswordValid={showPasswordValid}
+              setShowPasswordValid={setShowPasswordValid}
               iId={"i-intup-login"}
             />
             <ButtonsComponent

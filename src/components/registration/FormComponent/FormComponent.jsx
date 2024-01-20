@@ -18,7 +18,7 @@ export default function FormComponent({
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
-  const [checkClassName, setCheckClassName] = useState("fa-solid fa-circle");
+  const [showPasswordValid, setShowPasswordValid] = useState(false);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -33,6 +33,7 @@ export default function FormComponent({
   const onClickHandlerForPassword = onClickHandlerForPasswordFunction(
     setPassword,
     validatePass,
+    setShowPasswordValid,
     setIsNotValidPassword
   );
   const onSubmitHandler = onSubmitHandlerForRegistration(
@@ -69,7 +70,8 @@ export default function FormComponent({
       <div className="input-container">
         <DivOfInputComponents
           inputArray={inputArray}
-          checkClassName={checkClassName}
+          showPasswordValid={showPasswordValid}
+          setShowPasswordValid={setShowPasswordValid}
           iId={"i-intup-reg"}
         />
         <BirthdayDateComponent
