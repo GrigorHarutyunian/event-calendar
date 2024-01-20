@@ -18,7 +18,13 @@ export default function FormComponent({
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
+
   const [showPasswordValid, setShowPasswordValid] = useState(false);
+  const [lowerValidated, setLowerValidated] = useState(false);
+  const [upperValidated, setUpperValidated] = useState(false);
+  const [numberValidated, setNumberValidated] = useState(false);
+  const [specialValidated, setSpecialValidated] = useState(false);
+  const [lengthValidated, setLengthValidated] = useState(false);
 
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
@@ -34,6 +40,11 @@ export default function FormComponent({
     setPassword,
     validatePass,
     setShowPasswordValid,
+    setLengthValidated,
+    setLowerValidated,
+    setNumberValidated,
+    setSpecialValidated,
+    setUpperValidated,
     setIsNotValidPassword
   );
   const onSubmitHandler = onSubmitHandlerForRegistration(
@@ -73,6 +84,11 @@ export default function FormComponent({
           showPasswordValid={showPasswordValid}
           setShowPasswordValid={setShowPasswordValid}
           iId={"i-intup-reg"}
+          lowerValidated={lowerValidated}
+          upperValidated={upperValidated}
+          numberValidated={numberValidated}
+          specialValidated={specialValidated}
+          lengthValidated={lengthValidated}
         />
         <BirthdayDateComponent
           setBirthday={setBirthday}

@@ -35,7 +35,11 @@ export default function PasswordValidShow({
   return (
     <div className="tracker-box">
       {validateParams.map((param) => (
-        <ValidateParam title={param.title} state={param.state} />
+        <ValidateParam
+          key={param.title}
+          title={param.title}
+          state={param.state}
+        />
       ))}
     </div>
   );

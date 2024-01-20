@@ -24,7 +24,14 @@ export default function Login() {
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
-  const [showPasswordValid, setShowPasswordValid] = useState(true);
+
+  const [showPasswordValid, setShowPasswordValid] = useState(false);
+  const [lowerValidated, setLowerValidated] = useState(false);
+  const [upperValidated, setUpperValidated] = useState(false);
+  const [numberValidated, setNumberValidated] = useState(false);
+  const [specialValidated, setSpecialValidated] = useState(false);
+  const [lengthValidated, setLengthValidated] = useState(false);
+
   const [inValidDateShow, setInValidDateShow] = useState(false);
   const [doesExistGmail, setDoesExistGmail] = useState(false);
   const [DoesUserExist, setDoesUserExist] = useState(false);
@@ -42,6 +49,11 @@ export default function Login() {
     setPassword,
     validatePass,
     setShowPasswordValid,
+    setLengthValidated,
+    setLowerValidated,
+    setNumberValidated,
+    setSpecialValidated,
+    setUpperValidated,
     setIsNotValidPassword
   );
   const onSubmitHandler = onSubmitHandlerForLogin(
@@ -135,6 +147,11 @@ export default function Login() {
               showPasswordValid={showPasswordValid}
               setShowPasswordValid={setShowPasswordValid}
               iId={"i-intup-login"}
+              lowerValidated={lowerValidated}
+              upperValidated={upperValidated}
+              numberValidated={numberValidated}
+              specialValidated={specialValidated}
+              lengthValidated={lengthValidated}
             />
             <ButtonsComponent
               buttonText="Sign in"
