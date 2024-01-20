@@ -7,7 +7,22 @@ import { changeState } from "../../../../redux/slices/modalAddEventSlice";
 import { SorginEventsArray } from "./SortingEventsArray";
 import { RemoveEvent } from "../../../../firebase/service/RemoveEvent";
 import IconButton from "@mui/material/IconButton";
+import GroupsIcon from "@mui/icons-material/Groups";
+import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
+import LiquorIcon from "@mui/icons-material/Liquor";
+import LaptopIcon from "@mui/icons-material/Laptop";
+import CoffeeIcon from "@mui/icons-material/Coffee";
+import CakeIcon from "@mui/icons-material/Cake";
 import DeleteIcon from "@mui/icons-material/Delete";
+
+const iconMapping = {
+  meeting: <GroupsIcon />,
+  fitnnes: <FitnessCenterIcon />,
+  party: <LiquorIcon />,
+  coding: <LaptopIcon />,
+  coffee: <CoffeeIcon />,
+  cake: <CakeIcon />,
+};
 
 export const EventsDay = ({ userID }) => {
   const dispatch = useDispatch();
@@ -50,6 +65,7 @@ export const EventsDay = ({ userID }) => {
           SorginEventsArray(eventsArr).map((arr) => {
             return (
               <div key={arr.id} className="event-item">
+                <div className="event-icon">{iconMapping[arr.icon]}</div>
                 <div className="event-title">
                   <h5>{arr.title}</h5>
                 </div>
