@@ -293,8 +293,10 @@ td.today {
   font-size: 12px;
 
 }
+
 .time-grid-item:hover {
   background-color: #e0e0e0; 
+  cursor: pointer;
 }
 
 .time-grid-item:first-child {
@@ -305,4 +307,13 @@ td.today {
   background-color: #e0e0e0; 
 }
 
+::selection {
+  background: none;
+}
 
+.time-grid-item::selection {
+  background: none;
+}
+
+
+/**/
