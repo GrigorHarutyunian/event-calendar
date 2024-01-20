@@ -25,8 +25,7 @@
   transform: translateY(-50%);
 }
 .passwordValidShow-container {
-  top: 60%;
-  background-color: white;
+  padding-top: 120px;
   position: absolute;
   transform: translateY(-50%);
 }
