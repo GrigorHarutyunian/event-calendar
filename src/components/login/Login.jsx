@@ -117,7 +117,10 @@ export default function Login() {
           >
             <LabelComponent text="Login" />
 
-            <DivOfInputComponents inputArray={inputArray} />
+            <DivOfInputComponents
+              inputArray={inputArray}
+              iId={"i-intup-login"}
+            />
             <ButtonsComponent
               buttonText="Sign in"
               optionText="Or sign in with"

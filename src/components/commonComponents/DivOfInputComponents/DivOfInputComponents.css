@@ -2,3 +2,31 @@
   margin-top: 5px;
   margin-bottom: 20px;
 }
+
+#i-intup-reg {
+  cursor: pointer;
+  right: 11%;
+  top: 40%;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+}
+
+#i-intup-login {
+  cursor: pointer;
+  right: 11%;
+  top: 50%;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+  position: absolute;
+  transform: translateY(-50%);
+}
+.passwordValidShow-container {
+  top: 60%;
+  background-color: white;
+  position: absolute;
+  transform: translateY(-50%);
+}
