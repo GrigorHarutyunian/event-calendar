@@ -2,23 +2,15 @@ import React from "react";
 import ValidDate from "../../commonComponents/ValidDate/ValidDate";
 import "./InValidDateComp.css";
 
-export default function InValidDateComp({
-  inValidDateShow,
-  DoesUserExist,
-  doesExistGmail,
-}) {
+export default function InValidDateComp({ inValidDate, userExistWithEmail }) {
   const validDateArray = [
     {
-      state: inValidDateShow,
-      message: "InValid email or password!",
+      state: inValidDate,
+      message: "Please enter a valid data!",
     },
     {
-      state: DoesUserExist,
-      message: "User doesn't exist with this email or password!",
-    },
-    {
-      state: doesExistGmail,
-      message: "User doesn't exist with this Gmail!",
+      state: userExistWithEmail,
+      message: "User with this Email already exist!",
     },
   ];
   return (

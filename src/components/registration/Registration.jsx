@@ -11,9 +11,13 @@ import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
+import InValidDateComp from "./InValidDateComp/InValidDateComp";
 
 export default function Registration() {
   const [image, setImage] = useState(null);
+  const [inValidDate, setinValideDate] = useState(false);
+  const [userExistWithEmail, setUserExistWithEmail] = useState(false);
+
   const uploadImage = onChangeHandlerForImageInput(setImage);
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   useIsLoggin(isLoggedIn, "/home", isLoggedIn);
@@ -67,15 +71,23 @@ export default function Registration() {
           className="registration-container"
         >
           <LabelComponent text="Registration" />
-
+          <InValidDateComp
+            inValidDate={inValidDate}
+            userExistWithEmail={userExistWithEmail}
+          />
           <div className="form-container-reg">
             <UserImageComponent image={image} uploadImage={uploadImage} />
-            <FormComponent image={image} />
+            <FormComponent
+              image={image}
+              setinValideDate={setinValideDate}
+              setUserExistWithEmail={setUserExistWithEmail}
+            />
           </div>
           <FormFooterComponent
             text1="Already have an account  ?"
             text2="Sign in"
             link="/login"
+            setinValideDate={setinValideDate}
           />
         </motion.div>
       </motion.div>

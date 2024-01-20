@@ -10,7 +10,11 @@ import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponen
 import { ButtonsComponent, DivOfInputComponents } from "../../commonComponents";
 import { useNavigate } from "react-router-dom";
 
-export default function FormComponent({ image }) {
+export default function FormComponent({
+  image,
+  setinValideDate,
+  setUserExistWithEmail,
+}) {
   const [isNotValidEmail, setIsNotValidEmail] = useState(false);
   const [isNotValidPassword, setIsNotValidPassword] = useState(false);
   const [isNotValidBirthday, setIsNotValidBirthday] = useState(true);
@@ -39,6 +43,8 @@ export default function FormComponent({ image }) {
     isNotValidEmail,
     isNotValidPassword,
     isNotValidBirthday,
+    setinValideDate,
+    setUserExistWithEmail,
     navigate
   );
   const inputArray = [
