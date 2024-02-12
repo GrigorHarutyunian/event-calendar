@@ -73,9 +73,6 @@
   transition: opacity 1500ms, transform 1500ms ease-in-out;
 }
 
-
-
-
 .MuiFormControl-root.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   width: 100%;
 }
@@ -90,4 +87,8 @@
 
 .MuiFormControl-root.css-1nrlq1o-MuiFormControl-root {
   width: 100%;
+}
+
+.css-1h51icj-MuiAutocomplete-root .MuiAutocomplete-tag {
+  display: none;
 }
