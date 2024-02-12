@@ -6,28 +6,32 @@ import ListItemSecondaryAction from "@mui/material/ListItemSecondaryAction";
 import ListItem from "@mui/material/ListItem";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
-
+import { useRef } from "react";
 export const MyAutocomplete = ({ friends, setFriendsInfo, friendsInfo }) => {
+  const inputRef = useRef(null);
   const handleSelectChange = (event, newValue) => {
     setFriendsInfo(newValue);
   };
 
   return (
     <Autocomplete
+      style={{ maxHeight: "200px", overflowY: "auto" }}
       multiple
       options={friends}
       disableCloseOnSelect
       getOptionLabel={(option) => option.email}
       value={friendsInfo}
       onChange={handleSelectChange}
-      renderInput={(params) => <TextField {...params} label="Add Friends" />}
-      ListboxComponent={(props) => {
-        return (
+      renderInput={(params) => (
+        <TextField {...params} label="Add Friends" inputRef={inputRef} />
+      )}
+      ListboxComponent={(props) => (
+        <div>
           <List dense {...props}>
             {props.children}
           </List>
-        );
-      }}
+        </div>
+      )}
       renderOption={(props, option) => (
         <ListItem dense button {...props}>
           <Checkbox
