@@ -9,6 +9,10 @@ export const BurgerMenu = () => {
   const burgerState = useSelector((state) => state.burger);
   const [burgerClass, setBurgerClass] = useState("burger-unclicked");
   const [menuClass, setMenuClass] = useState("menu-hidden");
+  const userData = useSelector((state) => {
+    return state.userData;
+  });
+  console.log(userData);
 
   const updateManu = () => {
     if (!burgerState) {
@@ -26,7 +30,18 @@ export const BurgerMenu = () => {
 
   return (
     <>
-      <div className={menuClass}></div>
+      <div className={menuClass}>
+        <div className="userData">
+          {burgerState && userData && (
+            <div>
+              <span className="user-image">
+                <img src={userData.image} alt="user image" />
+              </span>
+              <span className="user-email"> {userData.email}</span>
+            </div>
+          )}
+        </div>
+      </div>
       <div className="cursor-div" onClick={() => updateManu()}>
         <div className={burgerClass}></div>
         <div className={burgerClass}></div>
