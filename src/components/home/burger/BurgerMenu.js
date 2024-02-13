@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./BurgerMenu.css";
-import { useSelector } from "react-redux";
+import { UserInfo } from "./UserInfo";
 import { useDispatch } from "react-redux";
 import { changeBurgerState } from "../../../redux/slices/burgerSlice";
+import { useSelector } from "react-redux";
+import { Invitation } from "./Inivations";
+import { modalInvitations } from "../../../redux/slices/modalInvitationsSlice";
 
 export const BurgerMenu = () => {
   const dispatch = useDispatch();
@@ -12,7 +15,7 @@ export const BurgerMenu = () => {
   const userData = useSelector((state) => {
     return state.userData;
   });
-  console.log(userData);
+  const invitations = useSelector((store) => store.invitation);
 
   const updateManu = () => {
     if (!burgerState) {
@@ -31,16 +34,17 @@ export const BurgerMenu = () => {
   return (
     <>
       <div className={menuClass}>
-        <div className="userData">
-          {burgerState && userData && (
-            <div>
-              <span className="user-image">
-                <img src={userData.image} alt="user image" />
-              </span>
-              <span className="user-email"> {userData.email}</span>
+        {burgerState && (
+          <>
+            <UserInfo userData={userData} />
+            <div
+              onClick={() => dispatch(modalInvitations(true))}
+              className="invitations"
+            >
+              Invitations
             </div>
-          )}
-        </div>
+          </>
+        )}
       </div>
       <div className="cursor-div" onClick={() => updateManu()}>
         <div className={burgerClass}></div>

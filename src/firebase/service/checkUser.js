@@ -12,10 +12,8 @@ export const checkUser = async (data) => {
     if (checkingUserSnapshot.exists()) {
       const checkingUser = checkingUserSnapshot.val();
 
-      // Access the password property from checkingUser
       const passwordFromDatabase = checkingUser?.description?.password;
 
-      // Now you can compare the passwords
       if (passwordFromDatabase === data.password) {
         return { success: true, user: checkingUser };
       } else {

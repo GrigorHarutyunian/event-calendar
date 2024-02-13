@@ -1,6 +1,4 @@
-import { useDispatch } from "react-redux";
-import { currentUser } from "../../redux/slices/userDataSlice";
-import { getDatabase, ref, get } from "firebase/database";
+import { ref, get } from "firebase/database";
 import { database } from "../firebase-config";
 export const getUser = async (userId) => {
   const path = `calendars/${userId}`;
