@@ -75,7 +75,8 @@ export const upDateEvents = async (
               description,
               dispatch,
               (type = "group"),
-              userEmailArr[i]
+              userEmailArr[i],
+              user
             )
         )
       );
