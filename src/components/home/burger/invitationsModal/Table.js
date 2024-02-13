@@ -13,9 +13,24 @@ const columns = [
       <Avatar alt={params.row.firstName} src={params.row.avatar} />
     ),
   },
-  { field: "title", headerName: "Title", width: 200, editable: true },
-  { field: "mail", headerName: "Email", width: 200, editable: true },
-  { field: "day", headerName: "Day", width: 200, editable: true },
+  {
+    field: "title",
+    headerName: "Title",
+    width: 200,
+    editable: true,
+  },
+  {
+    field: "mail",
+    headerName: "Email",
+    width: 200,
+    editable: true,
+  },
+  {
+    field: "day",
+    headerName: "Day",
+    width: 200,
+    editable: true,
+  },
   {
     field: "time",
     headerName: "Time",
@@ -34,7 +49,10 @@ const columns = [
 export const DataGridDemo = ({ rows }) => {
   return (
     <Box sx={{ height: 400, width: "100%" }}>
+      <div className="title-invitation">Invitations</div>
+
       <DataGrid
+        className="data-grid"
         rows={rows}
         columns={columns}
         initialState={{
@@ -45,6 +63,12 @@ export const DataGridDemo = ({ rows }) => {
           },
         }}
         pageSizeOptions={[5]}
+        sx={{
+          ".MuiDataGrid-row:hover": {
+            backgroundColor: "#add8e6",
+            transform: "scale(1.00)",
+          },
+        }}
       />
     </Box>
   );
