@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
 import InValidDateComp from "./InValidDateComp/InValidDateComp";
-
+import StarsBackground from "../commonComponents/StarsBackground/StarsBackground";
 export default function Login() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((store) => store.userIsLogin);
@@ -118,7 +118,7 @@ export default function Login() {
   return (
     <div className="login-container">
       <div className="backVideoWithForm">
-        <BackgroundVideoComp />
+        <StarsBackground />
         <motion.div
           initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
           animate={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}

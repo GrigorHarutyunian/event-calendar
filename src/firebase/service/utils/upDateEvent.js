@@ -2,6 +2,7 @@ import { getDatabase, ref, update, get } from "firebase/database";
 import { sendEmail } from "../../../utils/sendEmail";
 import { database } from "../../firebase-config";
 import { GetEvents } from "../GetEvents";
+import { toast } from "react-hot-toast";
 
 export async function upDateEvent(
   userId,
@@ -45,8 +46,10 @@ export async function upDateEvent(
     console.log(email);
     //email [time, title, email]
     sendEmail(email, "hello");
+    toast.success("Event added to your calendar.");
     console.log(`Event added successfully for user ${userId}`);
   } catch (error) {
+    toast.error("Event failed to add to your calendar.");
     console.error(`Error adding event for user ${userId}:`, error);
   }
 }

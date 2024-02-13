@@ -3,3 +3,8 @@
   display: flex;
   justify-content: space-between;
 }
+
+.earth-container {
+  margin-top: 50px;
+  margin-right: 100px;
+}

@@ -12,7 +12,7 @@ import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
 import InValidDateComp from "./InValidDateComp/InValidDateComp";
-
+import StarsBackgroundVideo from "../commonComponents/StarsBackgrounVideo/StarsBackgroundVideo";
 export default function Registration() {
   const [image, setImage] = useState(null);
   const [inValidDate, setinValideDate] = useState(false);
