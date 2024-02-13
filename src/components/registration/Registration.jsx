@@ -64,31 +64,39 @@ export default function Registration() {
         className="page-container"
       >
         <motion.div
-          variants={regContainerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
-          className="registration-container"
+          initial={{
+            y: "100px",
+            opacity: 0,
+          }}
+          animate={{ y: ["50px", "0px"], opacity: [0, 1] }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="reg-container-animation"
         >
-          <LabelComponent text="Registration" />
-          <InValidDateComp
-            inValidDate={inValidDate}
-            userExistWithEmail={userExistWithEmail}
-          />
-          <div className="form-container-reg">
-            <UserImageComponent image={image} uploadImage={uploadImage} />
-            <FormComponent
-              image={image}
-              setinValideDate={setinValideDate}
-              setUserExistWithEmail={setUserExistWithEmail}
+          <div className="rotation-div-reg"></div>
+          <motion.div
+            initial={{ boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
+            className="registration-container"
+          >
+            <LabelComponent text="Registration" />
+            <InValidDateComp
+              inValidDate={inValidDate}
+              userExistWithEmail={userExistWithEmail}
             />
-          </div>
-          <FormFooterComponent
-            text1="Already have an account  ?"
-            text2="Sign in"
-            link="/login"
-            setinValideDate={setinValideDate}
-          />
+            <div className="form-container-reg">
+              <UserImageComponent image={image} uploadImage={uploadImage} />
+              <FormComponent
+                image={image}
+                setinValideDate={setinValideDate}
+                setUserExistWithEmail={setUserExistWithEmail}
+              />
+            </div>
+            <FormFooterComponent
+              text1="Already have an account  ?"
+              text2="Sign in"
+              link="/login"
+              setinValideDate={setinValideDate}
+            />
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>

@@ -11,12 +11,21 @@ import Logo from "./Logo.png";
 import Calendar from "./Calendar.png";
 import CalLog from "./CalLog.png";
 import MyLogo from "./MyLogo.png";
+import Logo1 from "./Logo1.png";
+import Logo2 from "./Logo2.png";
+import Logo3 from "./Logo3.png";
+import Logo4 from "./Logo4.png";
+
 export {
   Login,
   MyLogo,
   CalLog,
   Calendar,
   Logo,
+  Logo1,
+  Logo2,
+  Logo3,
+  Logo4,
   User,
   UserImage,
   Picture1ForPreview,

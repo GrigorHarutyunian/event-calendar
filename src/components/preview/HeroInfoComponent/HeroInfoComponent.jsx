@@ -50,7 +50,6 @@ export default function HeroInfoComponent() {
           variants={labelVariant1}
           initial="hidden"
           animate="visible"
-          exit="exit"
           className="hero-intro"
         >
           <span className="hero-span-1">The Next</span>
@@ -65,7 +64,6 @@ export default function HeroInfoComponent() {
         variants={labelVariant1}
         initial="hidden"
         animate="visible"
-        exit="exit"
         className="hero-p"
       >
         Event corditating
@@ -74,7 +72,6 @@ export default function HeroInfoComponent() {
         variants={labelVariant2}
         initial="hidden"
         animate="visible"
-        exit="exit"
         className="hero-span-container"
       >
         <span className="hero-span-info">

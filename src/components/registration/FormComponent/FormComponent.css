@@ -33,7 +33,7 @@
   margin-bottom: 20px;
 }
 
-.button-container {
+form .button-container {
   display: flex;
   justify-content: center;
   margin-top: 8px;

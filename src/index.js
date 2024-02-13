@@ -8,6 +8,8 @@ import { BrowserRouter } from "react-router-dom";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import { persister } from "./redux/store";
 import { PersistGate } from "redux-persist/integration/react";
+import { Toaster } from "react-hot-toast";
+
 import { Loading } from "./components/commonComponents";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -19,6 +21,7 @@ root.render(
     <Provider store={store}>
       <PersistGate loading={<Loading />} persistor={persister}>
         <BrowserRouter>
+          <Toaster />
           <App />
         </BrowserRouter>
       </PersistGate>

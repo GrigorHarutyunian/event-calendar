@@ -95,10 +95,10 @@ export default function Login() {
       y: 0,
       rotate: 0,
       transition: {
-        delay: 0.9,
-        duration: 1.2,
+        delay: 0.5,
+        duration: 0.7,
         type: "spring",
-        stiffness: 100,
+        stiffness: 40,
       },
     },
     exit: {
@@ -128,42 +128,50 @@ export default function Login() {
           }}
           className="form-container-login"
         >
-          <motion.form
-            variants={loginContainerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="login-form"
-            onSubmit={onSubmitHandler}
+          <motion.div
+            initial={{
+              y: "100px",
+              opacity: 0,
+            }}
+            animate={{ y: ["50px", "0px"], opacity: [0, 1] }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="login-container-animation"
           >
-            <LabelComponent text="Login" />
-            <InValidDateComp
-              inValidDateShow={inValidDateShow}
-              DoesUserExist={DoesUserExist}
-              doesExistGmail={doesExistGmail}
-            />
-            <DivOfInputComponents
-              inputArray={inputArray}
-              showPasswordValid={showPasswordValid}
-              setShowPasswordValid={setShowPasswordValid}
-              iId={"i-intup-login"}
-              lowerValidated={lowerValidated}
-              upperValidated={upperValidated}
-              numberValidated={numberValidated}
-              specialValidated={specialValidated}
-              lengthValidated={lengthValidated}
-            />
-            <ButtonsComponent
-              buttonText="Sign in"
-              optionText="Or sign in with"
-              setDoesExistGmail={setDoesExistGmail}
-            />
-            <FormFooterComponent
-              text1="Don't have an account"
-              text2="Sign up"
-              link="/registration"
-            />
-          </motion.form>
+            <motion.form
+              initial={{ boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
+              className="login-form"
+              onSubmit={onSubmitHandler}
+            >
+              <LabelComponent text="Login" />
+              <InValidDateComp
+                inValidDateShow={inValidDateShow}
+                DoesUserExist={DoesUserExist}
+                doesExistGmail={doesExistGmail}
+              />
+              <DivOfInputComponents
+                inputArray={inputArray}
+                showPasswordValid={showPasswordValid}
+                setShowPasswordValid={setShowPasswordValid}
+                iId={"i-intup-login"}
+                lowerValidated={lowerValidated}
+                upperValidated={upperValidated}
+                numberValidated={numberValidated}
+                specialValidated={specialValidated}
+                lengthValidated={lengthValidated}
+              />
+              <ButtonsComponent
+                buttonText="Sign in"
+                optionText="Or sign in with"
+                setDoesExistGmail={setDoesExistGmail}
+              />
+              <FormFooterComponent
+                text1="Don't have an account"
+                text2="Sign up"
+                link="/registration"
+              />
+            </motion.form>
+            <div className="rotation-div-log"></div>
+          </motion.div>
         </motion.div>
       </div>
     </div>

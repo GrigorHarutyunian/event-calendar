@@ -10,10 +10,10 @@ export function responsGoogleFunction(navigate, dispatch, setDoesExistGmail) {
   return async function responsGoogle(response) {
     let decodedHeader = jwt_decode(response.credential);
     const { email, sub, name, picture } = decodedHeader;
-    console.log(decodedHeader);
     const doc = {
       id: generateUserId(email),
       email,
+      name,
       image: picture,
     };
     const body = gmailRegistrationBody(email);

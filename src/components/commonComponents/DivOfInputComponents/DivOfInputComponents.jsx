@@ -27,7 +27,6 @@ export default function DivOfInputComponents({
     <>
       {inputArray.map((input) => {
         if (input.type === "password") {
-          console.log(inputType);
           return (
             <div
               className="input-container"

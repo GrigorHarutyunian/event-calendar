@@ -19,6 +19,7 @@
   width: 100%;
   height: 100%;
   border-radius: 50%;
+  gap: 5px;
 }
 
 .flex-row {
@@ -33,6 +34,7 @@
   font-size: 18px;
   line-height: 10px;
   margin-right: 5px;
+  margin: 0px;
 }
 
 .text-gradient {

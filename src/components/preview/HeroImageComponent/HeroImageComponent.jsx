@@ -26,7 +26,6 @@ export default function HeroImageComponent() {
         variants={imageVariants}
         initial="hidden"
         animate="visible"
-        exit="exit"
         className="hero-image-container"
       >
         <img className="hero-img" src={Picture3ForPreview} alt="Preview" />

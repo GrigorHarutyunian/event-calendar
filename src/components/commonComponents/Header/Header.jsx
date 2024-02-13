@@ -12,8 +12,11 @@ import { useSelector } from "react-redux";
 import { changeCalendarType } from "../../../redux/slices/calendarTypeSlice";
 import { selectedDay } from "../../../redux/slices/selectedDaySlice";
 import { thisMonth } from "../../../redux/slices/currentDateSlice";
+import { useLocation } from "react-router-dom";
 export default function Header() {
   const dispatch = useDispatch();
+  const myLocation = useLocation();
+
   const calendarForm = useSelector((store) => store.calendarType);
   const userID = useSelector((store) => store.userData.id);
   const day = new Date();
@@ -21,10 +24,10 @@ export default function Header() {
   return (
     <div className="main-header-container">
       <div className="main-header-logo-container">
-        {isLoggedIn && <BurgerMenu />}
+        {isLoggedIn && myLocation.pathname === "/home" && <BurgerMenu />}
         <LogoComponent />
       </div>
-      {isLoggedIn && (
+      {isLoggedIn && myLocation.pathname === "/home" && (
         <>
           <FormControl style={{ maxWidth: "sm", width: "150px" }}>
             <Select

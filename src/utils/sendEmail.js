@@ -5,5 +5,7 @@ export function sendEmail(email, body) {
     From: "2003.karen.shmavonyan@gmail.com",
     Subject: "This is the subject",
     Body: body,
-  }).then((message) => alert(message));
+  }).then((message) => {
+    alert(message);
+  });
 }
