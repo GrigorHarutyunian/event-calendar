@@ -12,7 +12,8 @@ export async function upDateEvent(
   description,
   dispatch,
   type,
-  email
+  email,
+  user
 ) {
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
@@ -36,6 +37,7 @@ export async function upDateEvent(
           icon: icon,
           description: description,
           type: type,
+          user: user,
         },
       ],
       busyHours: [...busyHours, newTimeRange],

@@ -20,6 +20,8 @@ import userIsLoginReducer from "./slices/userIsLoginSlice.js";
 import userFirendsReducer from "./slices/userFriendsSlice.js";
 import persistStore from "redux-persist/es/persistStore";
 import selectedTimeReducer from "./slices/selectedTimeSlice.js";
+import inivationReducer from "./slices/invitationSlice.js";
+import modalInvitationsReducer from "./slices/modalInvitationsSlice.js";
 
 const persistConfig = {
   key: "root",
@@ -37,6 +39,8 @@ const rootReducer = combineReducers({
   userIsLogin: userIsLoginReducer,
   userFirends: userFirendsReducer,
   selectedTime: selectedTimeReducer,
+  invitation: inivationReducer,
+  modalInvitations: modalInvitationsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

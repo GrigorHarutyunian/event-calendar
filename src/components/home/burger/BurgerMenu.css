@@ -8,7 +8,7 @@
 
 .menu-hidden {
   width: 0;
-  height: 100%;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,14 +19,14 @@
 
 .burger-menu {
   width: 15%;
-  height: 100%;
-  /* background: red; */
+  height: 100vh;
   position: fixed;
-  z-index: 4;
+  z-index: 411111;
   background: #080741;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   left: 0px;
-  /* z-index: 112331; */
   transform: translateX(0%);
   transition: ease-out 1.5s;
 }
@@ -65,21 +65,31 @@
   transition: ease-out 0.5s;
 }
 
- .userData {
-  margin-top: 100px;
-  display: flex; 
+.userData {
+  margin-top: 70px;
+  display: flex;
   flex-direction: column;
-  align-items: center; 
-} 
+  transform: translateX(0%);
+  transition: ease 3.5s;
+}
 
-.user-image img {
-  width: 150px; 
-  height: 150px; 
+.user-img {
+  width: 150px;
+  height: 150px;
   border-radius: 80%;
 }
 
 .user-email {
-  font-size: 20px;
-
+  font-size: 14px;
+  font-style: italic;
 }
- 
+
+.invitations {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  height: 20%;
+  background: red;
+}
