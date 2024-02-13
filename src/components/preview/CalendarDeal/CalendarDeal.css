@@ -1,0 +1,8 @@
+.calendar-deal-container {
+  color: white;
+  padding-top: 12%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 12%;
+  gap: 40px;
+}
