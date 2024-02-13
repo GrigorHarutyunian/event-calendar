@@ -67,31 +67,36 @@ export default function Registration() {
           initial={{
             y: "100px",
             opacity: 0,
-            boxShadow: "0px 0px 15px rgb(255, 255, 255)",
           }}
           animate={{ y: ["50px", "0px"], opacity: [0, 1] }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="registration-container"
+          className="reg-container-animation"
         >
-          <LabelComponent text="Registration" />
-          <InValidDateComp
-            inValidDate={inValidDate}
-            userExistWithEmail={userExistWithEmail}
-          />
-          <div className="form-container-reg">
-            <UserImageComponent image={image} uploadImage={uploadImage} />
-            <FormComponent
-              image={image}
-              setinValideDate={setinValideDate}
-              setUserExistWithEmail={setUserExistWithEmail}
+          <div className="rotation-div-reg"></div>
+          <motion.div
+            initial={{ boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
+            className="registration-container"
+          >
+            <LabelComponent text="Registration" />
+            <InValidDateComp
+              inValidDate={inValidDate}
+              userExistWithEmail={userExistWithEmail}
             />
-          </div>
-          <FormFooterComponent
-            text1="Already have an account  ?"
-            text2="Sign in"
-            link="/login"
-            setinValideDate={setinValideDate}
-          />
+            <div className="form-container-reg">
+              <UserImageComponent image={image} uploadImage={uploadImage} />
+              <FormComponent
+                image={image}
+                setinValideDate={setinValideDate}
+                setUserExistWithEmail={setUserExistWithEmail}
+              />
+            </div>
+            <FormFooterComponent
+              text1="Already have an account  ?"
+              text2="Sign in"
+              link="/login"
+              setinValideDate={setinValideDate}
+            />
+          </motion.div>
         </motion.div>
       </motion.div>
     </div>

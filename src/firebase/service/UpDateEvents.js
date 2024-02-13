@@ -43,11 +43,10 @@ export const upDateEvents = async (
       );
 
       // toast.loading("Saving...");
-      toast.success("Event added to the calendar.");
-      showToast();
+      toast.success("Event added to your calendar.");
     } else {
       console.log("Oops! Time range overlaps with existing busy hours for,You");
-      toast.error("Event failed to the calendar");
+      toast.error("Event failed to add to your calendar.");
     }
   } else {
     const overlaps = await Promise.all(
@@ -87,9 +86,8 @@ export const upDateEvents = async (
           "Oops! Time range overlaps with existing busy hours for ",
           over.mail ? over.mail : "You"
         );
-        toast.error("Event failed to the calendar");
+        toast.error(`Event failed to add to ${over.email}'s calendar.`);
       });
-      // add setOverlap for the adding user
     }
   }
   GetEvents(dispatch, date, userId);
