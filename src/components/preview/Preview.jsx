@@ -4,6 +4,9 @@ import "./Preview.css";
 import StarsBackground from "./../commonComponents/StarsBackground/StarsBackground.jsx";
 import Business from "./Business/Business";
 import CalendarDeal from "./CalendarDeal/CalendarDeal";
+import ContactUs from "./ContactUs/ContactUs";
+import CTA from "./CTA/CTA";
+
 export default function Preview() {
   return (
     <div className="">
@@ -14,6 +17,8 @@ export default function Preview() {
         <Hero />
         <Business />
         <CalendarDeal />
+        <ContactUs />
+        <CTA />
       </div>
     </div>
   );
