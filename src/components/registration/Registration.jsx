@@ -64,10 +64,13 @@ export default function Registration() {
         className="page-container"
       >
         <motion.div
-          variants={regContainerVariants}
-          initial="hidden"
-          animate="visible"
-          exit="exit"
+          initial={{
+            y: "100px",
+            opacity: 0,
+            boxShadow: "0px 0px 15px rgb(255, 255, 255)",
+          }}
+          animate={{ y: ["50px", "0px"], opacity: [0, 1] }}
+          transition={{ duration: 1, delay: 0.5 }}
           className="registration-container"
         >
           <LabelComponent text="Registration" />

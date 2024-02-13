@@ -1,43 +1,30 @@
 .main-header-container {
   color: white;
-  height: 65px;
+  height: 60px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   position: absolute;
   width: 100%;
   z-index: 1;
-  border-bottom: 5px solid rgb(3, 0, 32);
-  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.2),
-    0 6px 20px 0 rgba(0, 0, 0, 0.12), 0 6px 30px 0 rgba(0, 0, 0, 0.08);
-  background: rgb(5, 0, 60);
-  background: -moz-linear-gradient(
-    90deg,
-    rgba(5, 0, 60, 1) 32%,
-    rgba(0, 0, 20, 1) 86%
-  );
-  background: -webkit-linear-gradient(
-    90deg,
-    rgba(5, 0, 60, 1) 32%,
-    rgba(0, 0, 20, 1) 86%
-  );
-  background: linear-gradient(
-    90deg,
-    rgba(5, 0, 60, 1) 32%,
-    rgba(0, 0, 20, 1) 86%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#05003c",endColorstr="#000014",GradientType=1);
+  background: rgba(5, 22, 58, 0.93);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(7.9px);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-backdrop-filter: blur(7.9px);
+  border-bottom: 3px solid rgba(5, 22, 58, 1);
 }
 
 .main-header-logo-container {
-  margin: 0;
+  margin-left: 6%;
 }
 
 .main-header-time-info-container {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 10px;
+  margin-right: 6%;
 }
 
 .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input:hover {

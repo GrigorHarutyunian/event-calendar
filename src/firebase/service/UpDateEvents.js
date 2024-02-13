@@ -6,6 +6,7 @@ import { useSelector } from "react-redux";
 import { checkOverlap } from "./utils/checkOverlap";
 import { upDateEvent } from "./utils/upDateEvent";
 import { type } from "@testing-library/user-event/dist/type";
+import { toast } from "react-hot-toast";
 export const upDateEvents = async (
   date,
   title,
@@ -40,8 +41,13 @@ export const upDateEvents = async (
         (type = "individual"),
         userEmailArr[0]
       );
+
+      // toast.loading("Saving...");
+      toast.success("Event added to the calendar.");
+      showToast();
     } else {
       console.log("Oops! Time range overlaps with existing busy hours for,You");
+      toast.error("Event failed to the calendar");
     }
   } else {
     const overlaps = await Promise.all(
@@ -74,13 +80,16 @@ export const upDateEvents = async (
             )
         )
       );
+      // toast.success(`Event added to the calendar.`);
     } else {
       overLapsResponse.forEach((over) => {
         console.log(
           "Oops! Time range overlaps with existing busy hours for ",
           over.mail ? over.mail : "You"
         );
+        toast.error("Event failed to the calendar");
       });
+      // add setOverlap for the adding user
     }
   }
   GetEvents(dispatch, date, userId);
