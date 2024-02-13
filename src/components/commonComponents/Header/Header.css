@@ -1,5 +1,5 @@
 .main-header-container {
-  position: sticky;
+  position: fixed;
   z-index: 200000000;
   color: white;
   height: 60px;
@@ -7,13 +7,13 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  background: rgba(22, 6, 66, 0.74);
+  background: rgba(4, 1, 12, 0.74);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.9px);
   -webkit-backdrop-filter: blur(6.9px);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-bottom: 3px solid rgba(5, 22, 58, 1);
+  border-bottom: 3px solid rgb(11, 14, 19);
 }
 
 .main-header-logo-container {

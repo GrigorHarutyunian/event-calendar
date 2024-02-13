@@ -10,11 +10,12 @@ export default function BusinessInfoComp() {
           <br />
           we'll handle the schedule
         </h2>
-        <div className="business-span-info">
-          <span className="info">
-            Efficiently organize your schedule with our intuitive calendar and
-            events website. Seamlessly manage events, set reminders, and stay on
-            track effortlessly. Simplify your life, one click at a time.
+        <div className="business-span-info-container">
+          <span className="business-span-info">
+            Introducing our new calendar website, designed to revolutionize your
+            scheduling experience. Effortlessly regulate your schedule, add
+            events, and receive email reminders: all in one place. Stay
+            organized, stay ahead.
           </span>
         </div>
       </div>

@@ -10,7 +10,7 @@
 .busines-content-featureCard {
   font-family: "Poppins", sans-serif;
   font-weight: normal; /* Equivalent to font-normal */
-  color: #f5f5f5; /* Equivalent to text-dimWhite */
+  color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
   line-height: 24px; /* Equivalent to leading-[24px] */
   margin-bottom: 0.25rem; /* Equivalent to mb-1 */
@@ -43,7 +43,9 @@
   flex-direction: row; /* Equivalent to flex-row */
   justify-content: center;
   align-items: center;
-  padding: 1.5rem; /* Equivalent to p-6 */
+  padding: 0.3rem; /* Equivalent to p-6 */
+  padding-left: 10px;
+  padding-right: 10px;
   border-radius: 20px; /* Equivalent to rounded-[20px] */
   margin-bottom: 1.5rem;
 }

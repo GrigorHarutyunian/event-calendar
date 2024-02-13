@@ -1,21 +1,23 @@
 .businessInfo-container {
   margin-left: 5%;
-}
-
-.businessInfo-container {
+  font-family: "Poppins", sans-serif;
 }
 
 .business-info-paragraf {
-  font-family: "Poppins", sans-serif;
   font-weight: 600; /* Semibold */
   font-size: 48px; /* For xs breakpoint */
   line-height: 76.8px; /* For xs breakpoint */
   color: #ffffff; /* White */
   width: 100%;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.business-span-info-container {
+  max-width: 470px;
 }
 
 .business-span-info {
-  max-width: 470px;
   font-size: 18px;
   font-weight: 400;
   line-height: 30.8px;
