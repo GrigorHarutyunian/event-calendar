@@ -26,7 +26,14 @@ import Logo4 from "./logo/Logo4.png";
 import Earth from "./earth/Earth.jpg";
 import Earth2 from "./earth/Earth2.jpg";
 
+import send from "./businessImages/Send.svg";
+import shield from "./businessImages/Shield.svg";
+import star from "./businessImages/Star.svg";
+
 export {
+  send,
+  shield,
+  star,
   Login,
   stars,
   StarsVideo,
