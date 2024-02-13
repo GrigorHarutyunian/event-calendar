@@ -1,12 +1,12 @@
 .main-header-container {
+  position: sticky;
+  z-index: 200000000;
   color: white;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
   width: 100%;
-  z-index: 1;
   background: rgba(22, 6, 66, 0.74);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.9px);

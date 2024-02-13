@@ -1,6 +1,7 @@
 .business-container {
   color: white;
-  padding-top: 5%;
+  padding-top: 12%;
   display: flex;
   justify-content: space-between;
+  padding-bottom: 12%;
 }
