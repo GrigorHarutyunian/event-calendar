@@ -1,0 +1,21 @@
+.app-navigation-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #cbcbcb;
+  margin: 0.5rem;
+
+  transition: background-color 0.2s ease-in-out;
+}
+.app-navigation-dot:hover {
+  background-color: #313bac;
+}
+
+.app-navigation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 1rem;
+}

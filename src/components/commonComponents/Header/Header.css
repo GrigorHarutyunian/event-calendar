@@ -1,19 +1,19 @@
 .main-header-container {
+  position: fixed;
+  z-index: 200000000;
   color: white;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
   width: 100%;
-  z-index: 1;
-  background: rgba(5, 22, 58, 0.93);
+  background: rgba(4, 1, 12, 0.74);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(7.9px);
+  backdrop-filter: blur(6.9px);
+  -webkit-backdrop-filter: blur(6.9px);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  -webkit-backdrop-filter: blur(7.9px);
-  border-bottom: 3px solid rgba(5, 22, 58, 1);
+  border-bottom: 3px solid rgb(11, 14, 19);
 }
 
 .main-header-logo-container {

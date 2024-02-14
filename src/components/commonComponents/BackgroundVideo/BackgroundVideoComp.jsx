@@ -1,5 +1,5 @@
-import Login from "../../../assets/Login.mp4";
 import "./BackgroundVideoComp.css";
+import { Login } from "../../../assets";
 
 export default function BackgroundVideoComp() {
   return (
