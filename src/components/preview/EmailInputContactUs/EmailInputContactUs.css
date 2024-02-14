@@ -1,0 +1,25 @@
+.contactUs-input-container {
+  margin-bottom: 2%;
+  margin-right: 6%;
+  background-color: inherit;
+}
+.contactus-error {
+  color: red;
+}
+.contactUs-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  padding: 0.95rem;
+  border: 2px;
+  border-radius: 7px;
+  border-color: black;
+  background-color: #edf2f8;
+  opacity: 0.5;
+  font-family: "DM Sans", sans-serif;
+  color: black;
+  outline: none;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}

@@ -1,0 +1,20 @@
+.textareaContact {
+  opacity: 0.5;
+  width: 88%;
+  height: 10rem;
+  padding: 0.95rem;
+  border: 2px;
+  border-radius: 7px;
+  border-color: black;
+  background-color: #edf2f8;
+  font-family: "DM Sans", sans-serif;
+  color: black;
+  outline: none;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.contactus-error {
+  color: red;
+}

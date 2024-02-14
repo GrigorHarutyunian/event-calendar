@@ -21,45 +21,6 @@
   flex-direction: column;
 }
 
-.contactUs-input-container {
-  margin-bottom: 2%;
-  margin-right: 6%;
-  background-color: inherit;
-}
-.contactUs-input {
-  margin-left: 5%;
-  margin-right: 5%;
-  width: 90%;
-  padding: 0.95rem;
-  border: 2px;
-  border-radius: 7px;
-  border-color: black;
-  background-color: #edf2f8;
-  opacity: 0.5;
-  font-family: "DM Sans", sans-serif;
-  color: black;
-  outline: none;
-  font-size: 1rem;
-  text-align: left;
-  line-height: 1.5;
-}
-.textareaContact {
-  opacity: 0.5;
-  width: 88%;
-  height: 10rem;
-  padding: 0.95rem;
-  border: 2px;
-  border-radius: 7px;
-  border-color: black;
-  background-color: #edf2f8;
-  font-family: "DM Sans", sans-serif;
-  color: black;
-  outline: none;
-  font-size: 1rem;
-  text-align: left;
-  line-height: 1.5;
-}
-
 .contactUs-paragraf1 {
   background: radial-gradient(
     64.18% 64.18% at 71.16% 35.69%,
@@ -81,24 +42,10 @@
   margin-top: 20px;
 }
 
-.contactUs-paragraf2 {
-  font-weight: 600; /* Semibold */
-  font-size: 40px; /* For xs breakpoint */
-  line-height: 76.8px; /* For xs breakpoint */
-  color: #ffffff; /* White */
-  width: 100%;
-  margin-bottom: 10px;
-  margin-top: 15px;
-}
-
 .contactUs-button {
   margin-left: 3%;
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.contactus-error {
-  color: red;
 }
