@@ -68,7 +68,6 @@ export default function Registration() {
           transition={{ duration: 1, delay: 0.5 }}
           className="reg-container-animation"
         >
-          <div className="rotation-div-reg"></div>
           <motion.div
             initial={{ boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
             className="registration-container"

@@ -131,6 +131,7 @@ export default function Login() {
           <motion.div
             initial={{
               y: "100px",
+              boxShadow: "0px 0px 15px rgb(255, 255, 255)",
               opacity: 0,
             }}
             animate={{ y: ["50px", "0px"], opacity: [0, 1] }}
@@ -170,7 +171,6 @@ export default function Login() {
                 link="/registration"
               />
             </motion.form>
-            <div className="rotation-div-log"></div>
           </motion.div>
         </motion.div>
       </div>

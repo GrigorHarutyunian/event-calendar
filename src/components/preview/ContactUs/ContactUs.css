@@ -1,0 +1,64 @@
+.preview-contactUs-container-first {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.preview-contactUs-component {
+  color: white;
+  width: 40%;
+  padding: 2rem 2rem 5rem 2rem;
+  background: rgba(255, 249, 249, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.5px);
+  -webkit-backdrop-filter: blur(6.5px);
+  border: 1px solid rgba(255, 249, 249, 0.29);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.contactUs-input-container {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  color: white;
+  background-color: inherit;
+}
+
+.contactUs-textarea {
+  width: 88%;
+  height: 10rem;
+  padding: 0.95rem;
+  border: 2px;
+  border-radius: 7px;
+  border-color: black;
+  background-color: inherit;
+  font-family: "DM Sans", sans-serif;
+  color: white;
+  outline: none;
+  font-size: 0.8rem;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.contactUs-paragraf1 {
+  font-weight: 600; /* Semibold */
+  font-size: 48px; /* For xs breakpoint */
+  line-height: 76.8px; /* For xs breakpoint */
+  color: #ffffff; /* White */
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 20px;
+}
+
+.contactUs-paragraf2 {
+  font-weight: 600; /* Semibold */
+  font-size: 40px; /* For xs breakpoint */
+  line-height: 76.8px; /* For xs breakpoint */
+  color: #ffffff; /* White */
+  width: 100%;
+  margin-bottom: 10px;
+  margin-top: 15px;
+}
