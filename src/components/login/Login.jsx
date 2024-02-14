@@ -119,15 +119,7 @@ export default function Login() {
     <div className="login-container">
       <div className="backVideoWithForm">
         <StarsBackground />
-        <motion.div
-          initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-          animate={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
-          transition={{
-            delay: 1,
-            duration: 3,
-          }}
-          className="form-container-login"
-        >
+        <div className="form-container-login">
           <motion.div
             initial={{
               y: "100px",
@@ -138,11 +130,7 @@ export default function Login() {
             transition={{ duration: 1, delay: 0.5 }}
             className="login-container-animation"
           >
-            <motion.form
-              initial={{ boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
-              className="login-form"
-              onSubmit={onSubmitHandler}
-            >
+            <form className="login-form" onSubmit={onSubmitHandler}>
               <LabelComponent text="Login" />
               <InValidDateComp
                 inValidDateShow={inValidDateShow}
@@ -170,9 +158,9 @@ export default function Login() {
                 text2="Sign up"
                 link="/registration"
               />
-            </motion.form>
+            </form>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

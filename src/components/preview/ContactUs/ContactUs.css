@@ -7,12 +7,14 @@
   color: white;
   width: 40%;
   padding: 2rem 2rem 5rem 2rem;
-  background: rgba(255, 249, 249, 0.1);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.5px);
-  -webkit-backdrop-filter: blur(6.5px);
-  border: 1px solid rgba(255, 249, 249, 0.29);
+  background: linear-gradient(
+    144.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
   display: flex;
   justify-content: center;
   text-align: center;
@@ -20,36 +22,62 @@
 }
 
 .contactUs-input-container {
-  width: 90%;
-  margin-left: 5%;
   margin-bottom: 2%;
-  color: white;
+  margin-right: 6%;
   background-color: inherit;
 }
-
-.contactUs-textarea {
+.contactUs-input {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  padding: 0.95rem;
+  border: 2px;
+  border-radius: 7px;
+  border-color: black;
+  background-color: #edf2f8;
+  opacity: 0.5;
+  font-family: "DM Sans", sans-serif;
+  color: black;
+  outline: none;
+  font-size: 1rem;
+  text-align: left;
+  line-height: 1.5;
+}
+.textareaContact {
+  opacity: 0.5;
   width: 88%;
   height: 10rem;
   padding: 0.95rem;
   border: 2px;
   border-radius: 7px;
   border-color: black;
-  background-color: inherit;
+  background-color: #edf2f8;
   font-family: "DM Sans", sans-serif;
-  color: white;
+  color: black;
   outline: none;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: left;
   line-height: 1.5;
 }
 
 .contactUs-paragraf1 {
-  font-weight: 600; /* Semibold */
-  font-size: 48px; /* For xs breakpoint */
-  line-height: 76.8px; /* For xs breakpoint */
-  color: #ffffff; /* White */
-  width: 100%;
-  margin-bottom: 0;
+  background: radial-gradient(
+    64.18% 64.18% at 71.16% 35.69%,
+    #def9fa 0.89%,
+    #bef3f5 17.23%,
+    #9dedf0 42.04%,
+    #7de7eb 55.12%,
+    #5ce1e6 71.54%,
+    #33bbcf 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  line-height: 80px;
+  margin: 0;
+  font-size: 55px;
+  margin-bottom: 2rem;
   margin-top: 20px;
 }
 
@@ -61,4 +89,16 @@
   width: 100%;
   margin-bottom: 10px;
   margin-top: 15px;
+}
+
+.contactUs-button {
+  margin-left: 3%;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contactus-error {
+  color: red;
 }

@@ -1,11 +1,16 @@
 import React from "react";
 import "./ImageInputComponent.css";
+import { motion } from "framer-motion";
 export default function ImageInputComponent({ uploadImage }) {
   return (
     <div>
-      <label id="upload-label" htmlFor="upload-image">
+      <motion.label
+        whileHover={{ scale: 1.1 }}
+        id="upload-label"
+        htmlFor="upload-image"
+      >
         Upload image
-      </label>
+      </motion.label>
       <input
         type="file"
         id="upload-image"

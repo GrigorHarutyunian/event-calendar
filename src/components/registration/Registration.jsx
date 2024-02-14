@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./Registration.css";
 import FormComponent from "./FormComponent/FormComponent";
 import UserImageComponent from "./UserImageComponent/UserImageComponent";
@@ -18,60 +18,21 @@ export default function Registration() {
   const isLoggedIn = useSelector((store) => store.userIsLogin);
   useIsLoggin(isLoggedIn, "/home", isLoggedIn);
 
-  const regContainerVariants = {
-    hidden: {
-      x: "-100vw",
-      y: "-100vw",
-      boxShadow: "0px 0px 15px rgb(255, 255, 255)",
-      rotate: 360,
-    },
-    visible: {
-      x: 0,
-      y: 0,
-      rotate: 0,
-      transition: {
-        delay: 0.9,
-        duration: 1.2,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-    exit: {
-      x: "-100vw",
-      y: "-100vw",
-      transition: {
-        delay: 0.4,
-        duration: 1.2,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-  };
   return (
     <div className="backVideoWithForm">
       <StarsBackground />
-      <motion.div
-        initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
-        animate={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}
-        transition={{
-          delay: 1,
-          duration: 3,
-        }}
-        className="page-container"
-      >
+      <div className="page-container">
         <motion.div
           initial={{
             y: "100px",
             opacity: 0,
+            boxShadow: "0px 0px 15px rgb(255, 255, 255)",
           }}
           animate={{ y: ["50px", "0px"], opacity: [0, 1] }}
           transition={{ duration: 1, delay: 0.5 }}
           className="reg-container-animation"
         >
-          <motion.div
-            initial={{ boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
-            className="registration-container"
-          >
+          <div className="registration-container">
             <LabelComponent text="Registration" />
             <InValidDateComp
               inValidDate={inValidDate}
@@ -91,9 +52,9 @@ export default function Registration() {
               link="/login"
               setinValideDate={setinValideDate}
             />
-          </motion.div>
+          </div>
         </motion.div>
-      </motion.div>
+      </div>
     </div>
   );
 }

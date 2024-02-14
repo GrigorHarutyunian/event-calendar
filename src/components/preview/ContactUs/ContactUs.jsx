@@ -4,19 +4,21 @@ import { motion } from "framer-motion";
 import WrapperComp from "../WrapperComp/WrapperComp";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { TextField } from "@mui/material";
 import { onSubmitHandlerForContactUs } from "../../../handlers";
+import SendMessage from "../SendMessage/SendMessage";
 
 function ContactUs() {
   const formik = useFormik({
     initialValues: {
       email: "",
-      textarea: "",
+      textareaContact: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string()
-        .min(9, "Must be more than 9 characters")
-        .required("Required"),
+      email: Yup.string().min(9, "Email must contain more than 9 characters"),
+      textareaContact: Yup.string().min(
+        15,
+        "Text must contain more than 15 characters"
+      ),
     }),
     onSubmit: onSubmitHandlerForContactUs,
   });
@@ -27,35 +29,43 @@ function ContactUs() {
         transition={{ duration: 1.1 }}
         className="preview-contactUs-component"
       >
-        <p className="contactUs-paragraf1">Have any questions?</p>
-        <p className="contactUs-paragraf2">Contact us</p>
+        <p className="contactUs-paragraf1">Contact us</p>
         <form
-          id="form"
+          id="formContact"
           onSubmit={formik.handleSubmit}
           className="contactUs-form-container"
         >
           <div className="contactUs-input-container">
-            <TextField
+            <input
+              className="contactUs-input"
               type={"email"}
-              fullWidth={true}
               required={true}
               id="email"
               placeholder="email"
               value={formik.values.email}
               onBlur={formik.handleBlur}
               onChange={formik.handleChange}
-              variant="standard"
             />
+            {formik.touched.email && formik.errors.email ? (
+              <p className="contactus-error">{formik.errors.email}</p>
+            ) : null}
           </div>
           <div className="contactUs-textarea-container">
             <textarea
-              id="textarea"
-              className="contactUs-textarea"
+              required={true}
+              id="textareaContact"
+              className="textareaContact"
               placeholder="Your Message"
-              value={formik.values.textarea}
-              name={"message"}
+              value={formik.values.textareaContact}
+              name={"textareaContact"}
               onChange={formik.handleChange}
             />
+            {formik.touched.textareaContact && formik.errors.textareaContact ? (
+              <p className="contactus-error">{formik.errors.textareaContact}</p>
+            ) : null}
+          </div>
+          <div className="contactUs-button">
+            <SendMessage />
           </div>
         </form>
       </motion.div>
