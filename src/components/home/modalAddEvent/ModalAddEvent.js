@@ -25,6 +25,7 @@ import SubjectIcon from "@mui/icons-material/Subject";
 import CakeIcon from "@mui/icons-material/Cake";
 import { MyAutocomplete } from "../../commonComponents/InputAutocomplete/Autocomplete";
 import dayjs from "dayjs";
+import { InputLabel, Button } from "@mui/material";
 
 export const ModalAddEvent = () => {
   const selectedDayString = useSelector((store) => store.selectedDay);
@@ -176,7 +177,7 @@ export const ModalAddEvent = () => {
                   }
                   inputRef={timeRef}
                   onChange={handleTime}
-                  label="Controlled field"
+                  label="Control Time"
                 />
               </LocalizationProvider>
             </div>
@@ -189,6 +190,7 @@ export const ModalAddEvent = () => {
                 friends={friends}
                 setFriendsInfo={setFriendsInfo}
                 friendsInfo={friendsInfo}
+                inputRef={guestsRef}
               />
             </div>
           </div>
@@ -197,12 +199,16 @@ export const ModalAddEvent = () => {
             <ImageIcon onClick={() => iconRef.current.focus()} />
             <div style={{ width: "65%" }}>
               <FormControl style={{ maxWidth: "m" }}>
+                <InputLabel id="demo-simple-select-label">
+                  Select an Icon
+                </InputLabel>
                 <Select
                   value={icon}
                   onChange={(event) => setIcon(event.target.value)}
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   inputRef={iconRef}
+                  placeholder="Select an Icon"
                 >
                   <MenuItem value={"meeting"}>
                     <GroupsIcon />
@@ -232,6 +238,7 @@ export const ModalAddEvent = () => {
             <div style={{ width: "65%" }}>
               <textarea
                 className="modal-textarea"
+                placeholder="Descriptions"
                 ref={descriptionRef}
                 onChange={(e) => {
                   setDescription(e.target.value);
@@ -239,12 +246,14 @@ export const ModalAddEvent = () => {
               ></textarea>
             </div>
           </div>
-          <button
-            style={{ position: "absolute", bottom: "4%", right: "5%" }}
+
+          <Button
             type="submit"
+            style={{ position: "absolute", bottom: "4%", right: "5%" }}
+            variant="contained"
           >
-            Save
-          </button>
+            Contained
+          </Button>
         </form>
       </div>
     </div>

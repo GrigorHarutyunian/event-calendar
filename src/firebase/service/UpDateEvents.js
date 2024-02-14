@@ -75,7 +75,6 @@ export const upDateEvents = async (
             )
         )
       );
-
     } else {
       overLapsResponse.forEach((over) => {
         console.log(
