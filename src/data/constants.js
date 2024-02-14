@@ -70,22 +70,22 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Rewards",
+    title: "Lorem ips",
     content:
-      "The best credit cards offer some tantalizing combinations of promotions and prizes",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "100% Secured",
+    title: "Lorem ip",
     content:
-      "We take proactive steps make sure your information and transactions are secure.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Balance Transfer",
+    title: "Lorem ip",
     content:
-      "A balance transfer credit card can save you a lot of money in interest charges.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
   },
 ];
