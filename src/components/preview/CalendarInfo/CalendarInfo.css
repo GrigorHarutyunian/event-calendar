@@ -1,5 +1,8 @@
 .calendar-info-container {
   font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
 }
 
 .calendar-info-paragraf {

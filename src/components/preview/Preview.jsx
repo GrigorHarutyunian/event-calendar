@@ -5,8 +5,7 @@ import StarsBackground from "./../commonComponents/StarsBackground/StarsBackgrou
 import Business from "./Business/Business";
 import CalendarDeal from "./CalendarDeal/CalendarDeal";
 import ContactUs from "./ContactUs/ContactUs";
-import CTA from "./CTA/CTA";
-import PreviewFooter from "./PreviewFooter/PreviewFooter";
+import CTAWithFooterContainer from "./CTAWithFooterContainer/CTAWithFooterContainer";
 
 export default function Preview() {
   return (
@@ -19,8 +18,7 @@ export default function Preview() {
         <Business />
         <CalendarDeal />
         <ContactUs />
-        <CTA />
-        <PreviewFooter />
+        <CTAWithFooterContainer />
       </div>
     </div>
   );

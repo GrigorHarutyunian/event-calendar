@@ -4,12 +4,17 @@ import HeroInfoComponent from "../HeroInfoComponent/HeroInfoComponent";
 import HeroImageComponent from "../HeroImageComponent/HeroImageComponent";
 import Earth from "../Earth/Earth";
 import WrapperComp from "../WrapperComp/WrapperComp";
+import { motion } from "framer-motion";
 function Hero() {
   return (
-    <div className="hero-container">
+    <motion.div
+      whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+      transition={{ duration: 1.1 }}
+      className="hero-container"
+    >
       <HeroInfoComponent />
       <HeroImageComponent />
-    </div>
+    </motion.div>
   );
 }
 

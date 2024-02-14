@@ -43,9 +43,10 @@
   flex-direction: row; /* Equivalent to flex-row */
   justify-content: center;
   align-items: center;
-  padding: 0.3rem; /* Equivalent to p-6 */
+  padding-top: 0.3rem; /* Equivalent to p-6 */
+  padding-bottom: 0.3rem; /* Equivalent to p-6 */
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 5px;
   border-radius: 20px; /* Equivalent to rounded-[20px] */
   margin-bottom: 1.5rem;
 }

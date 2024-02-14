@@ -7,6 +7,14 @@
   right: 0;
   overflow-y: scroll;
 }
+::-webkit-scrollbar {
+  background-color: black; /* Color of the scrollbar thumb */
+  width: 5px; /* Width of the scrollbar */
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+  background: white;
+}
 
 .background-stars {
   position: relative;
