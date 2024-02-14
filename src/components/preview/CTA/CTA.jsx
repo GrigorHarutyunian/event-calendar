@@ -8,8 +8,8 @@ export default function CTA() {
       <div className="CTA-description">
         <h2 className="CTA-first-title">Let's try our service now!</h2>
         <p className="CTA-paragaraf">
-          Everything you need to acdept card payments and grow your business
-          anywhere on the planet.
+          Everything you need to add your event and to do your business anywhere
+          on the planet.
         </p>
       </div>
       <div className="CTA-button-container">

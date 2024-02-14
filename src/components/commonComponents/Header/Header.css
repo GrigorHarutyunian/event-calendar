@@ -1,6 +1,6 @@
 .main-header-container {
   position: fixed;
-  z-index: 200000000;
+  z-index: 20;
   color: white;
   height: 60px;
   display: flex;

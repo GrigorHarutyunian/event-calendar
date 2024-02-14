@@ -4,16 +4,16 @@ export default function CalendarInfo() {
   return (
     <div className="calendar-info-container">
       <h2 className="calendar-info-paragraf">
-        You do the business,
+        Lorem Ipsum is simply
         <br />
-        we'll handle the schedule
+        dummy text of the print
       </h2>
       <div className="calendar-span-info-container">
         <span className="calendar-span-info">
-          Introducing our new calendar website, designed to revolutionize your
-          scheduling experience. Effortlessly regulate your schedule, add
-          events, and receive email reminders: all in one place. Stay organized,
-          stay ahead.
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book.
         </span>
       </div>
     </div>
