@@ -38,12 +38,13 @@ export const HomePage = () => {
   const userID = useSelector((store) => store.userData.id);
   console.log(thisDay);
   console.log(currentDate);
+  const modalInvitation = useSelector((store) => store.modalInvitations);
   useEffect(() => {
     GetFriendsList(dispatch);
     GetEvents(dispatch, currentDateText, userID);
     EventInivations(userID, dispatch);
-  }, []);
-  const modalInvitation = useSelector((store) => store.modalInvitations);
+  }, [modalInvitation]);
+
   useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
   const Inivations = useSelector((store) => store.invitation);
   return (

@@ -6,6 +6,7 @@ import { changeBurgerState } from "../../../redux/slices/burgerSlice";
 import { useSelector } from "react-redux";
 import { Invitation } from "./Inivations";
 import { modalInvitations } from "../../../redux/slices/modalInvitationsSlice";
+import { EventInivations } from "../../../firebase/service/EventInvitations";
 
 export const BurgerMenu = () => {
   const dispatch = useDispatch();
@@ -15,7 +16,7 @@ export const BurgerMenu = () => {
   const userData = useSelector((state) => {
     return state.userData;
   });
-  const invitations = useSelector((store) => store.invitation);
+  const userID = useSelector((store) => store.user);
 
   const updateManu = () => {
     if (!burgerState) {
@@ -38,7 +39,10 @@ export const BurgerMenu = () => {
           <>
             <UserInfo userData={userData} />
             <div
-              onClick={() => dispatch(modalInvitations(true))}
+              onClick={async () => {
+                await EventInivations(userID, dispatch);
+                dispatch(modalInvitations(true));
+              }}
               className="invitations"
             >
               Invitations
