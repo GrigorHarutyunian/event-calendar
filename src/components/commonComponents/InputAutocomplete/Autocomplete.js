@@ -7,8 +7,12 @@ import ListItem from "@mui/material/ListItem";
 import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { useRef } from "react";
-export const MyAutocomplete = ({ friends, setFriendsInfo, friendsInfo }) => {
-  const inputRef = useRef(null);
+export const MyAutocomplete = ({
+  friends,
+  setFriendsInfo,
+  friendsInfo,
+  inputRef,
+}) => {
   const handleSelectChange = (event, newValue) => {
     setFriendsInfo(newValue);
   };
@@ -17,6 +21,9 @@ export const MyAutocomplete = ({ friends, setFriendsInfo, friendsInfo }) => {
     <Autocomplete
       style={{ maxHeight: "200px", overflowY: "auto" }}
       multiple
+      limitTags={1}
+      maxHeight={20}
+      id="multiple-limit-tags"
       options={friends}
       disableCloseOnSelect
       getOptionLabel={(option) => option.email}
