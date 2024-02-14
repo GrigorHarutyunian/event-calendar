@@ -1,5 +1,6 @@
 .hero-info-container {
-  margin-left: 5%;
+  margin-left: 10%;
+  margin-top: 5%;
   font-family: "Poppins", sans-serif;
 }
 .hero-button-with-intro {
@@ -44,11 +45,10 @@
 }
 
 .hero-info-container .hero-p {
-  font-weight: 700;
   font-weight: 800;
-  line-height: 150px;
+  line-height: 120px;
   margin: 0;
-  font-size: 72px;
+  font-size: 55px;
   color: white;
 }
 .hero-info-container .hero-span-info {

@@ -1,20 +1,17 @@
 import React from "react";
 import "./WrapperComp.css";
-import { NavigationDots } from "../componetens";
+import NavigationDots from "../NavigationDots/NavigationDots.jsx";
 
-export default AppWrap = (Component, idName, classNames) =>
+const WrapperComp = (Component, idName, classNames) =>
   function HOC() {
     return (
-      <div className={`app__container ${classNames}`} id={idName}>
-        <div className="app__wrapper app__flex ">
+      <div className={`appWrap-container ${classNames}`} id={idName}>
+        <div className="component-wrapper-container">
           <Component />
-
-          <div className="copyright">
-            <p className="p-text">@2023 Karen</p>
-            <p className="p-text">All rights reserved</p>
-          </div>
         </div>
         <NavigationDots active={idName} />
       </div>
     );
   };
+
+export default WrapperComp;

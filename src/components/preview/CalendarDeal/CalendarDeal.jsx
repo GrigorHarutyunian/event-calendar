@@ -3,7 +3,9 @@ import CalendarImage from "../CalendarImage/CalendarImage";
 import CalendarInfo from "../CalendarInfo/CalendarInfo";
 import "./CalendarDeal.css";
 import { motion } from "framer-motion";
-export default function CalendarDeal() {
+import WrapperComp from "../WrapperComp/WrapperComp";
+
+function CalendarDeal() {
   return (
     <motion.div
       whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
@@ -15,3 +17,5 @@ export default function CalendarDeal() {
     </motion.div>
   );
 }
+
+export default WrapperComp(CalendarDeal, "calendarDeal");
