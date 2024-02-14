@@ -2,14 +2,10 @@
   border-width: 2px;
   border-color: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
     0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  background-color: #f7fafc;
+  background-color: #0d1930;
+  color: blanchedalmond;
   padding: 0.8rem 2rem;
   cursor: pointer;
-  border-radius: 9999px;
+  border-radius: 20px;
   margin-right: 10px;
-}
-
-.button:hover {
-  background-color: #2d3748;
-  color: #ffffff;
 }
