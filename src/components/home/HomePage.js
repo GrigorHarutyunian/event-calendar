@@ -66,10 +66,10 @@ export const HomePage = () => {
         in={modalInvitation}
         timeout={1500}
         classNames={{
-          enter: "modal-enter",
-          enterActive: "modal-enter-active",
-          exit: "modal-exit",
-          exitActive: "modal-exit-active",
+          enter: "modal-enter-invitation",
+          enterActive: "modal-enter-active-invitation",
+          exit: "modal-exit-invitation",
+          exitActive: "modal-exit-active-invitation",
         }}
         unmountOnExit
       >
