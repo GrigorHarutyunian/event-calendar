@@ -1,5 +1,9 @@
 .hero-container {
-  padding-top: 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  gap: 6.5%;
+}
+
+.earth-container {
+  margin-top: 50px;
 }

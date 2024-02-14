@@ -1,0 +1,7 @@
+.business-container {
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 12%;
+  gap: 40px;
+}

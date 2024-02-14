@@ -1,0 +1,50 @@
+.CTA-container {
+  display: flex;
+  background: linear-gradient(
+    224.39deg,
+    #ffffff -278.56%,
+    #6d6d6d -78.47%,
+    #11101d 91.61%
+  );
+  box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
+  border-radius: 20px; /* Equivalent to rounded-[20px] */
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1.5rem; /* Equivalent to my-6 */
+  margin-bottom: 1.5rem; /* Equivalent to my-6 */
+  padding-left: 1.5rem; /* Equivalent to px-6 */
+  padding-right: 1.5rem; /* Equivalent to px-6 */
+  padding-top: 1rem; /* Equivalent to py-4 */
+  padding-bottom: 1rem; /* Equivalent to py-4 */
+}
+.CTA-description {
+  margin-left: 5%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.CTA-first-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600; /* Equivalent to font-semibold */
+  font-size: 40px; /* Default font size for non-xs breakpoint */
+  color: #ffffff; /* Equivalent to text-white */
+  line-height: 48.8px; /* Default line height for non-xs breakpoint */
+  width: 100%;
+}
+
+.CTA-paragaraf {
+  font-family: "Poppins", sans-serif;
+  font-weight: normal; /* Equivalent to font-normal */
+  font-size: 18px;
+  max-width: 470px; /* Equivalent to max-w-[470px] */
+  margin-top: 1rem; /* Equivalent to mt-5 */
+  line-height: 30.8px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.CTA-button-container {
+  margin-right: 5%;
+}

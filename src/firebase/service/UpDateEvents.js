@@ -43,10 +43,8 @@ export const upDateEvents = async (
       );
 
       // toast.loading("Saving...");
-      toast.success("Event added to your calendar.");
     } else {
       console.log("Oops! Time range overlaps with existing busy hours for,You");
-      toast.error("Event failed to add to your calendar.");
     }
   } else {
     const overlaps = await Promise.all(
@@ -80,7 +78,6 @@ export const upDateEvents = async (
             )
         )
       );
-      // toast.success(`Event added to the calendar.`);
     } else {
       overLapsResponse.forEach((over) => {
         console.log(

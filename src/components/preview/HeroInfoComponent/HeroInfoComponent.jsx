@@ -4,24 +4,13 @@ import GetStarted from "../GetStarted/GetStarted";
 import { motion } from "framer-motion";
 export default function HeroInfoComponent() {
   const labelVariant1 = {
-    hidden: { x: "100vw" },
+    hidden: { x: "-100vw" },
     visible: {
       x: 0,
       rotate: 0,
       transition: {
-        delay: 1,
+        delay: 0.5,
         duration: 1.1,
-        type: "spring",
-        stiffness: 100,
-      },
-    },
-    exit: {
-      x: "100vw",
-      transition: {
-        delay: 1,
-        duration: 1.1,
-        type: "spring",
-        stiffness: 100,
       },
     },
   };
@@ -29,13 +18,6 @@ export default function HeroInfoComponent() {
     hidden: { scale: 0 },
     visible: {
       scale: 1,
-      transition: {
-        delay: 2,
-        duration: 1.2,
-      },
-    },
-    exit: {
-      scale: 0,
       transition: {
         delay: 2,
         duration: 1.2,

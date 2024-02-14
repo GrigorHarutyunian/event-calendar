@@ -1,0 +1,18 @@
+.preview-footer-container {
+  margin-left: 5%;
+  margin-top: 10%;
+  width: 90%; /* Equivalent to w-full */
+  display: flex;
+  justify-content: space-between; /* Equivalent to flex justify-between */
+  align-items: center; /* Equivalent to flex items-center */
+  padding-top: 1.5rem; /* Equivalent to pt-6 */
+  border-top: 1px solid #3f3e45; /* Equivalent to border-t-[1px] border-t-[#3F3E45] */
+}
+
+.preview-footer-text {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500; /* Equivalent to font-medium */
+  font-size: 18px;
+  line-height: 27px; /* Equivalent to leading-[27px] */
+  color: #ffffff; /* Equivalent to text-white */
+}

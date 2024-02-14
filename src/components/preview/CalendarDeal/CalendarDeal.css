@@ -1,0 +1,6 @@
+.calendar-deal-container {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  gap: 10%;
+}

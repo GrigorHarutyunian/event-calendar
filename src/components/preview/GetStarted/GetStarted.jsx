@@ -7,11 +7,11 @@ import { motion } from "framer-motion";
 export default function GetStarted() {
   const navigate = useNavigate();
   const buttonVariants = {
-    hidden: { x: "-100vw" },
+    hidden: { y: "-100vw" },
     visible: {
-      x: 0,
+      y: 0,
       transition: {
-        delay: 1.5,
+        delay: 3,
         duration: 2.4,
         type: "spring",
         stiffness: 70,

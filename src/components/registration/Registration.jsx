@@ -2,17 +2,13 @@ import React, { useEffect, useState } from "react";
 import "./Registration.css";
 import FormComponent from "./FormComponent/FormComponent";
 import UserImageComponent from "./UserImageComponent/UserImageComponent";
-import {
-  FormFooterComponent,
-  LabelComponent,
-  BackgroundVideoComp,
-} from "../commonComponents";
+import { FormFooterComponent, LabelComponent } from "../commonComponents";
+import StarsBackground from "../commonComponents/StarsBackground/StarsBackground";
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
 import InValidDateComp from "./InValidDateComp/InValidDateComp";
-
 export default function Registration() {
   const [image, setImage] = useState(null);
   const [inValidDate, setinValideDate] = useState(false);
@@ -53,7 +49,7 @@ export default function Registration() {
   };
   return (
     <div className="backVideoWithForm">
-      <BackgroundVideoComp />
+      <StarsBackground />
       <motion.div
         initial={{ backgroundColor: "rgba(0, 0, 0, 0)" }}
         animate={{ backgroundColor: "rgba(0, 0, 0, 0.4)" }}

@@ -11,7 +11,6 @@ export default function ButtonComponent({ text, type, onClickHandler, form }) {
           textShadow: "0px 0px 8px rgb(255, 255, 255)",
           boxShadow: "0px 0px 15px rgb(0, 0, 0)",
         }}
-        transition={{ duration: 0, type: "spring", stiffness: 500 }}
         type={type}
         onClick={onClickHandler}
         form={form}
