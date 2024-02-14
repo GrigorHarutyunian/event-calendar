@@ -6,6 +6,7 @@ import Business from "./Business/Business";
 import CalendarDeal from "./CalendarDeal/CalendarDeal";
 import ContactUs from "./ContactUs/ContactUs";
 import CTA from "./CTA/CTA";
+import PreviewFooter from "./PreviewFooter/PreviewFooter";
 
 export default function Preview() {
   return (
@@ -19,6 +20,7 @@ export default function Preview() {
         <CalendarDeal />
         <ContactUs />
         <CTA />
+        <PreviewFooter />
       </div>
     </div>
   );
