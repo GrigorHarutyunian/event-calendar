@@ -1,8 +1,4 @@
-import { getDatabase, ref, update, get } from "firebase/database";
-import { database } from "../firebase-config";
 import { GetEvents } from "./GetEvents";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import { checkOverlap } from "./utils/checkOverlap";
 import { upDateEvent } from "./utils/upDateEvent";
 import { type } from "@testing-library/user-event/dist/type";
@@ -28,6 +24,7 @@ export const upDateEvents = async (
 
   if (usersIdArr.length === 1) {
     let res = await checkOverlap(userId, date, time);
+
     if (!res) {
       const email = user.email;
       await upDateEvent(
@@ -37,9 +34,9 @@ export const upDateEvents = async (
         title,
         icon,
         description,
-        dispatch,
         (type = "individual"),
-        userEmailArr[0]
+        userEmailArr[0],
+        email
       );
 
       // toast.loading("Saving...");
@@ -80,14 +77,14 @@ export const upDateEvents = async (
             )
         )
       );
-      // toast.success(`Event added to the calendar.`);
+      toast.success(`Event added to the calendar.`);
     } else {
       overLapsResponse.forEach((over) => {
         console.log(
           "Oops! Time range overlaps with existing busy hours for ",
           over.mail ? over.mail : "You"
         );
-        toast.error(`Event failed to add to ${over.email}'s calendar.`);
+        toast.error(`Event failed to add to ${over.mail}'s calendar.`);
       });
     }
   }

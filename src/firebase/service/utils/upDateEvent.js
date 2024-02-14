@@ -10,11 +10,11 @@ export async function upDateEvent(
   title,
   icon,
   description,
-  dispatch,
   type,
   email,
   user
 ) {
+  console.log(user);
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
   try {

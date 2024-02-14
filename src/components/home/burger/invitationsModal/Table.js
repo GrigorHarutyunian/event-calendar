@@ -48,7 +48,7 @@ const columns = [
 
 export const DataGridDemo = ({ rows }) => {
   return (
-    <Box sx={{ height: 400, width: "100%" }}>
+    <Box sx={{ height: 400, width: "80%" }}>
       <div className="title-invitation">Invitations</div>
 
       <DataGrid

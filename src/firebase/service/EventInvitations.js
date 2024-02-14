@@ -15,7 +15,7 @@ export const EventInivations = async (userId, dispatch) => {
       const oneDay = updatedEvents[key].event;
       const day = key;
       for (let event of oneDay) {
-        if (event.type === "group") {
+        if (event.type === "group" && event.user.id !== userId) {
           const user = {
             avatar: event.user.image,
             mail: event.user.email,
