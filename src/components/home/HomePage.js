@@ -3,6 +3,12 @@ import "./HomePage.css";
 import "./calendar/eventsListDay/EventsDay.js";
 import { CSSTransition } from "react-transition-group";
 
+import { FormControl, Select, MenuItem } from "@mui/material";
+import Button from "@mui/material/Button";
+import { changeCalendarType } from "../../redux/slices/calendarTypeSlice";
+import { selectedDay } from "../../redux/slices/selectedDaySlice";
+import { thisMonth } from "../../redux/slices/currentDateSlice";
+
 import { EventsDay } from "./calendar/eventsListDay/EventsDay.js";
 
 import { Calendar } from "./calendar/Calendar.js";
@@ -27,6 +33,7 @@ import { InvitationsModal } from "./burger/invitationsModal/InvitationModal.js";
 import { Preloader } from "../commonComponents";
 
 export const HomePage = () => {
+  const day = new Date();
   const calendarForm = useSelector((store) => store.calendarType);
   const currentDateText = useSelector((store) => store.currentDate);
   const isLoggedIn = useSelector((store) => store.userIsLogin);
@@ -49,8 +56,48 @@ export const HomePage = () => {
   useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
   const Inivations = useSelector((store) => store.invitation);
   return (
-    <>
+    <section className="home-page-container">
       <Preloader />
+      <div className="home-calendar-today-regulate-container">
+        <FormControl style={{ maxWidth: "sm", width: "150px" }}>
+          <Select
+            value={calendarForm}
+            onChange={(event) =>
+              dispatch(changeCalendarType(event.target.value))
+            }
+            style={{
+              background: "linear-gradient(to right, #2b3248, #7b88cc)",
+              borderRadius: "5px",
+              fontSize: "15px",
+              fontWeight: "600",
+            }}
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            variant="outlined"
+          >
+            <MenuItem value={"Month"}>Month</MenuItem>
+            <MenuItem value={"Year"}>Year</MenuItem>
+            <MenuItem value={"Week"}>Week</MenuItem>
+          </Select>
+        </FormControl>
+        <Button
+          style={{
+            padding: "13px 23px",
+            background: "linear-gradient(to right, #2b3248, #7b88cc)",
+            color: "aqua",
+            fontSize: "15px",
+            fontWeight: "600",
+          }}
+          onClick={() => {
+            GetEvents(dispatch, day.toDateString(), userID);
+            dispatch(selectedDay(day.toDateString()));
+            dispatch(thisMonth());
+          }}
+          variant="outlined"
+        >
+          Today
+        </Button>
+      </div>
       <div className="home-page">
         <CSSTransition
           in={thereIsModal}
@@ -99,6 +146,6 @@ export const HomePage = () => {
           <EventsDay userID={userID} />
         </div>
       </div>
-    </>
+    </section>
   );
 };
