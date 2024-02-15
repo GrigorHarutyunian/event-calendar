@@ -58,8 +58,8 @@
 
 .MuiSelect-select.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
   padding: 14.5px 59px;
-  /* color: black; */
-  color: aqua;
-
-  border: 1px solid rgba(25, 118, 210, 0.5);
+}
+.MuiSelect-select.css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input:hover {
+  padding: 14.5px 59px;
+  border: 0px;
 }

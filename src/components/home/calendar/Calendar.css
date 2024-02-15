@@ -163,9 +163,9 @@ td.today {
 }
 
 /**/
-.css-i4bv87-MuiSvgIcon-root {
+/* .css-i4bv87-MuiSvgIcon-root {
   color: white;
-}
+} */
 
 .calendar::before {
   content: "";

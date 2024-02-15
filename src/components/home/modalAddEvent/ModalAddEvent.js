@@ -37,6 +37,7 @@ export const ModalAddEvent = () => {
   const [icon, setIcon] = useState("");
   const [description, setDescription] = useState("");
   const [position, setPosition] = useState({ x: 500, y: 150 });
+  const [errrorMessege, setErrorMessage] = useState("");
   const dispatch = useDispatch();
 
   const modalRef = useRef();
@@ -105,8 +106,7 @@ export const ModalAddEvent = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(1);
-    title &&
-      time.state &&
+    if (title && time.state) {
       upDateEvents(
         selectedDayString,
         title,
@@ -117,6 +117,10 @@ export const ModalAddEvent = () => {
         user,
         friendsInfo
       );
+      setErrorMessage("");
+    } else {
+      setErrorMessage("add event and control time \n entries are required");
+    }
   };
 
   const handleTime = (e) => {
@@ -208,7 +212,7 @@ export const ModalAddEvent = () => {
                   labelId="demo-simple-select-label"
                   id="demo-simple-select"
                   inputRef={iconRef}
-                  placeholder="Select an Icon"
+                  label="Select an Icon"
                 >
                   <MenuItem value={"meeting"}>
                     <GroupsIcon />
@@ -246,7 +250,7 @@ export const ModalAddEvent = () => {
               ></textarea>
             </div>
           </div>
-
+          <p className="error-message">{errrorMessege}</p>
           <Button
             type="submit"
             style={{ position: "absolute", bottom: "4%", right: "5%" }}
