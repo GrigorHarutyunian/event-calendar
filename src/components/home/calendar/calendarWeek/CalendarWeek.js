@@ -126,39 +126,44 @@ export const CalendarWeek = ({ userID, currentDate }) => {
 
   return (
     <div className="calendar week">
-      <header className="calendar-header">
-        <IconButton
-          onClick={() => dispatch(prevWeek())}
-          aria-label="previous-week"
-        >
-          <ChevronLeftRounded />
-        </IconButton>
-        <h2>{monthNames[new Date(currentDate).getMonth()]}</h2>
-        <IconButton onClick={() => dispatch(nexTWeek())} aria-label="next-week">
-          <ChevronRightRounded />
-        </IconButton>
-      </header>
-      <div className="calendar-week-list">
-        {weekDaysList.map((date, index) => (
-          <div className="week-days-date" key={date + index}>
-            <div key={date + "week-day" + index} className="week-day">
-              {weekDays[date.getDay()]}
+      <span className="span21">
+        <header className="calendar-header">
+          <IconButton
+            onClick={() => dispatch(prevWeek())}
+            aria-label="previous-week"
+          >
+            <ChevronLeftRounded />
+          </IconButton>
+          <h2>{monthNames[new Date(currentDate).getMonth()]}</h2>
+          <IconButton
+            onClick={() => dispatch(nexTWeek())}
+            aria-label="next-week"
+          >
+            <ChevronRightRounded />
+          </IconButton>
+        </header>
+        <div className="calendar-week-list">
+          {weekDaysList.map((date, index) => (
+            <div className="week-days-date" key={date + index}>
+              <div key={date + "week-day" + index} className="week-day">
+                {weekDays[date.getDay()]}
+              </div>
+              <div key={date + "week-date" + index} className="week-date">
+                {date.getDate()}
+              </div>
+              <div style={{ height: "100%" }}>
+                <TimeGrid
+                  key={date + "time-grid" + index}
+                  date={date}
+                  selectedHours={selectedHours}
+                  setSelectedHours={setSelectedHours}
+                  userID={userID}
+                />
+              </div>
             </div>
-            <div key={date + "week-date" + index} className="week-date">
-              {date.getDate()}
-            </div>
-            <div style={{ height: "100%" }}>
-              <TimeGrid
-                key={date + "time-grid" + index}
-                date={date}
-                selectedHours={selectedHours}
-                setSelectedHours={setSelectedHours}
-                userID={userID}
-              />
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </span>
     </div>
   );
 };
