@@ -1,0 +1,19 @@
+.send-message-button {
+  width: 200px;
+  padding-top: 1rem; /* Equivalent to py-4 */
+  padding-bottom: 1rem; /* Equivalent to py-4 */
+  padding-left: 1.5rem; /* Equivalent to px-6 */
+  padding-right: 1.5rem; /* Equivalent to px-6 */
+  background-image: linear-gradient(
+    to right,
+    #42a5f5,
+    #3f51b5
+  ); /* Background blue gradient */
+  font-family: "Poppins", sans-serif;
+  font-weight: 500; /* Equivalent to font-medium */
+  font-size: 18px; /* Equivalent to text-18px */
+  cursor: pointer;
+  color: black;
+  outline: none;
+  border-radius: 0.75rem; /* Equivalent to rounded-xl */
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import GetStaredButton from "../GetStaredButton/GetStaredButton";
+import { GetStaredButton } from "../index";
 import "./CTA.css";
 
 export default function CTA() {

@@ -1,19 +1,17 @@
 import React from "react";
-import "./GetStaredButton.css";
+import "./SendMessage.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-export default function GetStaredButton() {
+export default function SendMessage() {
   const navigate = useNavigate();
 
   return (
-    <motion.div
+    <motion.button
       whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgb(255, 255, 255)" }}
-      className="getStarted-button-business"
-      onClick={() => {
-        navigate("/login");
-      }}
+      className="send-message-button"
+      type="submit"
     >
-      Get started
-    </motion.div>
+      Send message
+    </motion.button>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./WrapperComp.css";
-import NavigationDots from "../NavigationDots/NavigationDots.jsx";
+import { NavigationDots } from "../index";
 
 const WrapperComp = (Component, idName, classNames) =>
   function HOC() {

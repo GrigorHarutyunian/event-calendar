@@ -8,7 +8,7 @@
   right: 11%;
   padding-top: 45px;
   font-size: 1.2rem;
-  color: #0f0e0e;
+  color: #999;
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);
@@ -19,7 +19,7 @@
   right: 11%;
   padding-top: 45px;
   font-size: 1.2rem;
-  color: #1b1919;
+  color: #999;
   cursor: pointer;
   position: absolute;
   transform: translateY(-50%);

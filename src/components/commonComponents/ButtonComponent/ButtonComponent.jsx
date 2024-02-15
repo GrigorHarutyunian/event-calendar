@@ -6,14 +6,16 @@ export default function ButtonComponent({ text, type, onClickHandler, form }) {
     <div>
       <motion.button
         className="button"
+        type={type}
+        initial={{
+          textShadow: "0px 0px 15px rgb(255, 255, 255)",
+        }}
         whileHover={{
           scale: 1.1,
-          textShadow: "0px 0px 8px rgb(255, 255, 255)",
+          textShadow: "0px 0px 8px rgb(0, 0, 0)",
           boxShadow: "0px 0px 15px rgb(0, 0, 0)",
         }}
-        type={type}
         onClick={onClickHandler}
-        form={form}
       >
         {text}
       </motion.button>

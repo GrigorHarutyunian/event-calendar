@@ -1,9 +1,8 @@
 import React from "react";
 import "./Hero.css";
-import HeroInfoComponent from "../HeroInfoComponent/HeroInfoComponent";
-import HeroImageComponent from "../HeroImageComponent/HeroImageComponent";
-import Earth from "../Earth/Earth";
+import { HeroInfoComponent, HeroImageComponent } from "../index";
 import WrapperComp from "../WrapperComp/WrapperComp";
+
 import { motion } from "framer-motion";
 function Hero() {
   return (

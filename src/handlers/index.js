@@ -3,3 +3,4 @@ export { onClickHandlerForPasswordFunction } from "./onClickHandlerForPasswordFu
 export { onSubmitHandlerForLogin } from "./onSubmitHandlerForLogin";
 export { onSubmitHandlerForRegistration } from "./onSubmitHandlerForRegistration";
 export { onChangeHandlerForImageInput } from "./onChangeHandlerForImageInput";
+export { onSubmitHandlerForContactUs } from "./onSubmitHandlerForContactUs";

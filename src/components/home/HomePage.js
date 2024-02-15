@@ -24,6 +24,7 @@ import { getWeather } from "./weathers/getWeather.js";
 
 import { EventInivations } from "../../firebase/service/EventInvitations.js";
 import { InvitationsModal } from "./burger/invitationsModal/InvitationModal.js";
+import { Preloader } from "../commonComponents";
 
 export const HomePage = () => {
   const calendarForm = useSelector((store) => store.calendarType);
@@ -48,53 +49,56 @@ export const HomePage = () => {
   useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
   const Inivations = useSelector((store) => store.invitation);
   return (
-    <div className="home-page">
-      <CSSTransition
-        in={thereIsModal}
-        timeout={1500}
-        classNames={{
-          enter: "modal-enter",
-          enterActive: "modal-enter-active",
-          exit: "modal-exit",
-          exitActive: "modal-exit-active",
-        }}
-        unmountOnExit
-      >
-        <ModalAddEvent />
-      </CSSTransition>
-      <CSSTransition
-        in={modalInvitation}
-        timeout={1500}
-        classNames={{
-          enter: "modal-enter-invitation",
-          enterActive: "modal-enter-active-invitation",
-          exit: "modal-exit-invitation",
-          exitActive: "modal-exit-active-invitation",
-        }}
-        unmountOnExit
-      >
-        <InvitationsModal invitations={Inivations} dispatch={dispatch} />
-      </CSSTransition>
+    <>
+      <Preloader />
+      <div className="home-page">
+        <CSSTransition
+          in={thereIsModal}
+          timeout={1500}
+          classNames={{
+            enter: "modal-enter",
+            enterActive: "modal-enter-active",
+            exit: "modal-exit",
+            exitActive: "modal-exit-active",
+          }}
+          unmountOnExit
+        >
+          <ModalAddEvent />
+        </CSSTransition>
+        <CSSTransition
+          in={modalInvitation}
+          timeout={1500}
+          classNames={{
+            enter: "modal-enter-invitation",
+            enterActive: "modal-enter-active-invitation",
+            exit: "modal-exit-invitation",
+            exitActive: "modal-exit-active-invitation",
+          }}
+          unmountOnExit
+        >
+          <InvitationsModal invitations={Inivations} dispatch={dispatch} />
+        </CSSTransition>
 
-      <div className={burgerState ? "burger-open" : "burger-close"}>
-        {calendarForm === "Year" ? (
-          <CalendarYear
-            userID={userID}
-            thisDay={date}
-            currentDate={currentDate}
-          />
-        ) : calendarForm === "Week" ? (
-          <CalendarWeek
-            userID={userID}
-            thisDay={date}
-            currentDate={currentDate}
-          />
-        ) : (
-          <Calendar userID={userID} currentDate={currentDate} />
-        )}
-        {getWeather(currentDate.getMonth())}
-        <EventsDay userID={userID} />
+        <div className={burgerState ? "burger-open" : "burger-close"}>
+          {calendarForm === "Year" ? (
+            <CalendarYear
+              userID={userID}
+              thisDay={date}
+              currentDate={currentDate}
+            />
+          ) : calendarForm === "Week" ? (
+            <CalendarWeek
+              userID={userID}
+              thisDay={date}
+              currentDate={currentDate}
+            />
+          ) : (
+            <Calendar userID={userID} currentDate={currentDate} />
+          )}
+          {getWeather(currentDate.getMonth())}
+          <EventsDay userID={userID} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };

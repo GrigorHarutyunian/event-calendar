@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import SelectComponent from "../../commonComponents/SelectComponent/SelectComponent";
+import { SelectComponent } from "../../commonComponents";
 import "./BirthdayDateComponent.css";
 import { days, years, months } from "../../../data/constants";
 import { toDate } from "../../../utils";
