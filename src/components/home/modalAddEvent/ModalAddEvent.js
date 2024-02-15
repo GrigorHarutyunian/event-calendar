@@ -252,7 +252,7 @@ export const ModalAddEvent = () => {
             style={{ position: "absolute", bottom: "4%", right: "5%" }}
             variant="contained"
           >
-            Contained
+            Add Event
           </Button>
         </form>
       </div>

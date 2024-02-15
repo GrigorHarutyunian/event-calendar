@@ -151,11 +151,12 @@ td.today {
   position: relative;
   width: 70%;
   height: 70%;
-  background: #ffffff91;
+  background: linear-gradient(to right, #2b3248, #7b88cc);
   display: flex;
   border-radius: 7px;
   justify-content: flex-start;
   z-index: 3;
+  color: white;
 }
 
 .calendar-week-list {
@@ -288,14 +289,13 @@ td.today {
 .time-grid-item {
   border-bottom: 1px solid #ccc;
   color: #7077a1;
-   /* color: transparent;  */
+  /* color: transparent;  */
   text-align: left;
   font-size: 12px;
-
 }
 
 .time-grid-item:hover {
-  background-color: #e0e0e0; 
+  background-color: #e0e0e0;
   cursor: pointer;
 }
 
@@ -304,7 +304,7 @@ td.today {
 }
 
 .time-grid-item.selected {
-  background-color: #e0e0e0; 
+  background-color: #e0e0e0;
 }
 
 ::selection {
@@ -315,5 +315,7 @@ td.today {
   background: none;
 }
 
-
 /**/
+.css-i4bv87-MuiSvgIcon-root {
+  color: white;
+}
