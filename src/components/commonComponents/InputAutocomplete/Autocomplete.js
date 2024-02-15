@@ -19,7 +19,12 @@ export const MyAutocomplete = ({
 
   return (
     <Autocomplete
-      style={{ maxHeight: "200px", overflowY: "auto" }}
+      style={{
+        maxHeight: "200px",
+        overflowY: "auto",
+
+        padding: "5px 0px",
+      }}
       multiple
       limitTags={1}
       maxHeight={20}

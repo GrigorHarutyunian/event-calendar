@@ -19,15 +19,12 @@ export async function upDateEvent(
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
   try {
-    // Fetch existing data
     const existingData = await get(eventRef);
     const busyHours = existingData?.val()?.busyHours || [];
     const event = existingData?.val()?.event || [];
     const firstDate = new Date(`${date} ${time.split("-")[0]}`);
     const secondDate = new Date(`${date} ${time.split("-")[1]}`);
     const newTimeRange = [firstDate.getTime(), secondDate.getTime()];
-
-    // Update the database with the new time range
     await update(eventRef, {
       event: [
         ...event,

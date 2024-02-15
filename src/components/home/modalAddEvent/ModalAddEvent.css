@@ -98,3 +98,10 @@
 
 /* .css-1h51icj-MuiAutocomplete-root .MuiAutocomplete-tag {
 } */
+.error-message {
+  padding: 0;
+  margin-right: 80px;
+  margin-top: 2px;
+  color: red;
+  font-size: 17px;
+}

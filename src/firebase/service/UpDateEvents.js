@@ -41,6 +41,9 @@ export const upDateEvents = async (
 
       // toast.loading("Saving...");
     } else {
+      toast.error(
+        `"Oops! Time range overlaps with existing busy hours for,You"`
+      );
       console.log("Oops! Time range overlaps with existing busy hours for,You");
     }
   } else {
@@ -80,7 +83,9 @@ export const upDateEvents = async (
           "Oops! Time range overlaps with existing busy hours for ",
           over.mail ? over.mail : "You"
         );
-        toast.error(`Event failed to add to ${over.mail}'s calendar.`);
+        toast.error(
+          `Time range overlaps with existing busy hours for ${over.mail}.`
+        );
       });
     }
   }
