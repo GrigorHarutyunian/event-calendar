@@ -9,7 +9,11 @@
   justify-content: space-evenly;
   align-items: center;
   /* background: #64b5f6; */
-  background: #9cbef4;
+  background: url("https://source.unsplash.com/1600x900/?nature,weather");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
   overflow: hidden;
 }
 ::-webkit-scrollbar {
@@ -35,7 +39,11 @@
   position: absolute;
   display: flex;
   /* background: #64b5f6; */
-  background: #9cbef4;
+  background: url("https://source.unsplash.com/1600x900/?nature,weather");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
   justify-content: space-evenly;
   align-items: center;
   transform: translateX(0%);
