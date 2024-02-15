@@ -7,6 +7,7 @@ export function sendEmail(email, body) {
     From: "2003.karen.shmavonyan@gmail.com",
     Subject: "This is the subject",
     Body: body,
+
   }).then((message) => {
     if (message === "Failure sending mail.") {
       toast.error(`Oops! Message delivery failed`);
@@ -14,4 +15,5 @@ export function sendEmail(email, body) {
       toast.success(`Message sent successfully! `);
     }
   });
+
 }

@@ -27,15 +27,16 @@
 } */
 
 .events-day {
-  background: linear-gradient(to right, #cae0f9, #a3c1e8);
+  background: linear-gradient(to right, #2b3248, #7b88cc);
   height: 54%;
   width: 20%;
   position: relative;
   margin-top: 7%;
   border-radius: 15px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  overflow: auto;
+  overflow: hidden;
   transition: 0.3s ease-in-out;
+  color: white;
 }
 
 .events-day-header {
@@ -93,5 +94,5 @@
 }
 
 .event-icon {
-margin-left: 10px;;
+  margin-left: 10px;
 }

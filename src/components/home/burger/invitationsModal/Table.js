@@ -1,8 +1,9 @@
 import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
 import { Button, Avatar } from "@mui/material";
-
+import "./Table.css";
 import { useDispatch } from "react-redux";
+import { useState } from "react";
 
 const columns = [
   {
@@ -42,7 +43,8 @@ const columns = [
     headerName: "Description",
     description: "This column has a value getter and is not sortable.",
     sortable: false,
-    width: 160,
+    width: 200,
+    editable: true,
   },
 ];
 
@@ -57,12 +59,11 @@ export const DataGridDemo = ({ rows }) => {
         columns={columns}
         initialState={{
           pagination: {
-            paginationModel: {
-              pageSize: 5,
-            },
+            paginationModel: { page: 0, pageSize: 5 },
           },
         }}
-        pageSizeOptions={[5]}
+        pageSizeOptions={[5, 10]}
+        disableRowSelectionOnClick
         sx={{
           ".MuiDataGrid-row:hover": {
             backgroundColor: "#add8e6",
