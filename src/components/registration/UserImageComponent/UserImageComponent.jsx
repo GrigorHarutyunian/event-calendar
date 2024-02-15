@@ -1,6 +1,5 @@
 import React from "react";
-import ImageComponent from "../ImageComponent/ImageComponent";
-import ImageInputComponent from "../ImageInputComponent/ImageInputComponent";
+import { ImageInputComponent, ImageComponent } from "../index";
 import "./UserImageComponent.css";
 
 export default function UserImageComponent({ image, uploadImage }) {

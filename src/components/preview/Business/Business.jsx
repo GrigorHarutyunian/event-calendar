@@ -1,8 +1,7 @@
 import React from "react";
-import BusinessInfoComp from "../BusinessInfoComp/BusinessInfoComp";
-import PageFeatureComp from "../PageFeatureComp/PageFeatureComp";
-import "./Business.css";
+import { BusinessInfoComp, PageFeatureComp } from "../index";
 import WrapperComp from "../WrapperComp/WrapperComp";
+import "./Business.css";
 import { motion } from "framer-motion";
 
 function Business() {

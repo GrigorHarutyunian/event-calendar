@@ -6,7 +6,7 @@ import {
   onClickHandlerForPasswordFunction,
   onSubmitHandlerForRegistration,
 } from "../../../handlers";
-import BirthdayDateComponent from "../BirthdayDateComponent/BirthdayDateComponent";
+import { BirthdayDateComponent } from "../index";
 import { ButtonsComponent, DivOfInputComponents } from "../../commonComponents";
 import { useNavigate } from "react-router-dom";
 

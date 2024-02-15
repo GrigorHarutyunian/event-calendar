@@ -24,7 +24,7 @@ export default function ButtonsComponent({
       <span className="orText">{optionText}</span>
       <motion.div
         whileHover={{
-          scale: 1.2,
+          scale: 1.1,
         }}
       >
         <GoogleLogin

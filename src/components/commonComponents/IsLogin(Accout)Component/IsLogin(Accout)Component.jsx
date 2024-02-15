@@ -1,7 +1,7 @@
 import React from "react";
 import "./IsLogin(Accout)Component.css";
 import { useSelector } from "react-redux";
-import SignInUpButtonsComp from "../SignInUpButtonsComp/SignInUpButtonsComp";
+import { SignInUpButtonsComp } from "../index";
 import { useNavigate } from "react-router-dom";
 import Account from "../Account/Account";
 

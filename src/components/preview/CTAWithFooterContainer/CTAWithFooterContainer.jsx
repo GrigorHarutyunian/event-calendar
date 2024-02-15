@@ -1,8 +1,6 @@
 import React from "react";
 import "./CTAWithFooterContainer.css";
-import CTA from "../CTA/CTA";
-import PreviewFooter from "../PreviewFooter/PreviewFooter";
-import WrapperComp from "../WrapperComp/WrapperComp";
+import { CTA, PreviewFooter } from "../index";
 import { motion } from "framer-motion";
 
 export default function CTAWithFooterContainer() {

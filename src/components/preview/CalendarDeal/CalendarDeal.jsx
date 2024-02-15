@@ -1,9 +1,9 @@
 import React from "react";
-import CalendarImage from "../CalendarImage/CalendarImage";
-import CalendarInfo from "../CalendarInfo/CalendarInfo";
+import { CalendarImage, CalendarInfo } from "../index";
 import "./CalendarDeal.css";
-import { motion } from "framer-motion";
 import WrapperComp from "../WrapperComp/WrapperComp";
+
+import { motion } from "framer-motion";
 
 function CalendarDeal() {
   return (

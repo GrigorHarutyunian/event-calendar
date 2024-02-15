@@ -1,11 +1,13 @@
 import React from "react";
-import Hero from "./Hero/Hero";
+import {
+  Hero,
+  Business,
+  CalendarDeal,
+  ContactUs,
+  CTAWithFooterContainer,
+} from "./index";
 import "./Preview.css";
-import StarsBackground from "./../commonComponents/StarsBackground/StarsBackground.jsx";
-import Business from "./Business/Business";
-import CalendarDeal from "./CalendarDeal/CalendarDeal";
-import ContactUs from "./ContactUs/ContactUs";
-import CTAWithFooterContainer from "./CTAWithFooterContainer/CTAWithFooterContainer";
+import { StarsBackground } from "./../commonComponents";
 
 export default function Preview() {
   return (
