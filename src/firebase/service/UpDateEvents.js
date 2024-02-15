@@ -36,7 +36,7 @@ export const upDateEvents = async (
         description,
         (type = "individual"),
         userEmailArr[0],
-        email
+        user
       );
 
       // toast.loading("Saving...");

@@ -47,6 +47,7 @@ export const HomePage = () => {
   console.log(thisDay);
   console.log(currentDate);
   const modalInvitation = useSelector((store) => store.modalInvitations);
+
   useEffect(() => {
     GetFriendsList(dispatch);
     GetEvents(dispatch, currentDateText, userID);
@@ -54,7 +55,10 @@ export const HomePage = () => {
   }, [modalInvitation]);
 
   useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
-  const Inivations = useSelector((store) => store.invitation);
+  const inivations = useSelector((store) => store.invitation);
+  console.log("🚀 ~ HomePage ~ inivations:", inivations);
+  const ownEventList = useSelector((store) => store.ownEvents);
+
   return (
     <section className="home-page-container">
       <Preloader />
@@ -123,7 +127,11 @@ export const HomePage = () => {
           }}
           unmountOnExit
         >
-          <InvitationsModal invitations={Inivations} dispatch={dispatch} />
+          <InvitationsModal
+            ownEvents={ownEventList}
+            invitations={inivations}
+            dispatch={dispatch}
+          />
         </CSSTransition>
 
         <div className={burgerState ? "burger-open" : "burger-close"}>

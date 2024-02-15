@@ -22,6 +22,7 @@ import persistStore from "redux-persist/es/persistStore";
 import selectedTimeReducer from "./slices/selectedTimeSlice.js";
 import inivationReducer from "./slices/invitationSlice.js";
 import modalInvitationsReducer from "./slices/modalInvitationsSlice.js";
+import ownEventsReducer from "./slices/ownEventsSlice.js";
 
 const persistConfig = {
   key: "root",
@@ -41,6 +42,7 @@ const rootReducer = combineReducers({
   selectedTime: selectedTimeReducer,
   invitation: inivationReducer,
   modalInvitations: modalInvitationsReducer,
+  ownEvents: ownEventsReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

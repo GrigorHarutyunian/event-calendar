@@ -4,6 +4,8 @@ import { database } from "../../firebase-config";
 import { GetEvents } from "../GetEvents";
 import { toast } from "react-hot-toast";
 
+import { v4 as uuidv4 } from "uuid";
+
 export async function upDateEvent(
   userId,
   date,
@@ -15,7 +17,6 @@ export async function upDateEvent(
   email,
   user
 ) {
-  console.log(user);
   const path = `calendars/${userId}/events/${date}/`;
   const eventRef = ref(database, path);
   try {
@@ -29,7 +30,7 @@ export async function upDateEvent(
       event: [
         ...event,
         {
-          id: time,
+          id: uuidv4(),
           title: title,
           time: time,
           icon: icon,

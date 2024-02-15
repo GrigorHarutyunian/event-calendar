@@ -45,7 +45,7 @@ export const BurgerMenu = () => {
               }}
               className="invitations"
             >
-              Invitations
+              All Events
             </div>
           </>
         )}

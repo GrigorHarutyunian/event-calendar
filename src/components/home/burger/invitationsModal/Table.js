@@ -1,67 +1,22 @@
 import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
-import { Button, Avatar } from "@mui/material";
 import "./Table.css";
-import { useDispatch } from "react-redux";
-import { useState } from "react";
 
-const columns = [
-  {
-    field: "avatar",
-    headerName: "Avatar",
-    width: 100,
-    renderCell: (params) => (
-      <Avatar alt={params.row.firstName} src={params.row.avatar} />
-    ),
-  },
-  {
-    field: "title",
-    headerName: "Title",
-    width: 200,
-    editable: true,
-  },
-  {
-    field: "mail",
-    headerName: "Email",
-    width: 200,
-    editable: true,
-  },
-  {
-    field: "day",
-    headerName: "Day",
-    width: 200,
-    editable: true,
-  },
-  {
-    field: "time",
-    headerName: "Time",
-    width: 200,
-    editable: true,
-  },
-  {
-    field: "description",
-    headerName: "Description",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 200,
-    editable: true,
-  },
-];
-
-export const DataGridDemo = ({ rows }) => {
+export const DataGridDemo = ({ columns, rows, title }) => {
   return (
     <Box className="box" sx={{ height: 450, width: "80%" }}>
-      <div className="title-invitation">Invitations</div>
+      <div className="title-invitation">{title}</div>
 
       <DataGrid
         rows={rows}
         columns={columns}
+        rowKey={(row) => row.id}
         initialState={{
           pagination: {
-            paginationModel: { page: 0, pageSize: 5 },
+            paginationModel: { page: 0, pageSize: 7 },
           },
         }}
-        pageSizeOptions={[5, 10]}
+        pageSizeOptions={[8, 10]}
         disableRowSelectionOnClick
       />
     </Box>
