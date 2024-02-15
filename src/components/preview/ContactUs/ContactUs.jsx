@@ -50,6 +50,6 @@ function ContactUs() {
       </motion.div>
     </div>
   );
-}
+} 
 
 export default WrapperComp(ContactUs, "contact");

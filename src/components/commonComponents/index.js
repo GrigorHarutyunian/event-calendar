@@ -18,8 +18,10 @@ import StarsBackgroundVideo from "./StarsBackgrounVideo/StarsBackgroundVideo.jsx
 import TimeShowing from "./TimeShowing/TimeShowing.jsx";
 import ValidateParam from "./ValidateParam/ValidateParam.jsx";
 import ValidDate from "./ValidDate/ValidDate.jsx";
+import Preloader from "./Preloader/Preloader.jsx";
 export {
   Account,
+  Preloader,
   PasswordValidShow,
   IsLoginComponent,
   SignInSignUpButton,
