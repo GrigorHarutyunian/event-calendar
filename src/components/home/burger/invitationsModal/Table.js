@@ -50,11 +50,10 @@ const columns = [
 
 export const DataGridDemo = ({ rows }) => {
   return (
-    <Box sx={{ height: 400, width: "80%" }}>
+    <Box className="box" sx={{ height: 450, width: "80%" }}>
       <div className="title-invitation">Invitations</div>
 
       <DataGrid
-        className="data-grid"
         rows={rows}
         columns={columns}
         initialState={{
@@ -64,12 +63,6 @@ export const DataGridDemo = ({ rows }) => {
         }}
         pageSizeOptions={[5, 10]}
         disableRowSelectionOnClick
-        sx={{
-          ".MuiDataGrid-row:hover": {
-            backgroundColor: "#add8e6",
-            transform: "scale(1.00)",
-          },
-        }}
       />
     </Box>
   );

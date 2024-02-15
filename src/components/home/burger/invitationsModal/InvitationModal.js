@@ -12,7 +12,9 @@ export const InvitationsModal = ({ dispatch, invitations }) => {
         onClick={(e) => e.stopPropagation()}
         className="modal-content-invitations"
       >
-        <DataGridDemo rows={invitations} />
+        <span className="span123">
+          <DataGridDemo rows={invitations} />
+        </span>
       </div>
     </div>
   );
