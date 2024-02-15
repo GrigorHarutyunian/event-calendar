@@ -55,7 +55,7 @@ export const upDateEvents = async (
     const overLapsResponse = overlaps.filter((overlap) => {
       return overlap.res;
     });
-
+    console.log(overLapsResponse);
     // If there is no overlap for any user, proceed with the update for all users
     if (overLapsResponse.length === 0) {
       await Promise.all(
@@ -68,7 +68,6 @@ export const upDateEvents = async (
               title,
               icon,
               description,
-              dispatch,
               (type = "group"),
               userEmailArr[i],
               user

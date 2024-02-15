@@ -35,51 +35,56 @@ export const CalendarYear = ({ currentDate, thisDay, userID }) => {
   );
   return (
     <div className="calendar year">
-      <header className="calendar-header">
-        <IconButton
-          onClick={() => {
-            dispatch(prevYear());
-          }}
-          aria-label="cart"
-        >
-          <ChevronLeftRounded />
-        </IconButton>
-        <h2>{currentDate.getFullYear()}</h2>
-        <IconButton
-          onClick={() => {
-            dispatch(nextYear());
-          }}
-        >
-          <ChevronRightRounded />
-        </IconButton>
-      </header>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexFlow: "wrap",
-          justifyContent: "space-between",
-          overflow: "auto",
-        }}
-      >
-        {arr.map((v, i) => (
-          // <div key={i} className="calendar-years">
-          <div
-            key={i}
-            className={`calendar-years ${i >= 10 ? "center-month" : ""}`}
+      <span className="span2">
+        <header className="calendar-header">
+          <IconButton
+            onClick={() => {
+              dispatch(prevYear());
+            }}
+            aria-label="cart"
           >
-            <p>
-              {monthNames[new Date(currentDate.getFullYear(), i, 1).getMonth()]}
-            </p>
-            <CalendarTable
-              userID={userID}
-              currentDate={new Date(currentDate.getFullYear(), i, 1)}
-            />
-          </div>
-        ))}
-      </div>
-      <div></div>
+            <ChevronLeftRounded />
+          </IconButton>
+          <h2>{currentDate.getFullYear()}</h2>
+          <IconButton
+            onClick={() => {
+              dispatch(nextYear());
+            }}
+          >
+            <ChevronRightRounded />
+          </IconButton>
+        </header>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            flexFlow: "wrap",
+            justifyContent: "space-between",
+            overflow: "auto",
+          }}
+        >
+          {arr.map((v, i) => (
+            // <div key={i} className="calendar-years">
+            <div
+              key={i}
+              className={`calendar-years ${i >= 10 ? "center-month" : ""}`}
+            >
+              <p>
+                {
+                  monthNames[
+                    new Date(currentDate.getFullYear(), i, 1).getMonth()
+                  ]
+                }
+              </p>
+              <CalendarTable
+                userID={userID}
+                currentDate={new Date(currentDate.getFullYear(), i, 1)}
+              />
+            </div>
+          ))}
+        </div>
+      </span>
     </div>
   );
 };
