@@ -1,5 +1,5 @@
 import React from "react";
-import GetStaredButton from "../GetStaredButton/GetStaredButton";
+import { GetStaredButton } from "../index";
 import "./BusinessInfoComp.css";
 export default function BusinessInfoComp() {
   return (

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Login.css";
 import {
-  BackgroundVideoComp,
   ButtonsComponent,
   FormFooterComponent,
   DivOfInputComponents,
@@ -17,8 +16,8 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
-import InValidDateComp from "./InValidDateComp/InValidDateComp";
-import StarsBackground from "../commonComponents/StarsBackground/StarsBackground";
+import { InValidDateComp } from "./index";
+import { StarsBackground } from "../commonComponents";
 export default function Login() {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((store) => store.userIsLogin);

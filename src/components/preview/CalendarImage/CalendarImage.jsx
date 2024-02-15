@@ -1,6 +1,6 @@
 import React from "react";
 import "./CalendarImage.css";
-import { Calendar1, Calendar2 } from "../../../assets";
+import { Calendar1 } from "../../../assets";
 export default function CalendarImage() {
   return (
     <div className="calendar-image-container">

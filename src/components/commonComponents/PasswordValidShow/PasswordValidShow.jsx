@@ -1,5 +1,5 @@
 import React from "react";
-import ValidateParam from "../ValidateParam/ValidateParam";
+import { ValidateParam } from "../index";
 import "./PasswordValidShow.css";
 
 export default function PasswordValidShow({

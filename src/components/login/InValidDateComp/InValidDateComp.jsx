@@ -1,5 +1,5 @@
 import React from "react";
-import ValidDate from "../../commonComponents/ValidDate/ValidDate";
+import { ValidDate } from "../../commonComponents";
 import "./InValidDateComp.css";
 
 export default function InValidDateComp({

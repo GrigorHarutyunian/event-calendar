@@ -1,5 +1,5 @@
 import React from "react";
-import SignInSignUpButton from "../SignInSignUpButton/SignInSignUpButton";
+import { SignInSignUpButton } from "../index";
 import "./SignInUpButtonsComp.css";
 
 export default function SignInUpButtonsComp({ buttonsArray }) {

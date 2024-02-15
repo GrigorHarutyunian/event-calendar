@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import "./Registration.css";
-import FormComponent from "./FormComponent/FormComponent";
-import UserImageComponent from "./UserImageComponent/UserImageComponent";
+import { FormComponent, UserImageComponent, InValidDateComp } from "./index";
 import { FormFooterComponent, LabelComponent } from "../commonComponents";
-import StarsBackground from "../commonComponents/StarsBackground/StarsBackground";
+import { StarsBackground } from "../commonComponents";
 import { onChangeHandlerForImageInput } from "../../handlers";
 import { motion } from "framer-motion";
 import { useSelector } from "react-redux";
 import { useIsLoggin } from "../../hooks";
-import InValidDateComp from "./InValidDateComp/InValidDateComp";
 export default function Registration() {
   const [image, setImage] = useState(null);
   const [inValidDate, setinValideDate] = useState(false);

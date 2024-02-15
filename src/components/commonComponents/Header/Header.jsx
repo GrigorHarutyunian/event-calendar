@@ -1,8 +1,6 @@
 import React from "react";
-import TimeShowing from "../TimeShowing/TimeShowing";
-import LogoComponent from "../LogoComponent/LogoComponent";
 import "./Header.css";
-import IsLoginComponent from "../IsLogin(Accout)Component/IsLogin(Accout)Component";
+import { IsLoginComponent, LogoComponent } from "../index";
 import { BurgerMenu } from "../../home/burger/BurgerMenu";
 import { FormControl, Select, MenuItem } from "@mui/material";
 import Button from "@mui/material/Button";

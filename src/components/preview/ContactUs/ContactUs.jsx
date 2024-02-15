@@ -1,13 +1,16 @@
 import React from "react";
 import "./ContactUs.css";
 import { motion } from "framer-motion";
+import {
+  SendMessage,
+  TextAreaContactUs,
+  EmailInputContactUs,
+} from "../index";
 import WrapperComp from "../WrapperComp/WrapperComp";
+
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { onSubmitHandlerForContactUs } from "../../../handlers";
-import SendMessage from "../SendMessage/SendMessage";
-import TextAreaContactUs from "../TextAreaContactUs/TextAreaContactUs";
-import EmailInputContactUs from "../EmailInputContactUs/EmailInputContactUs";
 
 function ContactUs() {
   const formik = useFormik({
@@ -24,6 +27,7 @@ function ContactUs() {
     }),
     onSubmit: onSubmitHandlerForContactUs,
   });
+
   return (
     <div className="preview-contactUs-container-first">
       <motion.div

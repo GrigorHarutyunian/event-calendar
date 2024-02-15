@@ -1,6 +1,6 @@
 import React from "react";
 import "./HeroInfoComponent.css";
-import GetStarted from "../GetStarted/GetStarted";
+import { GetStarted } from "../index";
 import { motion } from "framer-motion";
 export default function HeroInfoComponent() {
   const labelVariant1 = {
