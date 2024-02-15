@@ -77,8 +77,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 18vh;
-  right: 8svh;
+  top: 17.5vh;
+  left: 10svh;
+  z-index: 15;
+  gap: 1rem;
+}
+
+.home-today-button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 17.5vh;
+  right: 60svh;
   z-index: 15;
   gap: 1rem;
 }

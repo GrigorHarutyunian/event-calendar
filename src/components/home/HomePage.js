@@ -82,6 +82,8 @@ export const HomePage = () => {
             <MenuItem value={"Week"}>Week</MenuItem>
           </Select>
         </FormControl>
+      </div>
+      <div className="home-today-button">
         <Button
           style={{
             padding: "11px 23px",
