@@ -74,10 +74,12 @@
 
 .home-calendar-today-regulate-container {
   position: absolute;
-  top: 8rem;
-  right: 3.5rem;
-  z-index: 15;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 18vh;
+  right: 8svh;
+  z-index: 15;
   gap: 1rem;
 }
 .home-page-container {

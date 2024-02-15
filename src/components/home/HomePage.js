@@ -69,6 +69,8 @@ export const HomePage = () => {
               background: "linear-gradient(to right, #2b3248, #7b88cc)",
               borderRadius: "5px",
               fontSize: "15px",
+              outline: "none",
+              border: "none",
               fontWeight: "600",
             }}
             labelId="demo-simple-select-label"
@@ -82,9 +84,11 @@ export const HomePage = () => {
         </FormControl>
         <Button
           style={{
-            padding: "13px 23px",
+            padding: "11px 23px",
             background: "linear-gradient(to right, #2b3248, #7b88cc)",
-            color: "aqua",
+            color: "black",
+            outline: "none",
+            border: "none",
             fontSize: "15px",
             fontWeight: "600",
           }}
