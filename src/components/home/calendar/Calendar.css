@@ -1,9 +1,7 @@
 .calendar {
   position: relative;
-  /* max-width: 1200px; */
   width: 80%;
   height: 80%;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -64,8 +62,10 @@
 
 .img {
   position: relative;
-  width: 320px;
-  height: 320px;
+  /* width: 320px;
+  height: 320px; */
+  width: 25%;
+  height: 50%;
 }
 
 thead {
@@ -103,10 +103,12 @@ td.today {
   background-color: #a3bb98;
 }
 
+
 @media only screen and (max-width: 400px) {
   .calendar {
     width: 80%;
     height: 80%;
+
   }
 
   .img {
@@ -136,7 +138,6 @@ td.today {
 .time-grid-item {
   border-bottom: 1px solid #ccc;
   color: #7077a1;
-  /* color: transparent;  */
   text-align: left;
   font-size: 12px;
 }
@@ -162,10 +163,6 @@ td.today {
   background: none;
 }
 
-/**/
-/* .css-i4bv87-MuiSvgIcon-root {
-  color: white;
-} */
 
 .calendar::before {
   content: "";
