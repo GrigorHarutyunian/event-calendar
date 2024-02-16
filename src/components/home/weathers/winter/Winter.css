@@ -1,50 +1,25 @@
-.snow,
-.snow:after,
-.snow:before {
-  content: "";
-  position: absolute;
-  z-index: -19;
-  top: -650px;
+.snow {
+  position: fixed;
+  z-index: -1; /* Ensure snow appears behind other elements */
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(4px 4px at 100px 50px, #ffffff, transparent),
-    radial-gradient(6px 6px at 100px 50px, #fff, transparent),
-    radial-gradient(6px 6px at 200px 150px, #fff, transparent),
-    radial-gradient(3px 3px at 300px 250px, #fff, transparent),
-    radial-gradient(4px 4px at 400px 350px, #fff, transparent),
-    radial-gradient(6px 6px at 500px 100px, #fff, transparent),
-    radial-gradient(3px 3px at 50px 200px, #fff, transparent),
-    radial-gradient(4px 4px at 150px 300px, #fff, transparent),
-    radial-gradient(6px 6px at 250px 400px, #fff, transparent),
-    radial-gradient(3px 3px at 350px 500px, #fff, transparent);
-
-  background-size: 650px 650px;
-  animation: snowAnim 3s linear;
-  animation-iteration-count: infinite;
+  pointer-events: none; /* Make sure the snow doesn't interfere with mouse events */
 }
 
-.snow:after {
-  margin-left: -250px;
-  opacity: 0.5;
-  filter: blur(2px);
-  animation-direction: reverse;
-  animation-duration: 6s;
+.snowflake {
+  position: absolute;
+  background: #fff; /* Snowflake color */
+  border-radius: 50%;
 }
 
-.snow:before {
-  margin-left: -350px;
-  opacity: 0.7;
-  filter: blur(1px);
-  animation-direction: reverse;
-  animation-duration: 9s;
-}
-
-@keyframes snowAnim {
-  from {
-    transform: translateY(0);
+/* Define the animation for snowflakes */
+@keyframes snowfall {
+  0% {
+    top: -10px; /* Start position from top */
   }
-  to {
-    transform: translateY(650px);
+  100% {
+    top: 100vh; /* End position at bottom */
   }
 }

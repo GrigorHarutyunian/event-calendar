@@ -18,6 +18,7 @@ export const Autumn = () => {
       <div>
         <img src={png4} style={{ width: "100px", height: "100px" }} alt="a" />
       </div>
+
       <div>
         <img src={png1} style={{ width: "100px", height: "100px" }} alt="a" />
       </div>
@@ -29,6 +30,27 @@ export const Autumn = () => {
       </div>
       <div>
         <img src={png4} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png1} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png2} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png3} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png4} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png1} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png2} style={{ width: "100px", height: "100px" }} alt="a" />
+      </div>
+      <div>
+        <img src={png3} style={{ width: "100px", height: "100px" }} alt="a" />
       </div>
       <div>
         <img src={png4} style={{ width: "100px", height: "100px" }} alt="a" />

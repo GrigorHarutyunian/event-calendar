@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./BurgerMenu.css";
 import { UserInfo } from "./UserInfo";
 import { useDispatch } from "react-redux";
@@ -31,6 +31,10 @@ export const BurgerMenu = () => {
       dispatch(changeBurgerState(false));
     }
   };
+
+  useEffect(() => {
+    burgerState && updateManu();
+  }, []);
 
   return (
     <>
