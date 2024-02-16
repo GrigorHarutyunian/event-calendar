@@ -8,11 +8,11 @@
   overflow-y: scroll;
 }
 ::-webkit-scrollbar {
-  background-color: black; /* Color of the scrollbar thumb */
-  width: 5px; /* Width of the scrollbar */
+  background-color: black;
+  width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  border-radius: 10px; /* Rounded corners of the scrollbar thumb */
+  border-radius: 10px; 
   background: white;
 }
 

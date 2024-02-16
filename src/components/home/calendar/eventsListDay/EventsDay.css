@@ -1,43 +1,11 @@
-/* .events-day {
-  background: #7684a3; 
-  height: 73%;
-  width: 20%;
-  position: relative;
-  transform: translateX(0%);
-  transition: 1.4s ease-in;
-  overflow: auto;
-}
-
-.events-day-header {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.event-item {
-  display: flex;
-  justify-content: space-evenly;
-  border: 1px solid;
-  align-items: center;
-  cursor: pointer;
-}
-.event-item:hover {
-  background: #687ba3;
-  background: #2081a8;
-} */
-
 .events-day {
-  /* background: linear-gradient(to right, #2b3248, #7b88cc); */
-
   height: 54%;
   width: 20%;
   position: relative;
   margin-top: 10%;
   background: rgba(0, 0, 0, 8);
   border-radius: 20px;
-  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
   overflow: hidden;
-  /* transition: 0.3s ease-in-out; */
   color: white;
 }
 
@@ -71,7 +39,6 @@
 
 .event-time {
   font-size: 17px;
-  /* color: #666;  */
   margin-left: auto;
   font-style: italic;
 }

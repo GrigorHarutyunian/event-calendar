@@ -7,17 +7,17 @@
     #11101d 91.61%
   );
   box-shadow: 0px 20px 100px -10px rgba(66, 71, 91, 0.1);
-  border-radius: 20px; /* Equivalent to rounded-[20px] */
+  border-radius: 20px; 
   justify-content: center;
   align-items: center;
   margin-left: 5%;
   margin-right: 5%;
-  margin-top: 1.5rem; /* Equivalent to my-6 */
-  margin-bottom: 1.5rem; /* Equivalent to my-6 */
-  padding-left: 1.5rem; /* Equivalent to px-6 */
-  padding-right: 1.5rem; /* Equivalent to px-6 */
-  padding-top: 1rem; /* Equivalent to py-4 */
-  padding-bottom: 1rem; /* Equivalent to py-4 */
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; 
+  padding-left: 1.5rem; 
+  padding-right: 1.5rem; 
+  padding-top: 1rem; 
+  padding-bottom: 1rem; 
 }
 .CTA-description {
   margin-left: 5%;
@@ -28,19 +28,19 @@
 
 .CTA-first-title {
   font-family: "Poppins", sans-serif;
-  font-weight: 600; /* Equivalent to font-semibold */
-  font-size: 40px; /* Default font size for non-xs breakpoint */
-  color: #ffffff; /* Equivalent to text-white */
-  line-height: 48.8px; /* Default line height for non-xs breakpoint */
+  font-weight: 600; 
+  font-size: 40px; 
+  color: #ffffff; 
+  line-height: 48.8px; 
   width: 100%;
 }
 
 .CTA-paragaraf {
   font-family: "Poppins", sans-serif;
-  font-weight: normal; /* Equivalent to font-normal */
+  font-weight: normal; 
   font-size: 18px;
-  max-width: 470px; /* Equivalent to max-w-[470px] */
-  margin-top: 1rem; /* Equivalent to mt-5 */
+  max-width: 470px; 
+  margin-top: 1rem;
   line-height: 30.8px;
   color: rgba(255, 255, 255, 0.7);
 }

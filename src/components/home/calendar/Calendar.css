@@ -63,8 +63,6 @@
 
 .img {
   position: relative;
-  /* width: 320px;
-  height: 320px; */
   width: 25%;
   height: 50%;
 }
@@ -128,7 +126,7 @@ td.today {
   }
 
   .week-days-date {
-    flex: 1 0 auto; /* Allow days to wrap onto multiple lines */
+    flex: 1 0 auto; 
   }
 
   .time-grid {
@@ -137,7 +135,7 @@ td.today {
 
   .time-grid-item {
     padding: 5px;
-    font-size: 14px; /* Larger font size for readability */
+    font-size: 14px; 
   }
 
 }
