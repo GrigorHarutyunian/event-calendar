@@ -177,7 +177,7 @@ export const ModalAddEvent = () => {
                           dayjs(`2022-04-17T${selectedTime.start}`),
                           dayjs(`2022-04-17T${selectedTime.end}`),
                         ]
-                      : undefined // Set to undefined if you don't want a default value for other calendar types
+                      : undefined
                   }
                   inputRef={timeRef}
                   onChange={handleTime}

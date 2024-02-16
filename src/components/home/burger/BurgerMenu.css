@@ -34,7 +34,6 @@
   width: 31px;
   height: 4px;
   margin-top: 6px;
-  /* background: white; */
   background: #f0fff0;
   cursor: pointer;
   transition: transform 1.5s ease-out;
@@ -43,7 +42,6 @@
 .burger-clicked {
   width: 31px;
   height: 4px;
-  /* background: white; */
   background: #f0fff0;
   margin-left: 10px;
   cursor: pointer;
@@ -113,6 +111,5 @@
 
 .invitations:hover {
   transform: scale(1);
-  /* background: #9cbef4; */
   background: linear-gradient(to right, #070748, #3a3a8d);
 }

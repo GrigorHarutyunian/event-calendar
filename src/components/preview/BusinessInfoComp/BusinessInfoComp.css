@@ -4,10 +4,10 @@
 }
 
 .business-info-paragraf {
-  font-weight: 600; /* Semibold */
-  font-size: 48px; /* For xs breakpoint */
-  line-height: 76.8px; /* For xs breakpoint */
-  color: #ffffff; /* White */
+  font-weight: 600; 
+  font-size: 48px; 
+  line-height: 76.8px; 
+  color: #ffffff; 
   width: 100%;
   margin-bottom: 10px;
   margin-top: 20px;
