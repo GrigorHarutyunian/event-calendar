@@ -72,6 +72,43 @@
   animation: animate 18s linear infinite;
   animation-delay: -10s;
 }
+.set div:nth-child(14) {
+  left: 72%;
+  animation: animate 12s linear infinite;
+}
+.set div:nth-child(15) {
+  left: 65%;
+  animation: animate 14s linear infinite;
+}
+.set div:nth-child(16) {
+  left: 90%;
+  animation: animate 18s linear infinite;
+  animation-delay: -10s;
+}
+.set div:nth-child(17) {
+  left: 86%;
+  animation: animate 18s linear infinite;
+  animation-delay: -10s;
+}
+
+.set div:nth-child(18) {
+  left: 72%;
+  animation: animate 12s linear infinite;
+}
+.set div:nth-child(19) {
+  left: 65%;
+  animation: animate 14s linear infinite;
+}
+.set div:nth-child(20) {
+  left: 90%;
+  animation: animate 18s linear infinite;
+  animation-delay: -10s;
+}
+.set div:nth-child(21) {
+  left: 86%;
+  animation: animate 18s linear infinite;
+  animation-delay: -10s;
+}
 
 @keyframes animate {
   0% {

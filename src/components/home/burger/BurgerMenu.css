@@ -69,8 +69,16 @@
   margin-top: 70px;
   display: flex;
   flex-direction: column;
-  transform: translateX(0%);
-  transition: ease 3.5s;
+  animation: scaleUp 3.5s ease;
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0); /* Սկսել փոքր չափսով */
+  }
+  to {
+    transform: scale(1); /* Մեծանալու մեջ */
+  }
 }
 
 .user-img {
@@ -99,6 +107,8 @@
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   font-weight: bold;
   font-style: italic;
+  transition: 1s;
+  animation: scaleUp 3.5s ease;
 }
 
 .invitations:hover {

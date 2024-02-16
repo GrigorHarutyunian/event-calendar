@@ -56,14 +56,14 @@ export const HomePage = () => {
 
   useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
   const inivations = useSelector((store) => store.invitation);
-  console.log("🚀 ~ HomePage ~ inivations:", inivations);
+  console.log(burgerState);
   const ownEventList = useSelector((store) => store.ownEvents);
 
   return (
     <section className="home-page-container">
       <Preloader />
       <div className="home-calendar-today-regulate-container">
-        <FormControl style={{ maxWidth: "sm", width: "150px" }}>
+        <FormControl style={{ maxwidth: "sm", width: "150px" }}>
           <Select
             value={calendarForm}
             onChange={(event) =>
