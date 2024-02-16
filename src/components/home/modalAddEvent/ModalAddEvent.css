@@ -16,15 +16,10 @@
   align-items: center;
   gap: 5%;
   width: 37%;
-  height: 67%;
+  height: 71%;
   border-radius: 20px;
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14),
     0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
-
-  /* background: burlywood; */
-  /* background: #DBCC95; */
-  /* background: #A4D0A4; */
-  /* background:#F7E1AE; */
   background: white;
 
   cursor: grab;
@@ -96,8 +91,6 @@
   width: 100%;
 }
 
-/* .css-1h51icj-MuiAutocomplete-root .MuiAutocomplete-tag {
-} */
 .error-message {
   padding: 0;
   margin-right: 80px;

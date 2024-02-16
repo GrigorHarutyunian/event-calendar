@@ -191,7 +191,8 @@ export const ModalAddEvent = () => {
             <GroupAddIcon onClick={() => guestsRef.current.focus()} />
             <div style={{ width: "65%" }}>
               <MyAutocomplete
-                friends={friends}
+                user={user}
+                friendsList={friends}
                 setFriendsInfo={setFriendsInfo}
                 friendsInfo={friendsInfo}
                 inputRef={guestsRef}
@@ -207,6 +208,7 @@ export const ModalAddEvent = () => {
                   Select an Icon
                 </InputLabel>
                 <Select
+                  style={{ color: "black" }}
                   value={icon}
                   onChange={(event) => setIcon(event.target.value)}
                   labelId="demo-simple-select-label"

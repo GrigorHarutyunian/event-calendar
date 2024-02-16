@@ -6,17 +6,15 @@ export const Winter = () => {
       key={index}
       className="snowflake"
       style={{
-        top: `${Math.random() * -100}%`, // Adjust starting position from top
+        top: `${Math.random() * -100}%`,
         left: `${Math.random() * 100}%`,
-        width: `${Math.random() * 10}px`, // Adjust size of snowflakes
-        height: `${Math.random() * 10}px`, // Adjust size of snowflakes
+        width: `${Math.random() * 10}px`,
+        height: `${Math.random() * 10}px`,
       }}
-      animate={{ top: "100vh" }} // Animate to bottom of viewport
+      animate={{ top: "100vh" }}
       transition={{
         duration: Math.random() * 5 + 2,
         repeat: Infinity,
-        // repeatType: "reverse",
-        // ease: "linear",
       }}
     />
   ));

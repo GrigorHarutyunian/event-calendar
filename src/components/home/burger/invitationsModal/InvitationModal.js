@@ -7,24 +7,18 @@ import { columnsInvitation } from "./helpers/tableColumns";
 import { columnsOwnInvitations } from "./helpers/tableColumns";
 
 export const InvitationsModal = ({ dispatch, invitations, ownEvents }) => {
-  console.log("🚀 ~ InvitationsModal ~ invitations:", invitations);
   const [onlyMyEvents, setOnlyMyEvents] = useState(false);
   const tableRows = onlyMyEvents ? ownEvents : invitations;
-  // const [tableRows, setTableRows] = useState(invitations);
   const [title, setTitle] = useState("Invitations");
   const [tableColumn, setTableColumn] = useState(columnsInvitation);
 
   console.log(tableRows);
   const handleClick = () => {
     const t = title === "Invitations" ? "Own Events" : "Invitations";
-    // const rows = tableRows === invitations ? ownEvents : invitations;
-    console.log("🚀 ~ handleClick ~ invitations:", invitations);
-    console.log("🚀 ~ handleClick ~ ownEvents:", ownEvents);
     const columns =
       tableColumn === columnsInvitation
         ? columnsOwnInvitations
         : columnsInvitation;
-    // setTableRows(rows);
     setOnlyMyEvents(!onlyMyEvents);
     setTitle(t);
     setTableColumn(columns);
