@@ -121,6 +121,25 @@ td.today {
   td {
     padding: 10px;
   }
+
+  calendar-week-list {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .week-days-date {
+    flex: 1 0 auto; /* Allow days to wrap onto multiple lines */
+  }
+
+  .time-grid {
+    height: auto;
+  }
+
+  .time-grid-item {
+    padding: 5px;
+    font-size: 14px; /* Larger font size for readability */
+  }
+
 }
 
 .time-grid {
@@ -221,5 +240,22 @@ td.today {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+
+/* (max-width: 480px) */
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .span2, .span21 {
+    flex-wrap: wrap;
+    inset: 5px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .span2, .span21 {
+    inset: 7px;
+    font-size: 16px;
   }
 }
