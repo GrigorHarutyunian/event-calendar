@@ -65,7 +65,6 @@ export const CalendarYear = ({ currentDate, thisDay, userID }) => {
           }}
         >
           {arr.map((v, i) => (
-            // <div key={i} className="calendar-years">
             <div
               key={i}
               className={`calendar-years ${i >= 10 ? "center-month" : ""}`}

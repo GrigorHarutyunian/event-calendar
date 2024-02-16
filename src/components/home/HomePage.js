@@ -81,16 +81,16 @@ export const HomePage = () => {
             id="demo-simple-select"
             variant="outlined"
           >
-            <MenuItem value={"Month"}>Month</MenuItem>
-            <MenuItem value={"Year"}>Year</MenuItem>
-            <MenuItem value={"Week"}>Week</MenuItem>
+            <MenuItem value={"Month"}>MONTH</MenuItem>
+            <MenuItem value={"Year"}>YEAR</MenuItem>
+            <MenuItem value={"Week"}>WEEK </MenuItem>
           </Select>
         </FormControl>
         <Button
           style={{
             padding: "11px 23px",
             background: "linear-gradient(to right, #2b3248, #7b88cc)",
-            color: "black",
+            color: "white",
             outline: "none",
             border: "none",
             fontSize: "15px",

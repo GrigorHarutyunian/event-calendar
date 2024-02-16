@@ -21,6 +21,7 @@
   background: rgba(0, 0, 0, 8);
   overflow: hidden;
   border-radius: 26px;
+  margin-top: 44px;
 }
 
 .calendar-week-list {
@@ -75,7 +76,7 @@ thead {
 th {
   padding: 20px;
   border: none;
-  color: orange;
+  color: gold;
 }
 
 .day {
@@ -103,12 +104,10 @@ td.today {
   background-color: #a3bb98;
 }
 
-
 @media only screen and (max-width: 400px) {
   .calendar {
     width: 80%;
     height: 80%;
-
   }
 
   .img {
@@ -137,7 +136,7 @@ td.today {
 
 .time-grid-item {
   border-bottom: 1px solid #ccc;
-  color: #7077a1;
+  color: #e4e8ff;
   text-align: left;
   font-size: 12px;
 }
@@ -152,7 +151,7 @@ td.today {
 }
 
 .time-grid-item.selected {
-  background-color: #e0e0e0;
+  background-color: #000000;
 }
 
 ::selection {
@@ -162,7 +161,6 @@ td.today {
 .time-grid-item::selection {
   background: none;
 }
-
 
 .calendar::before {
   content: "";

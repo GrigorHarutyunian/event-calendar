@@ -74,10 +74,10 @@
 
 @keyframes scaleUp {
   from {
-    transform: scale(0); /* Սկսել փոքր չափսով */
+    transform: scale(0);
   }
   to {
-    transform: scale(1); /* Մեծանալու մեջ */
+    transform: scale(1);
   }
 }
 

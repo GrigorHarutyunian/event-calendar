@@ -8,11 +8,15 @@ import TextField from "@mui/material/TextField";
 import { useState } from "react";
 import { useRef } from "react";
 export const MyAutocomplete = ({
-  friends,
+  friendsList,
   setFriendsInfo,
   friendsInfo,
   inputRef,
+  user,
 }) => {
+  const friends = friendsList.filter((us) => {
+    return us.email !== user.email;
+  });
   const handleSelectChange = (event, newValue) => {
     setFriendsInfo(newValue);
   };
@@ -20,14 +24,14 @@ export const MyAutocomplete = ({
   return (
     <Autocomplete
       style={{
-        maxHeight: "200px",
+        maxheight: "200px",
         overflowY: "auto",
 
         padding: "5px 0px",
       }}
       multiple
       limitTags={1}
-      maxHeight={20}
+      maxheight={20}
       id="multiple-limit-tags"
       options={friends}
       disableCloseOnSelect

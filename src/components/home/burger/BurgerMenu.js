@@ -4,7 +4,6 @@ import { UserInfo } from "./UserInfo";
 import { useDispatch } from "react-redux";
 import { changeBurgerState } from "../../../redux/slices/burgerSlice";
 import { useSelector } from "react-redux";
-import { Invitation } from "./Inivations";
 import { modalInvitations } from "../../../redux/slices/modalInvitationsSlice";
 import { EventInivations } from "../../../firebase/service/EventInvitations";
 

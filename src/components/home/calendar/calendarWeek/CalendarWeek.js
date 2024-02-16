@@ -81,9 +81,6 @@ const TimeGrid = ({ userID, date, selectedHours, setSelectedHours }) => {
 
 export const CalendarWeek = ({ userID, currentDate }) => {
   const dispatch = useDispatch();
-  // const event = useSelector((store) => store.events);
-  // const eventsArr = [...event.events];
-
   function generateWeeklyDays(startDate) {
     const daysOfWeek = [];
     const currentDay = new Date(startDate).getDay();
