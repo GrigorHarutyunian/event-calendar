@@ -70,22 +70,19 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Lorem ips",
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Event: Manage easily",
+    content: "Easily create and manage events with our intuitive interface",
   },
   {
     id: "feature-2",
     icon: shield,
-    title: "Lorem ip",
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Email: Get alerts",
+    content: "Never miss an event with our timely email notifications",
   },
   {
     id: "feature-3",
     icon: send,
-    title: "Lorem ip",
-    content:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+    title: "Support: We assist",
+    content: "Our support team is always here to help with your questions",
   },
 ];

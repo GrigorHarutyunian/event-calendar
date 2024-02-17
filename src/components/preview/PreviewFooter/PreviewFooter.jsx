@@ -5,7 +5,7 @@ export default function PreviewFooter() {
     <div>
       <div className="preview-footer-container">
         <p className="preview-footer-text">
-          2023 Calendar. All Rights Reserved.
+          2024 Calendar. All Rights Reserved.
         </p>
       </div>
     </div>
