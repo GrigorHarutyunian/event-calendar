@@ -77,7 +77,12 @@
   left: -61%;
   width: 222%;
   height: 241%;
-  background-image: conic-gradient(transparent, transparent, transparent, gold);
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #030b37
+  );
   border-radius: 20px;
   animation: animatess 4s linear infinite;
   animation-delay: -2s;

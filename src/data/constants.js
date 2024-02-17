@@ -77,7 +77,7 @@ export const features = [
     id: "feature-2",
     icon: shield,
     title: "Email: Get alerts",
-    content: "Never miss an event with our timely email notifications",
+    content: "Never miss your new event with our timely email notifications",
   },
   {
     id: "feature-3",

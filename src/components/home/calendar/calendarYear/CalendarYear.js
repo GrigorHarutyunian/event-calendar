@@ -29,10 +29,7 @@ const monthNames = [
 
 export const CalendarYear = ({ currentDate, thisDay, userID }) => {
   const dispatch = useDispatch();
-  console.log(
-    "🚀 ~ file: CalendarYear.js:42 ~ CalendarYear ~ thisDay:",
-    thisDay
-  );
+
   return (
     <div className="calendar year">
       <span className="span2">

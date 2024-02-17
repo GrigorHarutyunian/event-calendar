@@ -43,10 +43,6 @@ const TimeGrid = ({ userID, date, selectedHours, setSelectedHours }) => {
   };
 
   const handleMouseUp = () => {
-    console.log(`Selected hours: ${dragStart} to ${dragEnd}`);
-    console.log(`Selected day: ${date.getDate()}`);
-    console.log(`Selected month: ${monthNames[date.getMonth()]}`);
-    console.log(`Selected year: ${date.getFullYear()}`);
     dispatch(setDate(date.toDateString()));
     dispatch(selectedDay(date.toDateString()));
     dispatch(getSelectedTime({ start: dragStart, end: dragEnd }));
