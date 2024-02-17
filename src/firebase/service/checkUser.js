@@ -2,7 +2,6 @@ import { database } from "../firebase-config";
 import { ref, get } from "firebase/database";
 
 export const checkUser = async (data) => {
-  console.log(data);
   const userId = data.id;
   const path = `calendars/${userId}`;
   const eventRef = ref(database, path);

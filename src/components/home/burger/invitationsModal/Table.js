@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import "./Table.css";
 
 export const DataGridDemo = ({ columns, rows, title }) => {
+  console.log(rows);
   return (
     <Box className="box" sx={{ height: 450, width: "80%" }}>
       <div className="title-invitation">{title}</div>

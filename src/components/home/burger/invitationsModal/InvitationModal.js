@@ -12,7 +12,6 @@ export const InvitationsModal = ({ dispatch, invitations, ownEvents }) => {
   const [title, setTitle] = useState("Invitations");
   const [tableColumn, setTableColumn] = useState(columnsInvitation);
 
-  console.log(tableRows);
   const handleClick = () => {
     const t = title === "Invitations" ? "Own Events" : "Invitations";
     const columns =

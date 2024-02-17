@@ -126,7 +126,7 @@ td.today {
   }
 
   .week-days-date {
-    flex: 1 0 auto; 
+    flex: 1 0 auto;
   }
 
   .time-grid {
@@ -135,9 +135,8 @@ td.today {
 
   .time-grid-item {
     padding: 5px;
-    font-size: 14px; 
+    font-size: 14px;
   }
-
 }
 
 .time-grid {
@@ -206,7 +205,12 @@ td.today {
   width: 239%;
   height: 258%;
 
-  background-image: conic-gradient(transparent, transparent, transparent, gold);
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #051a90
+  );
   border-radius: 20px;
   animation: animatess 4s linear infinite;
   animation-delay: -2s;
@@ -241,10 +245,9 @@ td.today {
   }
 }
 
-
-
 @media only screen and (max-width: 480px) {
-  .span2, .span21 {
+  .span2,
+  .span21 {
     flex-wrap: wrap;
     inset: 5px;
     font-size: 14px;
@@ -252,7 +255,8 @@ td.today {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 768px) {
-  .span2, .span21 {
+  .span2,
+  .span21 {
     inset: 7px;
     font-size: 16px;
   }

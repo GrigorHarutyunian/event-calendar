@@ -44,19 +44,19 @@ export const HomePage = () => {
   const thereIsModal = useSelector((store) => store.modalAddEvent);
   const dispatch = useDispatch();
   const userID = useSelector((store) => store.userData.id);
-  console.log(thisDay);
-  console.log(currentDate);
+  const events = useSelector((store) => store.events.events);
   const modalInvitation = useSelector((store) => store.modalInvitations);
 
   useEffect(() => {
     GetFriendsList(dispatch);
     GetEvents(dispatch, currentDateText, userID);
     EventInivations(userID, dispatch);
-  }, [modalInvitation]);
+  }, [modalInvitation, dispatch, currentDateText, userID]);
+  console.log(events);
 
   useIsLoggin(!isLoggedIn, "/login", isLoggedIn);
   const inivations = useSelector((store) => store.invitation);
-  console.log(burgerState);
+
   const ownEventList = useSelector((store) => store.ownEvents);
 
   return (

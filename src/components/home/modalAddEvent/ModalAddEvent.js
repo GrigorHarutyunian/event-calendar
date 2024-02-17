@@ -105,7 +105,7 @@ export const ModalAddEvent = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(1);
+
     if (title && time.state) {
       upDateEvents(
         selectedDayString,

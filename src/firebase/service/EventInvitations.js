@@ -17,7 +17,7 @@ export const EventInivations = async (userId, dispatch) => {
     for (let key in updatedEvents) {
       const oneDay = updatedEvents[key].event;
       const day = key;
-      console.log(oneDay);
+
       for (let event of oneDay) {
         if (event.type === "group" && event.user.id !== userId) {
           const user = {
@@ -38,6 +38,7 @@ export const EventInivations = async (userId, dispatch) => {
   } catch (error) {
     console.error("Error fetching updated data:", error);
   }
+
   dispatch(addOwnEvents(ownEventsList));
   dispatch(addInivations(eventsList));
 };

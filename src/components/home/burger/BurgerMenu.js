@@ -19,12 +19,10 @@ export const BurgerMenu = () => {
 
   const updateManu = () => {
     if (!burgerState) {
-      console.log(burgerState);
       setBurgerClass("burger-clicked");
       setMenuClass("burger-menu");
       dispatch(changeBurgerState(true));
     } else {
-      console.log(burgerState);
       setBurgerClass("burger-unclicked");
       setMenuClass("menu-hidden");
       dispatch(changeBurgerState(false));
