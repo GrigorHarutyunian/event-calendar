@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Event-Calendar App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview 📅
 
-## Available Scripts
+Event-Calendar is a React-based application designed to help you manage your events. With a user-friendly interface, it allows users to create, delete and view events on a calendar. The app supports different views such as monthly, yearly, and weekly.
 
-In the project directory, you can run:
+## Features 💡
 
-### `npm start`
+- 💻 **Preview Page**: A landing page that contains contact information and provides options for user login and registration.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- ✅ **User Authentication**: Secure login and registration functionality.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- 🔍**Calendar Views**: Once logged in, users can view the calendar in different formats - monthly, yearly, or weekly.
 
-### `npm test`
+- 📝 **Event Management**: Users can add their own events to the calendar. Each event can be color-coded for easy identification.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- 👥 **Event Invitations**: Users can invite friends to their events. Invitations are sent via email and can be accepted or declined by the recipient. Իf the user is busy at the given time, we show that he is busy and do not send an invitation to that user
 
-### `npm run build`
+- 👤 **User Profile**: Accessible via a burger menu, the user profile displays logged-in user information including profile picture and email. It also provides a summary of all event invitations and user-created events.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Getting Started 🚀🚀 🚀
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites 🛠️
 
-### `npm run eject`
+- Node.js
+- npm
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation ⬇️
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. Clone the repo
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+   ```sh
+   git clone https://github.com/GrigorHarutyunian/event-calendar.git
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. ```sh
+    npm install
+   ```
 
-## Learn More
+3. ```sh
+    npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Enjoy Event-Calendar App ✨
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+We hope you find the Event-Calendar app useful and enjoyable. We're always open to feedback and suggestions. If you have any issues or ideas, please feel free to open an issue or submit a pull request.
 
-### Code Splitting
+Happy event planning! 🎉
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributors 👥👥
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- **Grigor Harutyunian** - [@GrigorHarutyunian](https://github.com/GrigorHarutyunian).
+- **Maria Javadyan** - [@mariajavadyan](https://github.com/mariajavadyan)
+- **Karen Shmavonyan** - [@shmavonyankaren](https://github.com/shmavonyankaren)
+- **Edgar Petrosyan** - [@Petrosian7](https://github.com/Petrosian7?tab=repositories)
